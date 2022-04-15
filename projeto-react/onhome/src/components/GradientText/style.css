@@ -1,0 +1,35 @@
+.text {
+    flex: 1;
+    color: white;
+    font-size: 16px;
+}
+.text.main-title {
+    max-width: 450px;
+    text-align: center;
+}
+
+.text .label {
+    font-size: 1.25em;
+}
+
+.text .title {
+    font-size: 2em;
+    background: linear-gradient(to right, hsl(180, 100%, 50%), hsl(300, 100%, 50%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    width: fit-content;
+    margin: 0 auto;
+}
+.text .subtitle {
+    font-size: 1em;
+}
+.borderTextLeft {
+    border-style: solid;
+    border-color: hsl(0, 0%, 100%);
+    border-width: 2px;
+    padding: 0 10px;
+    border-top: 0;
+    border-bottom: 0;
+    border-left: 1;
+    border-right: 0;
+}

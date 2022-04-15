@@ -1,0 +1,22 @@
+.mainDiv--background{
+    background-color: rgb(33, 1, 85);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+/* // pfv vai agr */
+.mainDiv--background .mainDiv--content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainDiv--background .mainDiv--content .div--text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100% ;
+    
+    padding-bottom: 0%;
+}

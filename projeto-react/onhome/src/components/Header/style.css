@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap');
+
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
+header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 2%;
+}
+
+.container--mainContainerHeader{
+   width: 100%;
+   height: 10%;
+   color: white;
+}
+
+.header--logo{
+    font-size: 22px;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+.header-options, li, ul{
+    display: inline-block;
+    padding: 0px 20px;
+    font-weight: lighter;
+    list-style-type: none;
+    cursor: pointer;
+}
+
+.header-options, li, ul:hover{
+    font-weight: bolder;
+}
+
+.header--login{
+    display: flex;
+    justify-content: space-between;
+    width: 170px;
+}
+
+.btn--registrar{
+    border: white solid 1px;
+    border-radius: 20px;
+    width: 110px;
+    height: 35px;
+}
+
+button{
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+@media (max-width: 834px) {
+    .header-options, li{
+        font-size: 12px;
+    }
+
+    .header--logo {
+        font-size: 15px;
+    }
+
+    .header--login{
+        font-size: 13px;
+    }
+}
+
+
+

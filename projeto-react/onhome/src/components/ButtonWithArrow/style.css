@@ -1,0 +1,17 @@
+.button-with-arrow {
+    width: 160px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: #7879F1 solid 1px;
+    border-radius: 20px ;
+}
+/* // pfv vai agr */
+.button-with-arrow:hover{
+    transform: scale(1.1);
+    transition: all ease 1s;
+}

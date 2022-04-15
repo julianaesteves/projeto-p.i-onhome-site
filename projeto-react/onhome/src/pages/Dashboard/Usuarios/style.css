@@ -1,0 +1,64 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.right-content {
+    flex: 1;
+    color: white;
+}
+/* pfv vai agr */
+.title {
+    border: 2px;
+    padding-bottom: 10px;
+}
+
+.div-cadastro-usuarios {
+    display: flex;
+}
+
+.div-cadastro-usuarios > * {
+    flex: 1;
+    padding: 0 20px;
+}
+.div-inputs {
+    display: flex;
+    flex-direction: column;
+}
+
+.div-inputs input,
+.div-inputs button {
+    margin: 8px 0;
+}
+
+.div-inputs button {
+    width: fit-content;
+    height: 40px;
+}
+
+.label-title-form {
+    display: flex;
+    font-weight: lighter;
+}
+
+.cadastrados-border{
+    display: flex;
+    flex-direction: column;
+}
+
+.cadastrados-title{
+    margin-bottom: 25px;
+    font-weight: lighter;
+}
+
+.registered-users {
+   display: flex;
+   justify-content: space-between;
+   border-bottom: 1px solid grey;
+}
+
+.right-content-button {
+    display: flex;
+    justify-content: flex-end;
+}
+

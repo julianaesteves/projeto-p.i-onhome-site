@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+}
+
+.feedback--background{
+    background-color: rgb(0, 5, 82);
+    width: 100%;
+    display: flex;
+}
+
+.feedback--container{
+    width: 70rem;
+    margin: auto;
+}
+
+.feedback--cards{
+    display: inline-flex;
+    padding-top: 3em;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.feedback--clientName{
+    display: flex;
+}
