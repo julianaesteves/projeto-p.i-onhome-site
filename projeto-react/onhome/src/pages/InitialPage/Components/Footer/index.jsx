@@ -28,9 +28,10 @@ const Footer = () => {
     return (
         <div className="footer--container">
             <div className="footer--description">
-                <GradientText title={"OnHome"} 
+                <GradientText 
+                    textAlign="left"
+                    title={"OnHome"} 
                     subtitle={subtitle} 
-                    textAlign={"left"}
                     fontSizeTitle={40}
                     fontWeight={"bold"} 
                 />
