@@ -1,14 +1,18 @@
 import GradientText from '../../../../components/GradientText'
 import FeedbackCard from './FeedbackCard'
+
 import './style.css'
 
 const Feedbacks = () => {
     return (
         <div className='feedback--background'>
             <div className='feedback--container'>
-                    <GradientText title="Feedback dos nossos parceiros" /> 
+                <div className='feedback--title'>
+                    <GradientText title="Feedback dos nossos parceiros" />
+                </div>
                 <div className='feedback--cards'>
                     <FeedbackCard 
+                        textAlign={"left"}
                         label={"Esté é o campo onde terá os feedbacks, escrito por cada cliente"} 
                         fontSizeLabel={12} 
                         title={"Michael Fassbender"} 
@@ -26,7 +30,7 @@ const Feedbacks = () => {
                         label={"Esté é o campo onde terá os feedbacks, escrito por cada cliente"} 
                         fontSizeLabel={12} 
                         title={"Michelle Obama"} 
-                        subtitle={"CEO YouTech."}
+                        subtitle={"CEO YouTech"}
                         fontSizeTitle={19}
                         fontSizeSubtitle={18}/>
                     <FeedbackCard 

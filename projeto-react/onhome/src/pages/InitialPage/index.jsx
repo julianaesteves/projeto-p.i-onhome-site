@@ -29,7 +29,9 @@ const InitialPage = () => {
                 <section className="solutions">
                     <Solutions />
                 </section>
+                <section>
                     <Produtos />
+                </section>
                 <section>
                     <Feedbacks />
                 </section>
