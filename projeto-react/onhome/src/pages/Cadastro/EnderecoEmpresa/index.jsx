@@ -64,7 +64,7 @@ const EnderecoEmpresa = ({ nextPage, backPage, toggleButton, onSubmit, setFormDa
         width={"200px"}
         height={"30px"}
         margin={"30px"}
-        value={toggleButton}
+        children={toggleButton}
       ></ButtonWithArrow>
       
     </form>
