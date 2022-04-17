@@ -2,9 +2,10 @@
     box-sizing: border-box;
 }
 .products {
-    background-color: rgb(0, 5, 82);
-    /* margin-top: 20px; */
+    background-color: #0F0B30;
+    padding: 0 0 100px 0;
 }
+
 .products .container {
     max-width: 1140px;
     padding: 0 20px;
@@ -16,4 +17,8 @@
 }
 .products .container > * {
     padding: 40px 0;
+}
+
+.container .main-title{
+    padding: 150px 0 30px 0;
 }

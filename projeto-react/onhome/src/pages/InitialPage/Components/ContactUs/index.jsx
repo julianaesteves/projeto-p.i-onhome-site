@@ -12,8 +12,9 @@ const ContactUs = () => {
 
     return (
         <div className="contact--container">
-            <div className="contact--header">
-                <GradientText 
+            <div className="contact--header"> 
+                <GradientText
+                    textAlign="center"
                     title={"Entre em contato"} 
                     subtitle={"Entre em contato para obter mais informações ou fazer um orçamento que se adeque a suas necessidades"}
                 />

@@ -1,9 +1,10 @@
 .contact--container {
-    background-color: #000552;
+    background-color: #0F0B30;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 0 0 80px 0;
 }
 
 .contact--header {
