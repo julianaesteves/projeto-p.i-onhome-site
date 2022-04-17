@@ -49,7 +49,7 @@ const DadosEmpresa = ({ nextPage, toggleButton, onSubmit, setFormData, formData,
         width={"200px"}
         height={"30px"}
         margin={"30px"}
-        value={toggleButton}
+        children={toggleButton}
       ></ButtonWithArrow>
     </form>
   );

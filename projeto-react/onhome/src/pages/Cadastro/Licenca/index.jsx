@@ -42,7 +42,7 @@ const Licenca = ({ nextPage, backPage, toggleButton, onSubmit, setFormData, form
         width={"200px"}
         height={"30px"}
         margin={"30px"}
-        value={toggleButton}
+        children={toggleButton}
       ></ButtonWithArrow>
     </form>
   );
