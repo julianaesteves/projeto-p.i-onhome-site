@@ -5,8 +5,8 @@ import EnderecoEmpresa from "../EnderecoEmpresa/index";
 import Licenca from "../Licenca/index";
 import DadosEmpresa from "../DadosEmpresa/index";
 import GradientText from "../../../components/GradientText/index";
+import ButtonWithArrow from "../../../components/ButtonWithArrow/index.jsx";
 import MenuCadastro from "../MenuCadastro/index";
-
 
 const Form = () => {
   const [page, setPage] = useState(0);
@@ -32,15 +32,15 @@ const Form = () => {
     periodo: 1,
     qtdMaquinas: "",
   });
-  
+
   // Função que renderiza o componente do formulário a ser exibido
   const PageDisplay = () => {
     if (page === 0) {
-      return <DadosEmpresa nextPage={nextPage} backPage={backPage} toggleButton={toggleButton} onSubmit={onSubmit} formData={formData} setFormData={setFormData}/>;
+      return <DadosEmpresa formData={formData} setFormData={setFormData} />;
     } else if (page === 1) {
-      return <EnderecoEmpresa nextPage={nextPage} backPage={backPage} toggleButton={toggleButton} onSubmit={onSubmit} formData={formData} setFormData={setFormData}/>;
+      return <EnderecoEmpresa formData={formData} setFormData={setFormData} />;
     } else {
-      return <Licenca nextPage={nextPage} backPage={backPage} toggleButton={toggleButton} onSubmit={onSubmit} formData={formData} setFormData={setFormData}/>;
+      return <Licenca formData={formData} setFormData={setFormData} />;
     }
   };
 
@@ -54,11 +54,10 @@ const Form = () => {
     if (page == FormTitles.length - 1) {
       // condição para enviar o formulario para a API se estivermos na ultima pagina
       console.log("voce enviou o formulario");
-      console.log(formData)
+      console.log(formData);
     } else {
       setPage((currPage) => currPage + 1);
-      console.log(formData)
-
+      console.log(formData);
     }
   }
 
@@ -73,18 +72,26 @@ const Form = () => {
   return (
     <div className="formulario--background">
       <div className="formulario--gradientBackground">
-        {/* <Menu/> */}
+        {/* <MenuCadastro /> */}
         <div className="formulario--mainContainer">
           <div className="formulario--gradientTitle">
             <GradientText title={FormTitles[page]} />
           </div>
-          <div className="formulario--body">
+          <form className="formulario--body" onSubmit={onSubmit}>
             {PageDisplay()}
             <div className="formulario--buttons">
-              
-              
+              <button type="button" disabled={page == 0} onClick={backPage}>
+                Voltar
+              </button>
+              <ButtonWithArrow
+                type="submit"
+                width={"200px"}
+                height={"30px"}
+                margin={"30px"}
+                children={toggleButton}
+              ></ButtonWithArrow>
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </div>

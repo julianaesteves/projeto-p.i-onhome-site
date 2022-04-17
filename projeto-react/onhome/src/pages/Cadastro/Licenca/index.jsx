@@ -1,12 +1,10 @@
 import React from "react";
-import { useState } from "react";
 import Input from "../../../components/Input";
-import ButtonWithArrow from "../../../components/ButtonWithArrow/index.jsx";
 
-const Licenca = ({ nextPage, backPage, toggleButton, onSubmit, setFormData, formData }) => {
+const Licenca = ({ setFormData, formData }) => {
 
   return (
-    <form className="formulario--licencaContainer" onSubmit={onSubmit}>
+    <div className="formulario--licencaContainer">
       <select
         value={formData.opcoes}
         onChange={(e) => setFormData({...formData, opcoes: e.target.value})}
@@ -34,17 +32,7 @@ const Licenca = ({ nextPage, backPage, toggleButton, onSubmit, setFormData, form
         value={formData.qtdMaquinas}
         onChange={(e) => setFormData({...formData, qtdMaquinas: e.target.value})}
       />
-      <button onClick={backPage}>
-        Voltar
-      </button>
-      <ButtonWithArrow
-        type="submit"
-        width={"200px"}
-        height={"30px"}
-        margin={"30px"}
-        children={toggleButton}
-      ></ButtonWithArrow>
-    </form>
+    </div>
   );
 };
 

@@ -1,12 +1,10 @@
 import React from "react";
-import { useState } from "react"; 
-import ButtonWithArrow from "../../../components/ButtonWithArrow/index.jsx";
 import Input from "../../../components/Input/index.jsx";
 
-const EnderecoEmpresa = ({ nextPage, backPage, toggleButton, onSubmit, setFormData, formData }) => {
+const EnderecoEmpresa = ({ setFormData, formData }) => {
 
   return (
-    <form className="enderecoEmpresa--mainContainer" onSubmit={onSubmit}>
+    <div className="enderecoEmpresa--mainContainer">
       <label className="formulario--label">Logradouro</label>
       <Input
         value={formData.logradouro}
@@ -56,18 +54,10 @@ const EnderecoEmpresa = ({ nextPage, backPage, toggleButton, onSubmit, setFormDa
         width={"243px"}
         height={"25px"}
       />
-      <button onClick={backPage}>
-        Voltar
-      </button>
-      <ButtonWithArrow
-        type="submit"
-        width={"200px"}
-        height={"30px"}
-        margin={"30px"}
-        children={toggleButton}
-      ></ButtonWithArrow>
       
-    </form>
+      
+      
+    </div>
   );
 };
 export default EnderecoEmpresa;
