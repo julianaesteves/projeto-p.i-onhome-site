@@ -1,13 +1,10 @@
 import React from "react";
-import { useState } from "react";
 import Input from "../../../components/Input/index.jsx";
-import ButtonWithArrow from "../../../components/ButtonWithArrow/index.jsx";
-import GradientText from "../../../components/GradientText/index";
 
-const DadosEmpresa = ({ nextPage, toggleButton, onSubmit, setFormData, formData, handleChange }) => {
+const DadosEmpresa = ({ setFormData, formData }) => {
 
   return (
-    <form className="dadosEmpresa--mainContainer" onSubmit={onSubmit}>
+    <div className="dadosEmpresa--mainContainer">
       <label className="formulario--label">Nome Fantasia</label>
       <Input
         value={formData.nomeFantasia}
@@ -44,14 +41,8 @@ const DadosEmpresa = ({ nextPage, toggleButton, onSubmit, setFormData, formData,
         width={"258px"}
         height={"25px"}
       />
-      <ButtonWithArrow
-        type="submit"
-        width={"200px"}
-        height={"30px"}
-        margin={"30px"}
-        children={toggleButton}
-      ></ButtonWithArrow>
-    </form>
+      
+    </div>
   );
 };
 
