@@ -11,9 +11,8 @@ function App() {
   return (
     <div className="App">
       {/* <Home /> */}
-      <InitialPage />
+      <Form />
     </div>
   );
 }
-
 export default App;
