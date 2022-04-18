@@ -29,7 +29,7 @@ const Footer = () => {
         <div className="footer--container">
             <div className="footer--description">
                 <GradientText 
-                    textAlign="left"
+                    
                     title={"OnHome"} 
                     subtitle={subtitle} 
                     fontSizeTitle={40}
