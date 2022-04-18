@@ -1,3 +1,4 @@
+import {Link} from 'react-scroll'
 import './style.css'
 
 const Header = () => {
@@ -5,13 +6,13 @@ const Header = () => {
         <div>
             <header className="container--mainContainerHeader">
                     <div className="header--logo">
-                        <span>OnHome</span>
+                    <Link to='container--mainContainerHeader' smooth={true} duration={1000}><span>OnHome</span></Link>
                     </div>
                     <div className='header--options'>
                         <nav>
                             <ul>
-                                <li>Features</li>
-                                <li>Serviços</li>
+                                <li><Link to='solutions--container' smooth={true} duration={1000}>Serviços</Link></li>
+                                <li><Link to='products' smooth={true} duration={1000}>Produtos</Link></li>
                                 <li>Sobre nós</li>
                                 <li>Planos</li>
                                 <li>Suporte</li>
