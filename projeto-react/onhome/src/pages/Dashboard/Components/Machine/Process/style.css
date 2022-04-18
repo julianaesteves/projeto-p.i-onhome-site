@@ -1,0 +1,37 @@
+.process--container {
+    color: #fff;
+}
+
+.process--header {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.process--row {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    font-weight: 300;
+}
+
+.process--header > div {
+    width: 220px;
+    padding: 0.5rem;
+    border-right: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+}
+
+.process--row > div {
+    width: 220px;
+    padding: 0.5rem;
+    border-right: 1px solid #fff;
+}
+
+.process--row.process--table--border {
+    border-bottom: 1px solid #fff;
+}
+
+.process--header > div:nth-last-child(1), .process--row > div:nth-last-child(1) {
+    border-right: none;
+}
