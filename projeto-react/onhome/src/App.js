@@ -13,8 +13,9 @@ function App() {
     <div className="App">
       <Home />
       {/* <InitialPage /> */}
+      {/* <Home /> */}
+      <Form />
     </div>
   );
 }
-
 export default App;

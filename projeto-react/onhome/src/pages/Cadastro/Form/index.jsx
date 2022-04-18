@@ -5,16 +5,22 @@ import EnderecoEmpresa from "../EnderecoEmpresa/index";
 import Licenca from "../Licenca/index";
 import DadosEmpresa from "../DadosEmpresa/index";
 import GradientText from "../../../components/GradientText/index";
+import ButtonWithArrow from "../../../components/ButtonWithArrow/index.jsx";
 import MenuCadastro from "../MenuCadastro/index";
-// pfv vai agr
-const Form = (props) => {
+
+const Form = () => {
   const [page, setPage] = useState(0);
+
+  // Array de títulos
+  const FormTitles = ["Dados da empresa", "Endereço", "Escolha sua licença"];
+
+  // Objeto de campos do formulário onde serão armazenados os novos valores digitados
   const [formData, setFormData] = useState({
-    nome_fantasia: "",
+    nomeFantasia: "",
     cnpj: "",
-    razao_social: "",
-    email: "",
-    telefone: "",
+    razaoSocial: "",
+    emailEmpresa: "",
+    telefoneEmpresa: "",
     logradouro: "",
     bairro: "",
     numero: "",
@@ -22,54 +28,70 @@ const Form = (props) => {
     complemento: "",
     estado: "",
     cidade: "",
-    option: 1,
-    tipo: 1,
+    opcoes: 1,
+    periodo: 1,
+    qtdMaquinas: "",
   });
 
-  const FormTitles = ["Dados da empresa", "Endereço", "Escolha sua licença"];
-
+  // Função que renderiza o componente do formulário a ser exibido
   const PageDisplay = () => {
     if (page === 0) {
-      return <DadosEmpresa formData={formData} setFormData={formData}  />;
+      return <DadosEmpresa formData={formData} setFormData={setFormData} />;
     } else if (page === 1) {
-      return <EnderecoEmpresa formData={formData} setFormData={formData} />;
+      return <EnderecoEmpresa formData={formData} setFormData={setFormData} />;
     } else {
-      return <Licenca formData={formData} setFormData={formData} />;
+      return <Licenca formData={formData} setFormData={setFormData} />;
     }
+  };
+
+  // Função responsável por voltar para o componente anterior
+  function backPage() {
+    setPage((currPage) => currPage - 1);
+  }
+
+  // Função responsável por avançar o formulário
+  function nextPage() {
+    if (page == FormTitles.length - 1) {
+      // condição para enviar o formulario para a API se estivermos na ultima pagina
+      console.log("voce enviou o formulario");
+      console.log(formData);
+    } else {
+      setPage((currPage) => currPage + 1);
+      console.log(formData);
+    }
+  }
+
+  // Função que altera o texto do botão para "Finalizar" caso estiver na última página
+  const toggleButton = page == FormTitles.length - 1 ? "Finalizar" : "Próximo";
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    nextPage();
   };
 
   return (
     <div className="formulario--background">
       <div className="formulario--gradientBackground">
-        {/* <Menu/> */}
+        {/* <MenuCadastro /> */}
         <div className="formulario--mainContainer">
           <div className="formulario--gradientTitle">
             <GradientText title={FormTitles[page]} />
           </div>
-          <div className="formulario--body">{PageDisplay()}</div>
-          <div className="formulario--buttons">
-            <button
-              disabled={page == 0}
-              onClick={() => {
-                setPage((currPage) => currPage - 1);
-              }}
-            >
-              Voltar
-            </button>
-            <button
-              onClick={() => {
-                if (page == FormTitles.length - 1) {
-                  console.log(formData);
-                } else {
-                  {
-                    setPage((currPage) => currPage + 1);
-                  }
-                }
-              }}
-            >
-              {page == FormTitles.length - 1 ? "Finalizar" : "Próximo"}
-            </button>
-          </div>
+          <form className="formulario--body" onSubmit={onSubmit}>
+            {PageDisplay()}
+            <div className="formulario--buttons">
+              <button type="button" disabled={page == 0} onClick={backPage}>
+                Voltar
+              </button>
+              <ButtonWithArrow
+                type="submit"
+                width={"200px"}
+                height={"30px"}
+                margin={"30px"}
+                children={toggleButton}
+              ></ButtonWithArrow>
+            </div>
+          </form>
         </div>
       </div>
     </div>

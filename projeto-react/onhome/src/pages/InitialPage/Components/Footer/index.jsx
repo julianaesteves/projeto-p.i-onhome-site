@@ -1,4 +1,3 @@
-import Button from "../../../../components/Button"
 import ButtonWithArrow from "../../../../components/ButtonWithArrow"
 import GradientText from "../../../../components/GradientText"
 
@@ -29,13 +28,14 @@ const Footer = () => {
     return (
         <div className="footer--container">
             <div className="footer--description">
-                <GradientText title={"OnHome"} 
+                <GradientText 
+                    
+                    title={"OnHome"} 
                     subtitle={subtitle} 
-                    textAlign={"left"}
                     fontSizeTitle={40}
                     fontWeight={"bold"} 
                 />
-                <ButtonWithArrow value={"Seguir"} style={{ margin: "20px 0"}} />
+                <ButtonWithArrow value={"Seguir"} style={{ margin: "20px 0"}}>Seguir</ButtonWithArrow>
                 <div className="footer--icons">
                     {mediaIcons.map(image => (
                         <img src={image} alt="" />

@@ -8,7 +8,8 @@ const Produtos = () => {
     return (
         <section className="products">
             <div className="container">
-                <GradientText className="main-title" 
+                <GradientText className="main-title"
+                    textAlign="center" 
                     label="Introdução à" 
                     title="Nossos produtos!" 
                     subtitle="Esqueça lentidão e estresse durante o trabalho, nossos produtos são da mais alta qualidade e de acordo com o que você precisa." 
