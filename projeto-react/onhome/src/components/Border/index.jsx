@@ -1,6 +1,6 @@
 import "./style.css"
 
-const Border = ({width, height, margin, children}) => {
+const Border = ({ width, height, margin, children, textAlign }) => {
 
     return (
         <div>
@@ -10,10 +10,9 @@ const Border = ({width, height, margin, children}) => {
                     padding: "40px", 
                     width: width,  
                     height: height,
-                    margin: margin
+                    margin: margin,
+                    textAlign: textAlign
                 }}>
-                {/* {text}
-                {validate} */}
                 <div>{children}</div>
             </div>
         </div>

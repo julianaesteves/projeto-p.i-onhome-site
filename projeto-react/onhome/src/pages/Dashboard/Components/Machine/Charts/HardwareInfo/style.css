@@ -1,0 +1,12 @@
+.hardwareInfo--container {
+    margin-top: 10px;
+    color: #fff;
+}
+
+.hardwareInfo--header {
+    text-align: center;
+}
+
+.hardwareInfo--content {
+    font-weight: 300;
+}

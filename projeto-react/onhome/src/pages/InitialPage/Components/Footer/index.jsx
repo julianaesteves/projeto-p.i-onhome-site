@@ -47,9 +47,7 @@ const Footer = () => {
                     <div className="footer--list">
                         <li className="footer--link--title">{item.title}</li>
                         {item.options.map(option => (
-                            <li className="footer--option">
-                                {option}
-                            </li>
+                            <li className="footer--option">{option}</li>
                         ))}
                     </div>
                 ))}

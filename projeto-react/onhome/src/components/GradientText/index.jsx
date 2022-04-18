@@ -8,7 +8,7 @@ const GradientText = (props) => {
     const marginHorizontal = textAlign === "center" ? "auto" : "0";
     
     return (
-        <div className={`text ${className}`} style={{ textAlign: props.textAlign }}>
+        <div className={`text ${className}`} style={{ textAlign: props.textAlign, width: props.width }}>
             <div className="label" style={{ fontSize: `${props.fontSizeLabel}px` }}>
                 {props.label ?? ''}
             </div>
@@ -17,6 +17,8 @@ const GradientText = (props) => {
                     margin: marginHorizontal, 
                     fontSize: `${props.fontSizeTitle}px`,
                     fontWeight: props.fontWeight,
+                    textAlign: props.textAlign,
+                    borderLeft: props.borderLeft
                 }}>
                 {props.title ?? ''}
             </div>
