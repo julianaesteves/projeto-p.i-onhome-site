@@ -6,7 +6,7 @@ import "./style.css";
 const TelaInicialCadastro = () => {
   return (
     <div className="mainDiv--background">
-      <div className="formulario--gradientBackground">
+      <div className="mainDiv--gradientBackground">
         <div className="mainDiv--content">
           <div className="div--text">
             <GradientText

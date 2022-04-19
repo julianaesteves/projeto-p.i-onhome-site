@@ -1,0 +1,11 @@
+.dadosEmpresa--mainContainer{
+    width: 500px;
+    margin-top: 20px;
+}
+
+@media screen and (max-width: 480px) {
+    .dadosEmpresa--mainContainer{
+        width: 250px;
+        margin: 10px;
+    }
+}

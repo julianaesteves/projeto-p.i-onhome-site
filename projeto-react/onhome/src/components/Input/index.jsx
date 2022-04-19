@@ -1,6 +1,6 @@
 import "./style.css"
 
-const Input = ({ type, width, height, margin, placeholder, borderRadius, name, value, onChange }) => {
+const Input = ({ type, width, height, margin, placeholder, borderRadius, value, onChange }) => {
 
     return (
         <div>
@@ -13,7 +13,6 @@ const Input = ({ type, width, height, margin, placeholder, borderRadius, name, v
                     borderRadius: borderRadius        
                 }}
                 value={value}
-                name={name}
                 type={type}
                 placeholder={placeholder}
                 onChange={onChange}

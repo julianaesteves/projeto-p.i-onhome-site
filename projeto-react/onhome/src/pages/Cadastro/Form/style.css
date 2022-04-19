@@ -5,29 +5,16 @@
 }
 
 .formulario--gradientBackground {
-    height: 100vh ;
-    width: 100%;
+    height: 100%;
     background: linear-gradient(9deg, rgba(8,4,37,0.8379945728291316) 14%, rgba(92,1,188,0.23855479691876746) 68%, rgba(255,0,201,0.18253238795518212) 100%);
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 }
 
 .formulario--label {
     color: white;
     margin: 10px;
-}
-
-.formulario--gradientSelect {
-    padding: 5px 20px;
-    border-width: 2px;
-    border-style: solid;
-    background: linear-gradient(#080425, #080425) padding-box,
-                linear-gradient(to right, hsl(180, 100%, 50%), hsl(300, 100%, 50%)) border-box;
-    border-radius: 42px;
-    border-color: transparent;
-    background-color: #080425;
-    color: white;
 }
 
 .formulario--buttons{
