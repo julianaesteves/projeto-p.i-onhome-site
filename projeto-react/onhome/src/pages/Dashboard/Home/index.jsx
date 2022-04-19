@@ -7,7 +7,11 @@ import Teste from "../Components/Teste";
 
 const Home = () => {
     return (
+
+//         <div style={{ display: 'flex' }}>  Alteração inserida com o menu do Rafael
+
         <div style={{ display: "flex", gap: "20px" }}>
+
             <Menu />
             {/* <Configuracoes /> */}
             {/* <Reports /> */}
