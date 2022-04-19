@@ -6,6 +6,7 @@ import ContactUs from "./Components/ContactUs";
 import Footer from "./Components/Footer";
 import ButtonWithArrow from "../../components/ButtonWithArrow";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import {Link} from 'react-scroll';
 
 import './style.css'
 
@@ -23,7 +24,7 @@ const InitialPage = () => {
                         <ButtonWithArrow style={{width: '170px'}}>Seguir</ButtonWithArrow>
                     </span>
                     <div className="down--arrow">
-                        <ExpandMoreIcon style={{color: 'white', fontSize: 100, cursor: 'pointer'}}/> 
+                        <Link to='solutions--container' smooth={true} duration={1000}><ExpandMoreIcon style={{color: 'white', fontSize: 100, cursor: 'pointer'}}/> </Link>
                     </div>
                 </section> 
                 <section className="solutions">

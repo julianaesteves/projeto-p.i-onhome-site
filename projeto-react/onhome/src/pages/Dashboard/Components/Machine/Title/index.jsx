@@ -1,14 +1,13 @@
 import Border from "../../../../../components/Border"
 import GradientText from "../../../../../components/GradientText"
-import "./style.css"
 
-const Title = ({ sector, machineNumber, style }) => {
+const Title = ({ squad, machineNumber, style }) => {
     return (
         <Border style={style}>
-            <GradientText title={`Setor ${sector} - Máquina ${machineNumber}`}/>
+            <GradientText title={`Squad ${squad} - Máquina ${machineNumber}`}/>
         </Border>
-        
     )
 }
+
 
 export default Title

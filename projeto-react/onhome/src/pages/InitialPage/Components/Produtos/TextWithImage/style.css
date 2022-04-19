@@ -1,9 +1,13 @@
 .textWithImage {
-    flex: 1;
+    /* flex: 1; */
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
     gap: 20px;
+}
+
+.textWithImage > img {
+    max-width: 500px;
 }

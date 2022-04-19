@@ -12,6 +12,17 @@
     align-items: center;
 }
 
+.solutions--title {
+    font-size: 2em;
+    background: linear-gradient(to right, hsl(180, 100%, 50%), hsl(300, 100%, 50%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    width: fit-content;
+    /* margin: 0 auto; */
+    text-align: left;
+    width: 85%;
+}
+
 .solutions--cards {
     text-align: center;
 }

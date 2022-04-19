@@ -34,10 +34,10 @@ const Solutions = () => {
     return (
         <div className="solutions--container">
             <div className="solutions--header">
-                <img src="https://www.pngmart.com/files/16/Laptop-Notebook-PNG-HD.png" alt="" />
+                <img src="./images/notebook.png" alt="" />
                 <GradientText title={"Potencialize seu negócio, produtividade é na OnHome"} />
             </div>
-            <GradientText title={"Um mundo de possibilidades!"} align={"left"} />
+            <h3 className="solutions--title">Um mundo de possibilidades</h3>
             <div className="solutions--content">
                 <div className="solutions--cards">
                     {cards.map((card, index) => (
