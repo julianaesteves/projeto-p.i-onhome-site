@@ -75,7 +75,7 @@ const Form = () => {
         {/* <MenuCadastro /> */}
         <div className="formulario--mainContainer">
           <div className="formulario--gradientTitle">
-            <GradientText title={FormTitles[page]} />
+            <GradientText title={FormTitles[page]} textAlign="center" />
           </div>
           <form className="formulario--body" onSubmit={onSubmit}>
             {PageDisplay()}

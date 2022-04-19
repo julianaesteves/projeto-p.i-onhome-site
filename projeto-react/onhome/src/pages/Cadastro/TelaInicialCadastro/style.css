@@ -1,12 +1,10 @@
 .mainDiv--background{
     background-color: rgb(33, 1, 85);
-    height: 100vh;
     display: flex;
     justify-content: center;
 }
 
-.formulario--gradientBackground {
-    height: 100vh ;
+.mainDiv--gradientBackground {
     width: 100%;
     background: linear-gradient(9deg, rgba(8,4,37,0.8379945728291316) 14%, rgba(92,1,188,0.23855479691876746) 68%, rgba(255,0,201,0.18253238795518212) 100%);
     display: flex;

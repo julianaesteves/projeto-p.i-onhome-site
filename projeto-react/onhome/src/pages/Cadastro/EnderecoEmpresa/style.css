@@ -1,0 +1,21 @@
+.enderecoEmpresa--mainContainer{
+    width: 500px;
+    margin-top: 20px;
+    
+}
+
+.inline--inputs{
+    max-width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 480px) {
+    .enderecoEmpresa--mainContainer{
+        width: 250px;
+    }
+    .inline--inputs div{
+        width: 50%;
+    }
+    
+}
