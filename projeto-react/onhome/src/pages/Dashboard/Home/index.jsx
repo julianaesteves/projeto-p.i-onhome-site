@@ -4,7 +4,7 @@ import Usuarios from "../Usuarios";
 
 const Home = () => {
     return (
-        <div style={{display: "flex", gap: "20px"}}>
+        <div style={{ display: 'flex' }}>
             <Menu />
             <Configuracoes />
         </div>
