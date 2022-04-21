@@ -6,11 +6,11 @@ const Menu = () => {
         <div className="menu">
             <input id="dropdown" type="checkbox" />
             <nav className="navbar border-gradient">
-                <label for="dropdown" class="dropdown">
-                    <span class="hamburger-icon">
-                        <span class="icon-bar top-bar"></span>
-                        <span class="icon-bar middle-bar"></span>
-                        <span class="icon-bar bottom-bar"></span>
+                <label htmlFor='dropdown' className="dropdown">
+                    <span className="hamburger-icon">
+                        <span className="icon-bar top-bar"></span>
+                        <span className="icon-bar middle-bar"></span>
+                        <span className="icon-bar bottom-bar"></span>
                     </span>
                 </label>
                 <ul>
