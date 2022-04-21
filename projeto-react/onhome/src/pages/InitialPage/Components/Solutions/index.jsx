@@ -26,15 +26,15 @@ const Solutions = () => {
             url: "/icons/web.svg",
         },
         {
-            description: "Lorem ipson",
-            url: "/icons/",
+            description: "Produtividade",
+            url: "/icons/produtivity.svg",
         },
     ]
 
     return (
         <div className="solutions--container">
             <div className="solutions--header">
-                <img src="./images/notebook.png" alt="" />
+                <img src="./images/notebook.png" alt="" width={650}/>
                 <GradientText title={"Potencialize seu negócio, produtividade é na OnHome"} />
             </div>
             <h3 className="solutions--title">Um mundo de possibilidades</h3>
