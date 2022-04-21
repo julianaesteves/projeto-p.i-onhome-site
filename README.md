@@ -8,14 +8,14 @@
 - icons: armazenas aquivos de extensão svg;
 - images: armazena as imagens de extensão png e jpg/jpeg;
 - index.html: aplica as propriedades root no navegador;
-- manifest.json: json inicial criado com a aplicação do react;
+- manifest.json: json inicial criado com a aplicação do React;
 - robots.txt: ??
 
 ### Diretório src
 - components: armazena os componentes que podem ser reutilizados globalmente no código;
-- pages: armazena as páginas que compõem a aplicação, dentro de cada diretório existe os estilos e componentes exclusivos de cada página;
+- pages: armazena as páginas que compõem a aplicação, dentro de cada diretório existem os estilos e componentes exclusivos de cada página;
 - App.js: arquivo responsável pela renderização dos componentes, é necessário fazer o import do componente para que ele seja exibido;
-- index.js: responsável por criar o root e rendezira o App.js;
+- index.js: responsável por criar o root e renderiza o App.js;
 - App.css: arquivo de estilo que é aplicado em todas as páginas e componentes existentes na aplicação.
 
 ## Uso
