@@ -1,35 +1,63 @@
 .licenca--gradientSelect {
-    padding: 5px 20px;
-    border-width: 2px;
-    border-style: solid;
-    background: linear-gradient(#080425, #080425) padding-box,
-                linear-gradient(to right, hsl(180, 100%, 50%), hsl(300, 100%, 50%)) border-box;
-    border-radius: 42px;
-    border-color: transparent;
-    background-color: #080425;
-    color: white;
-    margin: 10px;
+  padding: 5px 15px;
+  border-width: 2px;
+  border-style: solid;
+  background: linear-gradient(#080425, #080425) padding-box,
+    linear-gradient(to right, hsl(180, 100%, 50%), hsl(300, 100%, 50%))
+      border-box;
+  border-radius: 42px;
+  border-color: transparent;
+  background-color: #080425;
+  color: white;
+  margin: 10px;
+  text-align: center;
+  width: 160px;
 }
 
-.formulario--licencaContainer{
-    display: flex;
-    flex-direction: column;
+.formulario--licencaContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.licenca--selects {
+  margin: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.planos--cards {
+  display: flex;
+}
+@media only screen and (max-width: 940px) {
+  .planos--cards {
+    overflow-x: scroll;
     align-items: center;
+    text-align: center;
+    max-width: 700px;
+  }
 }
 
-.licenca--selects{
-    margin: 30px;
+@media only screen and (max-width: 480px) {
+  .planos--cards {
+    overflow-x: scroll;
+    align-items: center;
+    text-align: center;
+    max-width: 400px;
+    border-radius: 5px;
+  }
+  .licenca--selects {
+    flex-direction: column;
+  }
+
+  .licenca--gradientSelect {
+    width: 235px;
+    margin: 0px 0px 20px 10px;
+  }
 }
 
-.planos--cards{
-    display: flex;
-}
-
-@media only screen and (max-width: 480px){
-    .planos--cards{
-        flex-wrap: wrap;
-        align-items: center;
-        text-align: center;
-        max-width: 200px;
-    }
+@media only screen and (max-width: 400px) {
+  .planos--cards {
+    max-width: 300px;
+  }
 }
