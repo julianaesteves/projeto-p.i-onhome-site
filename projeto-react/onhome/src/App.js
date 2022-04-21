@@ -1,6 +1,6 @@
 import TelaInicialCadastro from './pages/Cadastro/TelaInicialCadastro';
 import Configuracoes from './pages/Dashboard/Configuracoes';
-import Home from './pages/Dashboard/Home/';
+import Dashboard from './pages/Dashboard/';
 import InitialPage from './pages/InitialPage/';
 import Login from './pages/Login/index';
 import Usuarios from './pages/Dashboard/Usuarios';
@@ -11,10 +11,10 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <Home />
+      {/*<Home /> */}
       {/* <InitialPage /> */}
-      {/* <Home /> */}
-      <Form />
+      <Dashboard />
+      {/*<Form /> */}
     </div>
   );
 }

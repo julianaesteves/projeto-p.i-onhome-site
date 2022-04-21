@@ -1,22 +1,41 @@
-import Configuracoes from "../Configuracoes";
-import Menu from "../Components/Menu";
-import Usuarios from "../Usuarios";
-import Reports from "../Components/Reports"
-import Machine from "../Components/Machine"
-import Teste from "../Components/Teste";
+import Border from "../../../components/Border";
+import GradientText from "../../../components/GradientText";
 
+import './style.css';
 const Home = () => {
     return (
-
-//         <div style={{ display: 'flex' }}>  Alteração inserida com o menu do Rafael
-
-        <div style={{ display: "flex", gap: "20px" }}>
-
-            <Menu />
-            {/* <Configuracoes /> */}
-            {/* <Reports /> */}
-            <Machine />
-            {/* <Teste /> */}
+        <div style={{ flex: 1 }}>
+            <Border children={<GradientText title="Bem-Vindo(a) Lorem!" textAlign='center' />} />
+            <div className="home-graph border-gradient">
+                <div className="home-column-graph">
+                    <div className="home-graph-item">
+                        <div className="home-graph-title">
+                            <h2>Atividades anteriores</h2>
+                        </div>
+                        <div className="home-graph-content">
+                            <img src="./images/grafico1.png" alt="" />
+                        </div>
+                    </div>
+                    <div className="home-graph-item">
+                        <div className="home-graph-title">
+                            <h2>Visão geral</h2>
+                        </div>
+                        <div className="home-graph-content">
+                            <img src="./images/grafico2.png" />
+                        </div>
+                    </div>
+                </div>
+                <div className="home-column-graph">
+                    <div className="home-graph-item">
+                        <div className="home-graph-title">
+                            <h2>Últimas mensagens</h2>
+                        </div>
+                        <div className="home-graph-content">
+                            <img src="./images/grafico3.png" />
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 };

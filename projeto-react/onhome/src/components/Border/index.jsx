@@ -1,7 +1,6 @@
 import "./style.css"
 
 const Border = ({ width, height, margin, children, textAlign }) => {
-
     return (
         <div>
             <div className="border-gradient" 
