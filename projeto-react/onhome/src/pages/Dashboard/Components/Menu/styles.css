@@ -14,14 +14,14 @@ input[type="checkbox"]:checked ~ nav {
     margin-left: -230px;
     transition: all 400ms;
 }
-input[type="checkbox"]:checked + .hamburger-icon .top-bar {
+input[type="checkbox"]:not(:checked) ~ nav .hamburger-icon .top-bar {
     transform: rotate(45deg);
     transform-origin: 10% 10%;
 }
-input[type="checkbox"]:checked + .hamburger-icon .mid-bar {
+input[type="checkbox"]:not(:checked) ~ nav .hamburger-icon .middle-bar{
     opacity: 0;
 }
-input[type="checkbox"]:checked + .hamburger .bot-bar {
+input[type="checkbox"]:not(:checked) ~ nav .hamburger-icon .bottom-bar{
     transform: rotate(-45deg);
     transform-origin: 10% 90%;
 }

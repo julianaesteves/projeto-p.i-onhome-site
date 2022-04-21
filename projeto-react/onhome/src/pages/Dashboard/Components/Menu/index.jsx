@@ -4,7 +4,7 @@ import './styles.css';
 const Menu = () => {
     return (
         <div className="menu">
-            <input id="dropdown" class="input-box" type="checkbox" />
+            <input id="dropdown" type="checkbox" />
             <nav className="navbar border-gradient">
                 <label for="dropdown" class="dropdown">
                     <span class="hamburger-icon">
