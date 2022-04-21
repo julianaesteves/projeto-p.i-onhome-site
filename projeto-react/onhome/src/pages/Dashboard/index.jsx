@@ -9,23 +9,17 @@ import Maquinas from "./Maquinas"
 
 const Dashboard = () => {
     return (
-
         //         <div style={{ display: 'flex' }}>  Alteração inserida com o menu do Rafael
-
-        <>
-            <div style={{ display: "flex", gap: "20px" }}>
-                <Menu />
-                <Machine />
-                {/* <Configuracoes /> */}
-                {/* <Reports /> */}
-                {/*<Machine /> */}
-                {/* <Teste /> */}
-            </div>
-            <div style={{ display: "flex", gap: "20px" }}>
-                <Menu />
-                <Maquinas />
-            </div>
-        </>
+        <div style={{ display: "flex", gap: "10px" }}>
+            <Menu />
+            <Maquinas />
+            {/* <Menu /> */}
+            {/* <Machine /> */}
+            {/* <Configuracoes /> */}
+            {/* <Reports /> */}
+            {/* <Machine /> */}
+            {/* <Teste /> */}
+        </div>
     );
 };
 
