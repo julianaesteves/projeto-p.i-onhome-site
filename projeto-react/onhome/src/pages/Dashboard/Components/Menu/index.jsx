@@ -4,15 +4,15 @@ import './styles.css';
 const Menu = () => {
     return (
         <div className="menu">
-            <input id="dropdown" class="input-box" type="checkbox"/>
-            <label for="dropdown" class="dropdown">
-                <span class="hamburger-icon">
-                    <span class="icon-bar top-bar"></span>
-                    <span class="icon-bar middle-bar"></span>
-                    <span class="icon-bar bottom-bar"></span>
-                </span>
-            </label>
+            <input id="dropdown" class="input-box" type="checkbox" />
             <nav className="navbar border-gradient">
+                <label for="dropdown" class="dropdown">
+                    <span class="hamburger-icon">
+                        <span class="icon-bar top-bar"></span>
+                        <span class="icon-bar middle-bar"></span>
+                        <span class="icon-bar bottom-bar"></span>
+                    </span>
+                </label>
                 <ul>
                     <li><a href="#">Geral<i></i></a></li>
                     <li><a href="#">Máquinas<i></i></a></li>
