@@ -26,6 +26,7 @@
 .maquinas-header .maquinas-legend ul,
 .maquinas-header .maquinas-legend li {
     display: flex;
+    flex-wrap: wrap;
     gap: 20px;
     padding: initial;
     font-weight: initial;
