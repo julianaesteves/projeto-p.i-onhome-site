@@ -12,7 +12,8 @@ const Dashboard = () => {
         //         <div style={{ display: 'flex' }}>  Alteração inserida com o menu do Rafael
         <div style={{ display: "flex", gap: "10px" }}>
             <Menu />
-            <Maquinas />
+            <Home />
+            {/* <Maquinas /> */}
             {/* <Menu /> */}
             {/* <Machine /> */}
             {/* <Configuracoes /> */}
