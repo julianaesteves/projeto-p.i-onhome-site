@@ -1,11 +1,19 @@
-.div--mainBox{
+.div--mainBox {
+    background-color: #0F0B30;
+    display: flex;
+}
+
+.div--mainGradient{
     height: 100vh;
     width: 100%;
-    background-image: 
-            linear-gradient(45deg,
-            rgb(0, 5, 82),  
-            rgb(30, 0, 82), 
-            rgb(77, 8, 126));
+    /* background: rgb(15,11,48);
+    background: linear-gradient(5deg, rgba(15,11,48,1) 16%, rgba(23,0,82,1) 39%, rgba(41,7,106,1) 58%, rgba(91,8,126,0.9416360294117647) 100%); */
+    /* background: rgb(15,11,48);
+    background: linear-gradient(5deg, rgba(15,11,48,1) 16%, rgba(23,0,82,0.913624824929972) 39%, rgba(41,7,106,1) 58%, rgba(91,8,126,0.9416360294117647) 100%); */
+    background: #0f0b30;
+    background: linear-gradient(5deg, rgba(15,11,48,1) 16%, rgba(23,0,82,0.913624824929972) 39%, rgba(41,7,106,1) 58%, rgba(118,0,150,0.7679665616246498) 100%);
+
+
 }
 
 .about--content{
