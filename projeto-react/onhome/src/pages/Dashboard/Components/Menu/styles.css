@@ -15,17 +15,6 @@ input[type="checkbox"]:checked + nav {
     margin-left: -180px;
     transition: all 400ms;
 }
-input[type="checkbox"]:not(:checked) .hamburger-icon .top-bar {
-    transform: rotate(45deg);
-    transform-origin: 10% 10%;
-}
-input[type="checkbox"]:not(:checked) .hamburger-icon .middle-bar{
-    opacity: 0;
-}
-input[type="checkbox"]:not(:checked) .hamburger-icon .bottom-bar{
-    transform: rotate(-45deg);
-    transform-origin: 10% 90%;
-}
 .icon-bar {
     display: block;
     width: 22px;
