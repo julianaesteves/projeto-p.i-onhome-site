@@ -3,8 +3,11 @@ import GradientText from "../../../../../components/GradientText"
 
 const Title = ({ squad, machineNumber, style }) => {
     return (
-        <Border style={style}>
-            <GradientText title={`Squad ${squad} - Máquina ${machineNumber}`}/>
+        <Border>
+            <GradientText 
+                title={`Squad ${squad} - Máquina ${machineNumber}`} 
+                textAlign={"center"}
+            />
         </Border>
     )
 }
