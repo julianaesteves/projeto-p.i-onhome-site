@@ -1,23 +1,45 @@
 import Charts from "./Charts"
 import Process from "./Process"
 import Thermometer from "../Thermometer"
+import { useState } from "react"
 import Title from "./Title"
-
-import "./style.css"
 import Border from "../../../../components/Border"
 
-const Machine = ({ machineInfo }) => {
+import "./style.css"
+import { useEffect } from "react"
+
+const Machine = ({ machineInfo, handleWindow }) => {
+    const [machineStatus, setMachineStatus] = useState("")
+    const [textColor, setTextColor] = useState("")
+    console.log(machineInfo.status)
+
+    useEffect(() => {
+        if (machineInfo.status > 65) {
+            setMachineStatus("EMERGÊNCIA")
+            setTextColor("#ff0000")
+        } else if (machineInfo.status >= 10) {
+            setMachineStatus("Atenção")
+            setTextColor("#ffff00")
+        } else if (machineInfo.status >= -60) {
+            setMachineStatus("Ideal")
+            setTextColor("#008000")
+        }
+    }, [])
+
     return (
         <div style={{ display: "flex", flexDirection: "column"}}>
-            <Title squad={"S01"} machineNumber={4}/>
+            <Title squad={"- OnHome"} machineNumber={machineInfo.number} />
             <div style={{ display: "flex" }}>
                 <div>
-                    <Border>
+                    <Border margin={"10px"} padding={"20px 15px"}>
+                        <div className="machine--thermometer--header">
+                            STATUS: <span style={{ color: `${textColor}` }}>{machineStatus}</span>
+                        </div>
                         <Thermometer machineInfo={machineInfo}/>
                     </Border>
                     <Process />
                 </div>
-                <Charts />
+                <Charts handleWindow={handleWindow}/>
             </div>
         </div>
     )

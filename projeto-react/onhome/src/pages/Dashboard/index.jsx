@@ -8,12 +8,12 @@ import Maquinas from "./Maquinas"
 
 const Dashboard = () => {
     return (
-        <div style={{ display: "flex", gap: "10px" }}>
+        <div style={{ display: "flex" }}>
             <Menu />
             {/* <Usuarios /> */}
             {/* <Home /> */}
-            {/* <Maquinas /> */}
-            <Home />
+            <Maquinas />
+            {/* <Home /> */}
             {/* <Maquinas /> */}
             {/* <Menu /> */}
 

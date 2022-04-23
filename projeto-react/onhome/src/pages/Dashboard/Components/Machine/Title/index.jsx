@@ -1,12 +1,13 @@
 import Border from "../../../../../components/Border"
 import GradientText from "../../../../../components/GradientText"
 
-const Title = ({ squad, machineNumber, style }) => {
+const Title = ({ squad, machineNumber, padding }) => {
     return (
-        <Border>
+        <Border padding={"10px"}>
             <GradientText 
                 title={`Squad ${squad} - Máquina ${machineNumber}`} 
                 textAlign={"center"}
+                padding={padding}
             />
         </Border>
     )

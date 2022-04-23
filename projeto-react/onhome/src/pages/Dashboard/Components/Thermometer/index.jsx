@@ -21,9 +21,6 @@ const Thermometer = ({ machineInfo }) => {
     return (
             <div className="thermometer--container">
                 {/* Colocar só no thermometer do machine xx */}
-                {/* <div className="thermometer--header">
-                    STATUS: EMERGÊNCIA
-                </div> */}
                 <div className="thermometer--icon">
                     <img src="./images/metricas.png" alt="" />
                     <div className="thermometer--pointer" style={{ transform: `rotate(${machineStatus}deg)` }}></div>

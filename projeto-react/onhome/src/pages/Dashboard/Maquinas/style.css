@@ -1,5 +1,5 @@
 .maquinas-container {
-    overflow-y: auto;
+    margin: 10px 20px;
 }
 
 .maquinas-header {
@@ -18,7 +18,7 @@
 .maquinas-header .maquinas-legend li {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    /* gap: 20px; */
     font-weight: initial;
 }
 
@@ -31,7 +31,9 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    max-width: 1000px;
+    /* max-width: 1100px; */
+    overflow-y: auto;
+    height: calc(100vh - 150px) ;
 }
 
 .maquinas-content div {
