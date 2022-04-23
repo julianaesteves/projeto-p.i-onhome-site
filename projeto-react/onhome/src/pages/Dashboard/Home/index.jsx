@@ -1,5 +1,6 @@
 import Border from "../../../components/Border";
 import GradientText from "../../../components/GradientText";
+import Message from "./Message";
 
 import './style.css';
 const Home = () => {
@@ -13,7 +14,7 @@ const Home = () => {
                             <h2>Atividades anteriores</h2>
                         </div>
                         <div className="home-graph-content">
-                            <img src="./images/grafico1.png" alt="" />
+                            <img src="./images/grafico1.png" width='100%' alt="" />
                         </div>
                     </div>
                     <div className="home-graph-item">
@@ -21,7 +22,7 @@ const Home = () => {
                             <h2>Visão geral</h2>
                         </div>
                         <div className="home-graph-content">
-                            <img src="./images/grafico2.png" />
+                            <img src="./images/grafico2.png" width='100%' />
                         </div>
                     </div>
                 </div>
@@ -30,9 +31,8 @@ const Home = () => {
                         <div className="home-graph-title">
                             <h2>Últimas mensagens</h2>
                         </div>
-                        <div className="home-graph-content">
-                            <img src="./images/grafico3.png" />
-                        </div>
+                        <Message radius='10px' />
+                        <Message radius='100%' />
                     </div>
                 </div>
             </div>
