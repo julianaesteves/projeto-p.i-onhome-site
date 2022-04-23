@@ -69,12 +69,12 @@ const Charts = () => {
         <Border margin={"10px"}>
             <div>
                 <div style={{ borderBottom: "1px solid #fff" }}>                    
-                    <div style={{ display: "flex", flexWrap: "wrap", color: "#fff", maxWidth: "850px" }}>
+                    <div style={{ display: "flex", flexWrap: "wrap", color: "#fff", maxWidth: "850px", justifyContent: "center" }}>
                             {chartsLabel.map(chart => (
                                 <div>
                                     <h2>{chart}</h2>
                                     <AreaChart 
-                                        width={400}
+                                        width={320}
                                         height={170}
                                         data={chartData}
                                         margin={{

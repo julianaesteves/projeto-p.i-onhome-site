@@ -1,16 +1,18 @@
 import "./style.css"
 
-const Border = ({ width, height, margin, children, textAlign }) => {
+const Border = ({ width, height, margin, textAlign, padding, cursor, onClick, children }) => {
     return (
         <div>
-            <div className="border-gradient" 
-                style={{ 
+            <div className="border-gradient"
+                onClick={onClick} 
+                style={{
                     borderRadius: "20px", 
-                    padding: "40px", 
+                    padding: padding, 
                     width: width,  
                     height: height,
                     margin: margin,
-                    textAlign: textAlign
+                    textAlign: textAlign,
+                    cursor: cursor
                 }}>
                 <div>{children}</div>
             </div>

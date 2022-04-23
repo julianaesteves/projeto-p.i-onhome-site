@@ -6,7 +6,6 @@ import './style.css';
 
 const Configuracoes = () => {
 
-// pfv vai agr
     return (
         <div className='right-content'>
             <div className='title'>
@@ -14,7 +13,7 @@ const Configuracoes = () => {
             </div>
             <div className='cards'>
                 <div className='empresa-plano'>
-                    <Border height={230}>
+                    <Border height={230} padding={"20px"}>
                         <div className='cards-description'>
                             <h1 className='cards-title'>Empresa</h1>
                             <div className="cards-content">
@@ -26,7 +25,7 @@ const Configuracoes = () => {
                             </div>
                         </div>
                     </Border>
-                    <Border height={190}>
+                    <Border height={190} padding={"20px"}>
                         <div className='div-plano'>
                         <div className='cards-description'>
                             <h1 className='cards-title'>Plano</h1>

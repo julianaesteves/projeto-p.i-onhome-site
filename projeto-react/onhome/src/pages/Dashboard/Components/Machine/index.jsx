@@ -4,14 +4,17 @@ import Thermometer from "../Thermometer"
 import Title from "./Title"
 
 import "./style.css"
+import Border from "../../../../components/Border"
 
-const Machine = () => {
+const Machine = ({ machineInfo }) => {
     return (
         <div style={{ display: "flex", flexDirection: "column"}}>
             <Title squad={"S01"} machineNumber={4}/>
             <div style={{ display: "flex" }}>
                 <div>
-                    <Thermometer />
+                    <Border>
+                        <Thermometer machineInfo={machineInfo}/>
+                    </Border>
                     <Process />
                 </div>
                 <Charts />

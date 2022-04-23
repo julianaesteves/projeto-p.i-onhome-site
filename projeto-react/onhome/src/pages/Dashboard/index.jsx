@@ -10,10 +10,11 @@ const Dashboard = () => {
     return (
         <div style={{ display: "flex", gap: "10px" }}>
             <Menu />
-            <Maquinas />
-            {/* <Menu /> */}
+            {/* <Usuarios /> */}
+            {/* <Home /> */}
+            {/* <Maquinas /> */}
             {/* <Machine /> */}
-            {/* <Configuracoes /> */}
+            <Configuracoes />
             {/* <Reports /> */}
             {/* <Machine /> */}
             {/* <Teste /> */}
