@@ -31,8 +31,8 @@ const Home = () => {
                         <div className="home-graph-title">
                             <h2>Últimas mensagens</h2>
                         </div>
-                        <Message radius='100%' />
                         <Message radius='10px' />
+                        <Message radius='100%' />
                     </div>
                 </div>
             </div>
