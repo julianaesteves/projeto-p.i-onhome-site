@@ -1,21 +1,11 @@
-.border-gradient {
-    padding: 0 10px;
-    border-width: 2px;
-    border-style: solid;
-    background: linear-gradient(#1F1B42, #1F1B42) padding-box,
-                linear-gradient(to right, hsl(180, 100%, 50%), hsl(300, 100%, 50%)) border-box;
-    border-radius: 14px;
-    border-color: transparent;
+.maquinas-container {
+    overflow-y: auto;
 }
-.maquinas-header.container {
+
+.maquinas-header {
     display: flex;
     justify-content: center;
-}
-.maquinas-header .maquinas-title {
-    font-size: 2em;
-    background: linear-gradient(to right, hsl(180, 100%, 50%), hsl(300, 100%, 50%));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    align-items: center;
 }
 
 .maquinas-header .maquinas-legend {
@@ -23,24 +13,27 @@
     flex-direction: column;
     color: white;
 }
+
 .maquinas-header .maquinas-legend ul,
 .maquinas-header .maquinas-legend li {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    padding: initial;
     font-weight: initial;
 }
+
 .maquinas-header .maquinas-legend ul li:hover{
     font-weight: bold;
 }
-.border-gradient.dash-item {
-    flex: 1;
-    flex-basis: calc(100vw/8);
+
+.maquinas-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1000px;
 }
-.border-gradient.dash-item > div {
-    color: white;
-}
-.border-gradient.dash-item > img {
-    width: 100%;
+
+.maquinas-content div {
+    color: #fff;
 }
