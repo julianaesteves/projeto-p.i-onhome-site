@@ -13,8 +13,11 @@ const Dashboard = () => {
             {/* <Usuarios /> */}
             {/* <Home /> */}
             {/* <Maquinas /> */}
+            <Home />
+            {/* <Maquinas /> */}
+            {/* <Menu /> */}
+
             {/* <Machine /> */}
-            <Configuracoes />
             {/* <Reports /> */}
             {/* <Machine /> */}
             {/* <Teste /> */}

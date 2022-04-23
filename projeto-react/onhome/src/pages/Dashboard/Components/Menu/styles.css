@@ -2,28 +2,18 @@
     display: none;
 }
 label.dropdown {
+    display: none;
     cursor: pointer;
-    display: flex;
-    justify-content: flex-end;
+    position: fixed;
+    padding: 20px 10px;
 }
-input[type="checkbox"]:not(:checked) ~ nav {
+input[type="checkbox"]:not(:checked) + nav {
     margin-left: 0px;
     transition: all 400ms;
 }
-input[type="checkbox"]:checked ~ nav {
-    margin-left: -230px;
+input[type="checkbox"]:checked + nav {
+    margin-left: -180px;
     transition: all 400ms;
-}
-input[type="checkbox"]:not(:checked) ~ nav .hamburger-icon .top-bar {
-    transform: rotate(45deg);
-    transform-origin: 10% 10%;
-}
-input[type="checkbox"]:not(:checked) ~ nav .hamburger-icon .middle-bar{
-    opacity: 0;
-}
-input[type="checkbox"]:not(:checked) ~ nav .hamburger-icon .bottom-bar{
-    transform: rotate(-45deg);
-    transform-origin: 10% 90%;
 }
 .icon-bar {
     display: block;
@@ -75,7 +65,7 @@ input[type="checkbox"]:not(:checked) ~ nav .hamburger-icon .bottom-bar{
     border-color: transparent;
 }
 .navbar ul {
-    width: 250px;
+    width: 200px;
     display: flex;
     flex-direction: column;
     font-size: 1em;
@@ -84,4 +74,13 @@ input[type="checkbox"]:not(:checked) ~ nav .hamburger-icon .bottom-bar{
 .navbar ul li a {
     display: block;
     padding: 20px 0;
+}
+
+@media screen and (max-width: 600px) {
+    label.dropdown {
+        display: block;
+    }
+    .navbar ul {
+        margin-top: 50px;
+    }
 }
