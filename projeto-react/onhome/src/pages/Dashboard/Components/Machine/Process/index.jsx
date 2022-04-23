@@ -7,11 +7,14 @@ const Process = () => {
         { name: "Google Chrome", percentual: "100%" },
         { name: "VSCode", percentual: "10%" },
         { name: "Spotify", percentual: "40%" },
-        { name: "MySQL Workbench", percentual: "100%" },
+        { name: "NetBeans", percentual: "80%" },
+        { name: "Postman", percentual: "10%" },
+        { name: "Slack", percentual: "15%" },
+        { name: "Microsoft Outlook", percentual: "16%" },
     ]
 
     return (
-        <Border margin={"10px"}>
+        <Border margin={"10px"} padding={"10px"}>
             <div className="process--container">
                 <div>
                     <div className="process--header">

@@ -1,12 +1,11 @@
+import { useState, useEffect } from "react";
 import Border from "../../../../../components/Border"
 import HardwareInfo from "./HardwareInfo"
 import { LineChart, AreaChart, Area, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 
 import "./style.css"
-import { useState } from "react";
-import { useEffect } from "react";
 
-const Charts = () => {
+const Charts = ({ handleWindow }) => {
 
     const data = [
         {
@@ -66,7 +65,7 @@ const Charts = () => {
     }, [chartData])
 
     return (
-        <Border margin={"10px"}>
+        <Border margin={"10px"} padding={"20px"}>
             <div>
                 <div style={{ borderBottom: "1px solid #fff" }}>                    
                     <div style={{ display: "flex", flexWrap: "wrap", color: "#fff", maxWidth: "850px", justifyContent: "center" }}>
@@ -95,7 +94,7 @@ const Charts = () => {
                             ))}         
                     </div>
                 </div>
-                <HardwareInfo />
+                <HardwareInfo handleWindow={handleWindow} />
             </div>
         </Border>
     )

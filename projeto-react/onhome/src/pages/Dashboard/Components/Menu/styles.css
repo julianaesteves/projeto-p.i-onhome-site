@@ -32,6 +32,7 @@ input[type="checkbox"]:checked + nav {
 
 .menu {
     display: flex;
+    max-height: 100vh;
 }
 .navbar {
     display: flex;
