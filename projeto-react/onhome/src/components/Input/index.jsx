@@ -10,7 +10,8 @@ const Input = ({ type, width, height, margin, placeholder, borderRadius, value, 
                     width: width,  
                     height: height,
                     margin: margin,
-                    borderRadius: borderRadius        
+                    borderRadius: borderRadius,
+                    outline: "none"        
                 }}
                 value={value}
                 type={type}
