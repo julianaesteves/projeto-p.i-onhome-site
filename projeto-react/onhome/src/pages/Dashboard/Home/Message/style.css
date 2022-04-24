@@ -1,7 +1,9 @@
 .home-graph-message {
     padding-top: 20px;
+    margin: 10px 0;
     display: flex;
     gap: 20px;
+    font-size: 1.2rem;
 }
 .home-graph-message .home-content-image {
     width: 50px;
@@ -18,6 +20,6 @@
 }
 
 .home-content-description p {
-    font-size: 10px;
+    font-size: 12px;
     padding-right: 5px;
 }

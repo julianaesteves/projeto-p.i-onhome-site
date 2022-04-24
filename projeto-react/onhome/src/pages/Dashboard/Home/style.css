@@ -30,7 +30,7 @@
     border-color: #54526c;
     border-radius: 20px;
     background-color: #0f0b30;
-    margin: 20px;
+    margin: 10px;
 }
 
 .home-graph-item img{
@@ -39,4 +39,9 @@
 
 .home-graph-title {
     margin: 10px;
+}
+
+.home-graph-content-1 {
+    display: flex;
+    justify-content: center;
 }
