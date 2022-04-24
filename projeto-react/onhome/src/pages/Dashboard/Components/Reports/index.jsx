@@ -16,13 +16,13 @@ const Reports = () => {
     ]
 
     return (
-        <Border textAlign={"center"}>
+        <Border textAlign={"center"} padding={"20px"}>
             <div style={{ display: "flex", maxHeight: "50px", justifyContent: "center" }}>
                 <img src="./icons/dashboard.svg" alt="" />
-                <GradientText title={"Relatórios de Monitoramento"} />
+                <GradientText title={"Relatórios de Monitoramento"} textAlign={"center"}/>
             </div>
             <Input placeholder={"Pesquisar"} width={"80%"} />
-            <Border margin={"20px 0"}>
+            <Border margin={"20px 0"} padding={"20px"}>
                 <div>
                     <div className="reports--header">
                         {reportsHeader.map(title => (

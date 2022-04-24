@@ -1,4 +1,3 @@
-import { margin } from '@mui/system';
 import './style.css';
 
 const GradientText = (props) => {
