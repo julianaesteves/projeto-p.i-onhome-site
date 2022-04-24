@@ -1,6 +1,5 @@
 .formulario--background {
     height: 100vh;
-    width: 100%;
     background: #080425;
 }
 
@@ -14,15 +13,20 @@
 
 .formulario--label {
     color: white;
+    font-size: 15px;
     margin: 10px;
 }
 
 .formulario--buttons{
-    margin: 30px;
+    margin: 20px 0px 20px 20px;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
 }
 
 .formulario--buttons button:disabled{
     display: none;
+}
+
+.formulario--body {
+    justify-content: center;
 }

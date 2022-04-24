@@ -12,7 +12,7 @@ const DadosEmpresa = ({ setFormData, formData }) => {
         value={formData.nomeFantasia}
         onChange={(e) => setFormData({...formData, nomeFantasia: e.target.value})}
         width={"90%"}
-        height={"30px"}
+        height={"20px"}
         margin={"8px 0 20px 0"} 
          />
       <label className="formulario--label">CNPJ</label>
@@ -20,7 +20,7 @@ const DadosEmpresa = ({ setFormData, formData }) => {
         value={formData.cnpj}
         onChange={(e) => setFormData({...formData, cnpj: e.target.value})}
         width={"90%"}
-        height={"30px"}
+        height={"20px"}
         margin={"8px 0 20px 0"} 
       />
       <label className="formulario--label">Razão Social</label>
@@ -28,7 +28,7 @@ const DadosEmpresa = ({ setFormData, formData }) => {
         value={formData.razaoSocial}
         onChange={(e) => setFormData({...formData, razaoSocial: e.target.value})}
         width={"90%"}
-        height={"30px"}
+        height={"20px"}
         margin={"8px 0 20px 0"} 
       />
       <label className="formulario--label">E-mail</label>
@@ -37,7 +37,7 @@ const DadosEmpresa = ({ setFormData, formData }) => {
         value={formData.emailEmpresa}
         onChange={(e) => setFormData({...formData, emailEmpresa: e.target.value})}
         width={"90%"}
-        height={"30px"}
+        height={"20px"}
         margin={"8px 0 20px 0"} 
       />
       <label className="formulario--label">Telefone</label>
@@ -45,7 +45,7 @@ const DadosEmpresa = ({ setFormData, formData }) => {
         value={formData.telefoneEmpresa}
         onChange={(e) => setFormData({...formData, telefoneEmpresa: e.target.value})}
         width={"30%"}
-        height={"30px"}
+        height={"20px"}
         margin={"8px 0 20px 0"} 
       /> 
       </div>
