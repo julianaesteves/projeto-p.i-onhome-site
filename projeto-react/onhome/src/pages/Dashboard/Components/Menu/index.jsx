@@ -1,7 +1,9 @@
 import '../../../../components/Border';
 import './styles.css';
 
-const Menu = () => {
+const Menu = ({ handleChosenItem }) => {
+    const menuItens = ["Geral", "Máquinas", "Relatórios", "Configurações", "Usuários"]
+
     return (
         <div className="menu">
             <label htmlFor='dropdown' className="dropdown">
@@ -14,13 +16,9 @@ const Menu = () => {
             <input id="dropdown" type="checkbox" />
             <nav className="navbar border-gradient">
                 <ul>
-                    <li><a href="#">Geral<i></i></a></li>
-                    <li><a href="#">Máquinas<i></i></a></li>
-                    <li><a href="#">Localização<i></i></a></li>
-                    <li><a href="#">Relatórios<i></i></a></li>
-                    <li><a href="#">Configurações<i></i></a></li>
-                    <li><a href="#">Usuários<i></i></a></li>
-                    <li><a href="#">Sair<i></i></a></li>
+                    {menuItens.map(item => (
+                        <li onClick={(e) => handleChosenItem(e)}><a>{item}</a></li>
+                    ))}
                 </ul>
             </nav>
         </div>

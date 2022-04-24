@@ -1,33 +1,31 @@
+import { useState, useEffect } from "react"
 import Charts from "./Charts"
 import Process from "./Process"
 import Thermometer from "../Thermometer"
-import { useState } from "react"
 import Title from "./Title"
 import Border from "../../../../components/Border"
 
 import "./style.css"
-import { useEffect } from "react"
 
 const Machine = ({ machineInfo, handleWindow }) => {
     const [machineStatus, setMachineStatus] = useState("")
     const [textColor, setTextColor] = useState("")
-    console.log(machineInfo.status)
 
     useEffect(() => {
         if (machineInfo.status > 65) {
             setMachineStatus("EMERGÊNCIA")
             setTextColor("#ff0000")
         } else if (machineInfo.status >= 10) {
-            setMachineStatus("Atenção")
+            setMachineStatus("ATENÇÃO")
             setTextColor("#ffff00")
         } else if (machineInfo.status >= -60) {
-            setMachineStatus("Ideal")
+            setMachineStatus("IDEAL")
             setTextColor("#008000")
         }
     }, [])
 
     return (
-        <div style={{ display: "flex", flexDirection: "column"}}>
+        <div style={{ display: "flex", flexDirection: "column", margin: "15px"}}>
             <Title squad={"- OnHome"} machineNumber={machineInfo.number} />
             <div style={{ display: "flex" }}>
                 <div>

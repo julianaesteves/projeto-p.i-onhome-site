@@ -45,11 +45,12 @@ const Charts = ({ handleWindow }) => {
         },
       ];
 
-    const chartsLabel = ["CPU", "Disco", "Memória", "GPU"]
     const [chartData, setChartData] = useState(data)
     const [nameData, setNameData] = useState(21)
     const [atualData, setAtualData] = useState(3000)
     const [mediaData, setMediaData] = useState(3000)
+
+    const chartsLabel = ["CPU", "Disco", "Memória", "GPU"]
 
     useEffect(() => {
         setTimeout(() => {

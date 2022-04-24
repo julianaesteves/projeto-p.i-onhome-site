@@ -7,13 +7,12 @@ import './style.css'
 
 const Usuarios = () => {
 
-    // pfv vai agr
     return (
         <div className='right-content'>
             <div className='title'>
                 <GradientText title={"Cadastro de Usuários"} fontSizeTitle={45}/>
             </div>
-            <Border>
+            <Border padding={"20px"}>
                 <div className='div-cadastro-usuarios'>
                     <form action="#" className='div-inputs'>
                         <label className='label-title-form'>Nome:</label>
@@ -28,7 +27,7 @@ const Usuarios = () => {
                             <button className="border-gradient" type="submit">Cadastrar</button>
                         </div>
                     </form>
-                    <div className="border-gradient">
+                    <div className="border-gradient" style={{ padding: "20px" }}>
                         <h2 className='cadastrados-title'>Cadastrados</h2>
                         <div className='registered-users'>
                             <p>Felipe Camara</p>
