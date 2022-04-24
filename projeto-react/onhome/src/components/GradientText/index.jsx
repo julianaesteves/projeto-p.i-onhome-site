@@ -13,7 +13,8 @@ const GradientText = (props) => {
                 textAlign: props.textAlign, 
                 width: props.width, 
                 padding: props.padding, 
-                margin: props.margin
+                margin: props.margin,
+                fontSize: props.fontSize
             }}>
             <div className="label" style={{ fontSize: `${props.fontSizeLabel}px` }}>
                 {props.label ?? ''}
