@@ -6,6 +6,7 @@
 .home-graph-message .home-content-image {
     width: 50px;
     height: 50px;
+    margin: 0 0 0 20px;
 }
 .home-graph-message .home-content-image > img {
     width: 100%;
@@ -14,4 +15,9 @@
 .home-graph-message .home-graph-content {
     flex: 1;
     text-align: left;
+}
+
+.home-content-description p {
+    font-size: 10px;
+    padding-right: 5px;
 }
