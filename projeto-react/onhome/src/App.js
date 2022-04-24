@@ -11,9 +11,8 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      {/*<Home /> */}
-      {/* <InitialPage /> */}
-      <Dashboard />
+      <InitialPage />
+      {/* <Dashboard /> */}
       {/* <Form /> */}
     </div>
   );
