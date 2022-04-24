@@ -8,7 +8,7 @@
     color: white;
     margin: 20px;
 }
-/* pfv vai agr */
+
 .title {
     border: 2px;
     padding-bottom: 10px;
@@ -64,3 +64,7 @@
     justify-content: flex-end;
 }
 
+.usuarios-gradient .border-gradient {
+    background: linear-gradient(#080425, #080425) padding-box,
+    linear-gradient(to right, hsl(180, 100%, 50%), hsl(300, 100%, 50%)) border-box;
+}

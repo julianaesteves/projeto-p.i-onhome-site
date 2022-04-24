@@ -9,7 +9,7 @@ const Configuracoes = () => {
     return (
         <div className='right-content'>
             <div className='title'>
-                <GradientText title={"Configurações"} fontSizeTitle={45}/>
+                <GradientText title={"Configurações"} fontSizeTitle={35}/>
             </div>
             <div className='cards'>
                 <div className='empresa-plano'>
@@ -17,7 +17,7 @@ const Configuracoes = () => {
                         <div className='cards-description'>
                             <h1 className='cards-title'>Empresa</h1>
                             <div className="cards-content">
-                                <p className='paragraph-card'>Razao Social:</p>
+                                <p className='paragraph-card'>Razão Social:</p>
                                 <p className='paragraph-card'>CNPJ:</p>
                                 <p className='paragraph-card'>Nome Fantasia:</p>
                                 <p className='paragraph-card'>Email:</p>

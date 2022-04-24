@@ -10,7 +10,7 @@ const Usuarios = () => {
     return (
         <div className='right-content'>
             <div className='title'>
-                <GradientText title={"Cadastro de Usuários"} fontSizeTitle={45}/>
+                <GradientText title={"Cadastro de Usuários"} fontSizeTitle={35} />
             </div>
             <Border padding={"20px"}>
                 <div className='div-cadastro-usuarios'>
@@ -27,13 +27,15 @@ const Usuarios = () => {
                             <button className="border-gradient" type="submit">Cadastrar</button>
                         </div>
                     </form>
-                    <div className="border-gradient" style={{ padding: "20px" }}>
-                        <h2 className='cadastrados-title'>Cadastrados</h2>
-                        <div className='registered-users'>
-                            <p>Felipe Camara</p>
-                            <div className='mui-icons'>
-                                <EditIcon />
-                                <DeleteIcon />
+                    <div className="usuarios-gradient">
+                        <div className="border-gradient" style={{ padding: "20px" }}>
+                            <h2 className='cadastrados-title'>Cadastrados</h2>
+                            <div className='registered-users'>
+                                <p>Felipe Camara</p>
+                                <div className='mui-icons'>
+                                    <EditIcon />
+                                    <DeleteIcon />
+                                </div>
                             </div>
                         </div>
                     </div>

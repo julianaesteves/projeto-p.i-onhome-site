@@ -48,12 +48,13 @@ const Maquinas = () => {
                 <Machine machineInfo={machineChosen} handleWindow={handleWindow} />
                 :
                 <div className="maquinas-container">
-                    <Border padding={"5px"} margin={"0 0 30px"}>
+                    <Border padding={8} margin={"0 0 30px"}>
                         <div className='maquinas-header'>
                             <GradientText 
                                 title={`Squad - OnHome`} 
                                 textAlign={"center"}  
-                                padding={"10px"}
+                                fontSize={12}
+                                margin={"10px 0 0 0"}
                             />
                             <div className='maquinas-legend'>
                                 <ul>
