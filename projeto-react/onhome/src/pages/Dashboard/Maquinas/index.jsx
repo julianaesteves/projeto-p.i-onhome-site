@@ -20,6 +20,10 @@ const Maquinas = () => {
         { number: 10, status: -39 },
         { number: 11, status: -22 },
         { number: 12, status: -31 },
+        { number: 13, status: -31 },
+        { number: 14, status: -31 },
+        { number: 15, status: -31 },
+        { number: 16, status: -31 },
     ]
 
     const [isVisible, setIsVisible] = useState(false)
