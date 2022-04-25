@@ -21,8 +21,12 @@ const Usuarios = () => {
                         <input type="text" name='email' className="border-gradient-input" style={{ margin: "20px 0"}}/>
                         <label className='label-title-form'>Senha:</label>
                         <input type="text" name='senha' className="border-gradient-input" style={{ margin: "20px 0"}}/>
-                        <label className='label-title-form'>Cargo:</label>
-                        <input type="text" name='cargo' className="border-gradient-input" style={{ margin: "20px 0"}}/>
+                        <label className='label-title-form'>Permissão:</label>
+                        
+                        <select name="" id="" className='cadastro--gradientSelect'>
+                            <option value="">Usuário</option>
+                            <option value="">Administrador</option>
+                        </select>
                         <div className='right-content-button'>
                             <button className="border-gradient" type="submit">Cadastrar</button>
                         </div>
