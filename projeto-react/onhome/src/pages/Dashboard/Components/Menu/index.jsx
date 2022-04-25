@@ -5,12 +5,8 @@ import './styles.css';
 const Menu = ({ handleChosenItem }) => {
     const menuItens = [
         {
-            description: 'Tela inicial',
-            iconUrl: '/icons/homeMenu.svg'
-        },
-        {
             description: "Geral",
-            iconUrl: ''
+            iconUrl: '/icons/homeMenu.svg'
         }, 
         {   
             description: "Máquinas",
