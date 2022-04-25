@@ -69,3 +69,18 @@
     background: linear-gradient(#080425, #080425) padding-box,
     linear-gradient(to right, hsl(180, 100%, 50%), hsl(300, 100%, 50%)) border-box;
 }
+
+.cadastro--gradientSelect {
+    padding: 5px 15px;
+    border-width: 2px;
+    border-style: solid;
+    background: linear-gradient(#080425, #080425) padding-box,
+      linear-gradient(to right, hsl(180, 100%, 50%), hsl(300, 100%, 50%))
+        border-box;
+    border-radius: 42px;
+    border-color: transparent;
+    background-color: #080425;
+    color: white;
+    margin: 10px;
+    text-align: center;
+  }

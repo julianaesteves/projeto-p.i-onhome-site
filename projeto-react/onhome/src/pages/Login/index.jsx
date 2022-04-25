@@ -34,16 +34,18 @@ const Login = () => {
             margin={"8px 0 20px 0"} 
             onChange={(e) => setSenha(e.target.value)}
           />
+          <div className="formulario--loginButton">
           <Link to={"/dashboard"}>
             <Button
               type="submit"
               value={"Entrar"}
-              width={"60%"}
+              width={"200px"}
               height={"40px"}
               margin={"30px"}
               borderRadius={50}
             />
           </Link>
+          </div>
         </form>
       </div>
     </div>
