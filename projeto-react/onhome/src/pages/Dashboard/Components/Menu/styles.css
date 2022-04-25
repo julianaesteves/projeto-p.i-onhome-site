@@ -104,3 +104,8 @@ input[type="checkbox"]:checked + nav {
     margin-top: 150px;
     margin-left: 55%;
 }
+
+.menuContainer .border-gradient {
+     background: linear-gradient(90deg, #012347, #0F0B30) padding-box,
+                linear-gradient(to right, hsl(180, 100%, 50%), hsl(300, 100%, 50%)) border-box;
+}

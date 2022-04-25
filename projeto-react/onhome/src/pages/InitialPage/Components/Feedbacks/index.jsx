@@ -13,47 +13,47 @@ const Feedbacks = () => {
                 <div className='feedback--cards'>
                     <FeedbackCard 
                         textAlign={"left"}
-                        label={"Esté é o campo onde terá os feedbacks, escrito por cada cliente"} 
-                        fontSizeLabel={12} 
-                        title={"Michael Fassbender"} 
+                        label={"Com os serviços da OnHome nossa produtividade dobrou a velocidade."} 
+                        fontSizeLabel={13} 
+                        title={"Marcos Barbosa de Sá"} 
                         subtitle={"Gerente de projetos"}
                         fontSizeTitle={19}
                         fontSizeSubtitle={18}/>
                     <FeedbackCard 
-                        label={"Esté é o campo onde terá os feedbacks, escrito por cada cliente"} 
-                        fontSizeLabel={12} 
-                        title={"Robert Pattinson"} 
-                        subtitle={"Diretor de RH"}
+                        label={"Simplesmente incrível."} 
+                        fontSizeLabel={14} 
+                        title={"Mariana Angiulli Caito"} 
+                        subtitle={"Diretora de RH"}
                         fontSizeTitle={19}
                         fontSizeSubtitle={18}/>
                     <FeedbackCard 
-                        label={"Esté é o campo onde terá os feedbacks, escrito por cada cliente"} 
-                        fontSizeLabel={12} 
-                        title={"Michelle Obama"} 
+                        label={"O suporte é com certeza um diferencial do mercado!"} 
+                        fontSizeLabel={14} 
+                        title={"Daniel Santos da Silva"} 
                         subtitle={"CEO YouTech"}
                         fontSizeTitle={19}
                         fontSizeSubtitle={18}/>
                     <FeedbackCard 
-                        label={"Esté é o campo onde terá os feedbacks, escrito por cada cliente"} 
-                        fontSizeLabel={12} 
-                        title={"Henry Cavill"} 
+                        label={"A melhor empresa que você nunca ouviu falar"} 
+                        fontSizeLabel={14} 
+                        title={"Mariane Cerqueira Ito"} 
                         subtitle={"CTO AllSafe"}
                         fontSizeTitle={19}
                         fontSizeSubtitle={18}/>
                     <FeedbackCard 
-                        label={"Esté é o campo onde terá os feedbacks, escrito por cada cliente"} 
-                        fontSizeLabel={12} 
-                        title={"Han Okasaka"} 
+                        label={"Super atenciosos e prestativos, do primeiro atendimento até o suporte"} 
+                        fontSizeLabel={14} 
+                        title={"Han Okasaka Woong"} 
                         subtitle={"CTO F&F"}
                         fontSizeTitle={19}
                         fontSizeSubtitle={18}/>
                     <FeedbackCard 
-                        label={"Esté é o campo onde terá os feedbacks, escrito por cada cliente"} 
-                        fontSizeLabel={12} 
-                        title={"Jenifer Lawrence"} 
-                        subtitle={"Diretora Regional HungerGames"}
+                        label={"Empresa que acreditam que nada está escrito a lápis"} 
+                        fontSizeLabel={14} 
+                        title={"Pedro Ribeiro Cesare"} 
+                        subtitle={"Diretor Tech"}
                         fontSizeTitle={19}
-                        fontSizeSubtitle={17}/>
+                        fontSizeSubtitle={15}/>
                 </div>
             </div>
         </div>
