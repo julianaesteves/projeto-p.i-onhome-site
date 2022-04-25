@@ -40,6 +40,7 @@ header{
     display: flex;
     justify-content: space-between;
     width: 170px;
+    
 }
 
 .btn--registrar{
@@ -49,6 +50,11 @@ header{
     height: 35px;
 }
 
+.btn--login {
+    color: white;
+    text-decoration: none;
+
+}
 button{
     background-color: rgba(255, 255, 255, 0);
     border: none;
