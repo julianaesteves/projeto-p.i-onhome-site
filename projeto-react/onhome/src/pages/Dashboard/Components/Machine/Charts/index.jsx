@@ -9,40 +9,25 @@ const Charts = ({ handleWindow }) => {
 
     const data = [
         {
-          name: 'Dia 1',
-          atual: 4000,
-          media: 2400,
+          name: '16:41:02',
+          atual: 55,
         },
         {
-          name: 'Dia 2',
-          atual: 3000,
-          media: 1398,
+          name: '16:44:34',
+          atual: 67,
         },
         {
-          name: 'Dia 3',
-          atual: 2000,
-          media: 9800,
+          name: '16:47:29',
+          atual: 49,
         },
         {
-          name: 'Dia 4',
-          atual: 2780,
-          media: 3908,
+          name: '16:50:49',
+          atual: 59,
         },
         {
-          name: 'Dia 5',
-          atual: 1890,
-          media: 4800,
-        },
-        {
-          name: 'Dia 6',
-          atual: 2390,
-          media: 3800,
-        },
-        {
-          name: 'Dia 7',
-          atual: 3490,
-          media: 4300,
-        },
+          name: '16:53:21',
+          atual: 67,
+        }
       ];
 
     const [chartData, setChartData] = useState(data)
@@ -52,18 +37,18 @@ const Charts = ({ handleWindow }) => {
 
     const chartsLabel = ["CPU", "Disco", "Memória", "GPU"]
 
-    useEffect(() => {
-        setTimeout(() => {
-            const newName = nameData + 1
-            const newAtual = atualData + 500
-            const newMedia = mediaData + 50
-            setNameData(newName)
-            setMediaData(newMedia)
-            setAtualData(newAtual)
-            let newData = [...data, {name: `${newName}`, atual: `${newAtual}`, media: `${newMedia}`}]
-            setChartData(newData)
-        }, 3000)
-    }, [chartData])
+    // useEffect(() => {
+    //     setTimeout(() => {
+    //         const newName = nameData + 1
+    //         const newAtual = atualData + 500
+    //         const newMedia = mediaData + 50
+    //         setNameData(newName)
+    //         setMediaData(newMedia)
+    //         setAtualData(newAtual)
+    //         let newData = [...data, {name: `${newName}`, atual: `${newAtual}`, media: `${newMedia}`}]
+    //         setChartData(newData)
+    //     }, 3000)
+    // }, [chartData])
 
     return (
         <Border margin={"10px"} padding={"20px"}>
@@ -87,9 +72,7 @@ const Charts = ({ handleWindow }) => {
                                         <XAxis dataKey="name" />
                                         <YAxis />
                                         <Tooltip />
-                                        {/* <Legend /> */}
-                                        {/* <Line type="monotone" dataKey="media" stroke="#ff0000" activeDot={{ r: 8 }} /> */}
-                                        <Area type="monotone" dataKey="atual" stroke="#ffa500" />
+                                        <Area type="monotone" dataKey="atual" fill="#FF3784" stroke="#FF3784"/>
                                     </AreaChart>
                                 </div>
                             ))}         

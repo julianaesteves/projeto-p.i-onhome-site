@@ -9,9 +9,9 @@ import './style.css'
 const Maquinas = () => {
     const machineList = [
         { number: 1, status: -53 },
-        { number: 2, status: 0 },
+        { number: 2, status: -29 },
         { number: 3, status: -39 },
-        { number: 4, status: -21 },
+        { number: 4, status: -31 },
         { number: 5, status: -30 },
         { number: 6, status: 69 },
         { number: 7, status: -19 },

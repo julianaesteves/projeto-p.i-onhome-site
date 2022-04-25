@@ -1,5 +1,6 @@
 import GradientText from "../../../components/GradientText";
 import ButtonWithArrow from "../../../components/ButtonWithArrow";
+import { Link } from "react-router-dom";
 
 import "./style.css";
 
