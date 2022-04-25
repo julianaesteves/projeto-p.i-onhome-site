@@ -12,12 +12,14 @@ const Reports = () => {
         { maquina: 3, squad: "S03", conteudo: "Uso CPU, GPU, RAM, Disco" },
         { maquina: 4, squad: "S04", conteudo: "Uso CPU, GPU, RAM, Disco" },
         { maquina: 5, squad: "S05", conteudo: "Uso CPU, GPU, RAM, Disco" },
+        { maquina: 6, squad: "S05", conteudo: "Uso CPU, GPU, RAM, Disco" },
+        { maquina: 7, squad: "S05", conteudo: "Uso CPU, GPU, RAM, Disco" },
 
     ]
 
     return (
         <div className="reports-container">
-            <Border textAlign={"center"} padding={"20px"} margin={20}>
+            <Border textAlign={"center"} padding={"20px"} margin={"20px 50px"}>
                 <div style={{ display: "flex", maxHeight: "50px", justifyContent: "center" }}>
                     <img src="./icons/dashboard.svg" alt="" />
                     <GradientText title={"Relatórios de Monitoramento"} textAlign={"center"} />

@@ -20,7 +20,7 @@
 .thermometer--pointer {
     position: absolute;
     top: 25px;
-    left: 75px;
+    left: 80px;
     background: url("../../../../../public/images/ponteiro.png") no-repeat;
     background-size: contain;
     height: 60px;
