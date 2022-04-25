@@ -48,7 +48,7 @@
 }
 
 .down--arrow{
-    margin-top: 200px;
+    margin-top: 100px;
     animation: 1s up-and-down infinite alternate;
 }
 
