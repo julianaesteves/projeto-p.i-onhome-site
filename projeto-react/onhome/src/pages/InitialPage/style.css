@@ -24,18 +24,19 @@
 }
 
 .subtitle{
-    font-size: 35px;
+    font-size: 45px;
     color: white;
     font-weight: lighter;
 }
 
 .header--title{
-    font-size: 70px;
+    font-size: 80px;
     color: #7879F1;
     font-weight: bolder;
 }
 
 .about--onhome{
+    font-size: 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -43,7 +44,7 @@
     color: white;
     font-weight: lighter;
     margin: auto;
-    width: 33%;
+    width: 35%;
     height: 120px;
 }
 

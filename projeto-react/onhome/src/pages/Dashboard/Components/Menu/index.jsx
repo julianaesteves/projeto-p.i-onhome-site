@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import '../../../../components/Border';
 import Button from '../../../../components/Button'
 import './styles.css';
@@ -24,6 +25,10 @@ const Menu = ({ handleChosenItem }) => {
             description: "Usuários",
             iconUrl: '/icons/userMenu.svg'
         },
+        {
+            description: "Perfil",
+            iconUrl: '/icons/userMenu.svg'
+        }
     ]
 
     return (

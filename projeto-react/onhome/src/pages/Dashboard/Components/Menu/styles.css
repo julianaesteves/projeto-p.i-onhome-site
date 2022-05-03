@@ -56,12 +56,18 @@ input[type="checkbox"]:checked + nav {
     text-decoration: none;
     color: white;
 }
+
+.menu--itemClicked{
+    font-weight: bold;
+    transform: scale(1.1);
+    background: rgb(250, 113, 250);
+}
+
 .navbar ul li:hover {
     font-weight: bold;
     transform: scale(1.1);
     background: rgb(250, 113, 250);
     transition: all ease 600ms;
-    
 }
 .navbar .border-gradient {
     padding: 32px;

@@ -10,7 +10,7 @@ const Usuarios = () => {
     return (
         <div className='right-content'>
             <div className='title'>
-                <GradientText title={"Cadastro de Usuários"} fontSizeTitle={35} />
+                <GradientText title={"Cadastro de Usuários"} textAlign="left" fontSizeTitle={35} />
             </div>
             <Border padding={"20px"}>
                 <div className='div-cadastro-usuarios'>
