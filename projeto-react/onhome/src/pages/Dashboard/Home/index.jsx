@@ -33,7 +33,7 @@ const Home = () => {
 
     return (
         <div className="home-graph-container">
-            <Border width={"730px"} padding={"10px 0 0 0"} margin={"0 0 20px 0"} children={<GradientText title="Bem-Vindo, Carlos!" textAlign='center' />} />
+            <Border width={"730px"} padding={"10px 0 0 0"} margin={"0 0 20px 0"} children={<GradientText className="welcome" title="Bem-Vindo, Carlos!" textAlign='center' />} />
             <div className="home-graph border-gradient">
                 <div className="home-column-graph">
                     <div className="home-graph-item">

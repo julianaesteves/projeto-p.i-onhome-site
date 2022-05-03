@@ -9,7 +9,7 @@ const Configuracoes = () => {
     return (
         <div className='right-content'>
             <div className='title'>
-                <GradientText title={"Configurações"} fontSizeTitle={35}/>
+                <GradientText className="config--title" title={"Configurações"} fontSizeTitle={35}/>
             </div>
             <div className='cards'>
                 <div className='empresa-plano'>

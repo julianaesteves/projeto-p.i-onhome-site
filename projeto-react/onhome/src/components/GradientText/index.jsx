@@ -4,7 +4,7 @@ const GradientText = (props) => {
     const className = props.className ?? "";
     const classNameTitle = props.classNameTitle ?? "";
     const classNameSubtitle = props.classNameSubtitle ?? "";
-    const textAlign = props.textAlign ? "center" : "left";
+    const textAlign = props.textAlign ? "left" : "center";
     const marginHorizontal = textAlign === "center" ? "auto" : "0";
     
     return (

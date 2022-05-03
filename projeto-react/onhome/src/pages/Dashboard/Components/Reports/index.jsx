@@ -22,7 +22,7 @@ const Reports = () => {
             <Border textAlign={"center"} padding={"20px"} margin={"20px 50px"}>
                 <div style={{ display: "flex", maxHeight: "50px", justifyContent: "center" }}>
                     <img src="./icons/dashboard.svg" alt="" />
-                    <GradientText title={"Relatórios de Monitoramento"} textAlign={"center"} />
+                    <GradientText className="reports--title" title={"Relatórios de Monitoramento"} textAlign={"center"} />
                 </div>
                 <Input placeholder={"Pesquisar"} width={"80%"} />
                 <div className="reports-gradient">
