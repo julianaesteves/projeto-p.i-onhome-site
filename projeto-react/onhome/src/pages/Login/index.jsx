@@ -5,12 +5,15 @@ import GradientText from "../../components/GradientText";
 import Input from "../../components/Input";
 import { Link } from "react-router-dom";
 
+import { formatarCpf } from '../../functions/formatter';
 import "./style.css";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
-
+  const formatar = (e) => {
+    e.target.value = formatarCpf(e.target.value);
+  } 
   return (
     <div className="formulario--loginBackground">
       <div className="formulario--loginGradientBackground">
@@ -24,6 +27,7 @@ const Login = () => {
             height={"30px"}
             margin={"8px 0 20px 0"} 
             onChange={(e) => setEmail(e.target.value)}
+            onInput={(e) => formatar(e)}
           />
           <label className="formulario--loginLabel">Senha</label>
           <Input

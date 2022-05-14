@@ -1,5 +1,0 @@
-
-// Basta colocar o nome da função passado this por exemplo:
-// <input oninput='formatarcpf(this)' />
-// Se der erro avise, feito pelo javascript e 
-// Created by Rafael

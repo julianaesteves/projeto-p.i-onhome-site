@@ -1,8 +1,8 @@
-function formatarCpf(ipt) {
-    ipt.value = formatter(ipt.value, '###.###.###-##');
+export function formatarCpf(ipt) {
+    return formatter(ipt, '###.###.###-##');
 }
-function formatarCep(ipt) {
-    ipt.value = formatter(ipt.value, '#####-###');
+export function formatarCep(ipt) {
+    return formatter(ipt, '#####-###');
 }
 function formatter(value, mask) {
     const text = value.replace(/\D/g, '');

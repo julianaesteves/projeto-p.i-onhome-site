@@ -13,12 +13,11 @@ const Header = () => {
                     <nav>
                         <ul>
                             <li><LinkScroll to='solutions--container' smooth={true} duration={1000}>Serviços</LinkScroll></li>
-                                <li><LinkScroll to='products' smooth={true} duration={1000}>Produtos</LinkScroll></li>
-                                <li>Sobre nós</li>
-                                <li>Planos</li>
-                                <li>Suporte</li>
-                         
-                        </ul>
+                            <li><LinkScroll to='products' smooth={true} duration={1000}>Produtos</LinkScroll></li>
+                            <li>Sobre nós</li>
+                            <li>Planos</li>
+                            <li>Suporte</li>
+                         </ul>
                     </nav>
                 </div>
                 <div className="header--login">
