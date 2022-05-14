@@ -22,7 +22,7 @@ const TelaInicialCadastro = () => {
             />
           </div>
           <div>
-            <ButtonWithArrow color={"white"}>Seguir</ButtonWithArrow>
+            <Link to={"/formulario"}><ButtonWithArrow color={"white"}>Seguir</ButtonWithArrow></Link>
           </div>
         </div>
       </div>
