@@ -27,6 +27,11 @@
     display: none;
 }
 
+.container__error {
+    height: 20px;
+    color: rgb(226, 226, 226);
+    font-size: 10px;
+
 .formulario--body {
     justify-content: center;
 }

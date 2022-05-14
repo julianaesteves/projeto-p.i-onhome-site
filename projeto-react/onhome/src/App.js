@@ -17,7 +17,6 @@ function App() {
           <Route path="/login" element={ <Login/> } />
           <Route path="/cadastro" element={ <TelaInicialCadastro/> } />
           <Route path="/suporte" element={ <Suporte/> } />
-
         </Routes>
       </div>
     </Router>

@@ -1,50 +1,159 @@
 import React from "react";
 import Input from "../../../components/Input/index.jsx";
 import "./style.css";
+import { useState } from "react";
+import ButtonWithArrow from "../../../components/ButtonWithArrow/index.jsx";
 
-const EnderecoEmpresa = ({ setFormData, formData }) => {
+const EnderecoEmpresa = ({ setFormData, formData, nextPage }) => {
+  const [logradouroError, setLogradouroError] = useState(false);
+  const [bairroError, setBairroError] = useState(false);
+  const [numeroError, setNumeroError] = useState(false);
+  const [cepError, setCepError] = useState(false);
+  const [estadoError, setEstadoError] = useState(false);
+  const [cidadeError, setCidadeError] = useState(false);
+
+  function verify() {
+    if (formData.logradouro == "") {
+      setLogradouroError(true);
+    } else {
+      setLogradouroError(false);
+    }
+
+    if (formData.bairro == "") {
+      setBairroError(true);
+    } else {
+      setBairroError(false);
+    }
+    if (formData.numero == "") {
+      setNumeroError(true);
+    } else {
+      setNumeroError(false);
+    }
+    if (formData.cep.length != 8) {
+      setCepError(true);
+    } else {
+      setCepError(false);
+    }
+    if (formData.estado == "") {
+      setEstadoError(true);
+    } else {
+      setEstadoError(false);
+    }
+    if (formData.cidade == "") {
+      setCidadeError(true);
+    } else {
+      setCidadeError(false);
+    }
+    if (
+      formData.cidade != "" &&
+      formData.estado != "" &&
+      formData.cep != "" &&
+      formData.numero!= "" &&
+      formData.bairro != "" &&
+      formData.logradouro != ""
+    ) {
+      console.log("foi pt2");
+      nextPage();
+    }
+  }
   return (
     <div className="enderecoEmpresa--mainContainer">
       <label className="formulario--label">Logradouro</label>
       <Input
         value={formData.logradouro}
-        onChange={(e) =>
-          setFormData({ ...formData, logradouro: e.target.value })
-        }
+        // onChange={
+        //   ((e) => setFormData({ ...formData, logradouro: e.target.value }),
+        //   setLogradouroError(false))
+        // }
+        onChange={({ target }) => {
+          setFormData({ ...formData, logradouro: target.value });
+          setLogradouroError(false);
+        }}
+        onBlur={() => {
+          if (formData.logradouro == "") {
+            setLogradouroError(true);
+          }
+        }}
         width={"90%"}
         height={"20px"}
         margin={"8px 0 20px 0"}
       />
+      <div className="container__error">
+        {logradouroError && <p>Por favor, preencha o logradouro</p>}
+      </div>
       <label className="formulario--label">Bairro</label>
       <Input
         value={formData.bairro}
-        onChange={(e) => setFormData({ ...formData, bairro: e.target.value })}
+        // onChange={
+        //   ((e) => setFormData({ ...formData, bairro: e.target.value }),
+        //   setBairroError(false))
+        // }
+        onChange={({ target }) => {
+          setFormData({ ...formData, bairro: target.value });
+          setBairroError(false);
+        }}
+        onBlur={() => {
+          if (formData.bairro == "") {
+            setBairroError(true);
+          }
+        }}
         width={"90%"}
         height={"20px"}
         margin={"8px 0 20px 0"}
       />
+      <div className="container__error">
+        {bairroError && <p>Por favor, preencha o nome bairro</p>}
+      </div>
       <div className="inline--inputs">
         <div>
           <label className="formulario--label">Número</label>
           <Input
             value={formData.numero}
-            onChange={(e) =>
-              setFormData({ ...formData, numero: e.target.value })
-            }
-            width={"140px"}
-            height={"20px"}
-            margin={"8px 35px 20px 0"}
+            // onChange={
+            //   ((e) => setFormData({ ...formData, numero: e.target.value }),
+            //   setNumeroError(false))
+            // }
+            onChange={({ target }) => {
+              setFormData({ ...formData, numero: target.value });
+              setNumeroError(false);
+            }}
+            onBlur={() => {
+              if (formData.numero == "") {
+                setNumeroError(true);
+              }
+            }}
+            width={"100%"}
+            height={"30px"}
+            margin={"8px 0 20px 0"}
           />
+          <div className="container__error">
+            {numeroError && <p>Por favor, preencha o numero</p>}
+          </div>
         </div>
         <div>
           <label className="formulario--label">CEP</label>
           <Input
             value={formData.cep}
-            onChange={(e) => setFormData({ ...formData, cep: e.target.value })}
-            width={"140px"}
-            height={"20px"}
+            // onChange={
+            //   ((e) => setFormData({ ...formData, cep: e.target.value }),
+            //   setCepError(false))
+            // }
+            onChange={({ target }) => {
+              setFormData({ ...formData, cep: target.value });
+              setCepError(false);
+            }}
+            onBlur={() => {
+              if (formData.cep == "") {
+                setCepError(true);
+              }
+            }}
+            width={"100%"}
+            height={"30px"}
             margin={"8px 0 20px 0"}
           />
+          <div className="container__error">
+            {cepError && <p>Por favor, preencha o cep</p>}
+          </div>
         </div>
       </div>
       <label className="formulario--label">Complemento</label>
@@ -62,27 +171,60 @@ const EnderecoEmpresa = ({ setFormData, formData }) => {
           <label className="formulario--label">Estado</label>
           <Input
             value={formData.estado}
-            onChange={(e) =>
-              setFormData({ ...formData, estado: e.target.value })
-            }
-            width={"140px"}
-            height={"20px"}
-            margin={"8px 35px 20px 0"}
+            // onChange={
+            //   ((e) => setFormData({ ...formData, estado: e.target.value }),
+            //   setEstadoError(false))
+            // }
+            onChange={({ target }) => {
+              setFormData({ ...formData, estado: target.value });
+              setEstadoError(false);
+            }}
+            onBlur={() => {
+              if (formData.estado == "") {
+                setEstadoError(true);
+              }
+            }}
+            width={"100%"}
+            height={"30px"}
+            margin={"8px 0 20px 0"}
           />
+          <div className="container__error">
+            {estadoError && <p>Por favor, preencha o estado</p>}
+          </div>
         </div>
         <div>
           <label className="formulario--label">Cidade</label>
           <Input
             value={formData.cidade}
-            onChange={(e) =>
-              setFormData({ ...formData, cidade: e.target.value })
-            }
-            width={"140px"}
-            height={"20px"}
+            // onChange={
+            //   ((e) => setFormData({ ...formData, cidade: e.target.value }),
+            //   setCidadeError(false))
+            // }
+            onChange={({ target }) => {
+              setFormData({ ...formData, cidade: target.value });
+              setCidadeError(false);
+            }}
+            onBlur={() => {
+              if (formData.cidade == "") {
+                setCidadeError(true);
+              }
+            }}
+            width={"100%"}
+            height={"30px"}
             margin={"8px 0 20px 0"}
           />
+          <div className="container__error">
+            {cidadeError && <p>Por favor, preencha a cidade</p>}
+          </div>
         </div>
       </div>
+      <ButtonWithArrow
+      width={"200px"}
+      height={"30px"}
+      margin={"30px"}
+      onClick={verify}
+      children={"Próximo"}
+    ></ButtonWithArrow>
     </div>
   );
 };
