@@ -26,3 +26,9 @@
 .formulario--buttons button:disabled{
     display: none;
 }
+
+.container__error {
+    height: 20px;
+    color: rgb(226, 226, 226);
+    font-size: 10px;
+}

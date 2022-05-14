@@ -20,7 +20,6 @@ const Dashboard = () => {
             {/* <Machine /> */}
             {/* <Reports /> */}
             {/* <Machine /> */}
-            {/* <Teste /> */}
         </div>
     );
 };

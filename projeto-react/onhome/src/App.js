@@ -13,8 +13,8 @@ function App() {
     <div className="App">
       {/*<Home /> */}
       {/* <InitialPage /> */}
-      <Dashboard />
-      {/*<Form /> */}
+      {/* <Dashboard /> */}
+      <Form />  
     </div>
   );
 }
