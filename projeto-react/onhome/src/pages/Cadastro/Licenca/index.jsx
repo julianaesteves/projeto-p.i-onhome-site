@@ -10,22 +10,22 @@ const Licenca = ({ setFormData, formData, nextPage }) => {
     {
       text: "Plano 1",
       urlImage:
-        "https://www.lenovo.com/medias/lenovo-laptop-ideapad-3-15-intel-hero.png?context=bWFzdGVyfHJvb3R8MjczNzUyfGltYWdlL3BuZ3xoMGQvaDYxLzE0MTkwNTI5Njc1Mjk0LnBuZ3xmYTMyYzBlZmE5NTcyNzAyMTZhZmJlMmFmOTVjMmZmYTM4ZTdjNWFiZWM0YzE5YWQ2YzcxNmM3OTE2MThjZmE4",
+        "./images/plano-1.png",
     },
     {
       text: "Plano 2",
       urlImage:
-        "https://s2.glbimg.com/P_xNC3JLsCLd5FZmgF25Fiseqyc=/0x0:1024x820/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2020/C/8/vBgzB8RiqZEjt1dvLpXQ/product-1-20200512115231-5eba1d7f42d90.png",
+      "./images/plano-4.png",
     },
     {
       text: "Plano 3",
       urlImage:
-        "https://images.samsung.com/is/image/samsung/br-notebook-style-s51-np730xbe-kp1br-np730xbe-kp1br-fronttitanumsilver-thumb-185313139?$480_480_PNG$",
+      "./images/plano-2.png",
     },
     {
       text: "Plano personalizado",
       urlImage:
-        "https://www.lenovo.com/medias/lenovo-laptops-v-series-v14-gen2-14inch-intel-hero.png?context=bWFzdGVyfHJvb3R8MjIzOTA5fGltYWdlL3BuZ3xoM2UvaGU1LzE0MTg2OTE5NDYwODk0LnBuZ3xlMzA3MmJlZmQwZGZkZjk0MTU3MmY3OWI3NDUxNDgxYzJjYzRlM2ZlN2Q5ODlhZDc3NGM0OTk0ZTM2MmMyODAz",
+      "./images/plano-3-1.png",
     },
   ];
 

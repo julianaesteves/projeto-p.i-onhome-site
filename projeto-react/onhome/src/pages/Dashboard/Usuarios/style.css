@@ -6,8 +6,9 @@
 .right-content {
     flex: 1;
     color: white;
+    margin: 30px;
 }
-/* pfv vai agr */
+
 .title {
     border: 2px;
     padding-bottom: 10px;
@@ -24,6 +25,7 @@
 .div-inputs {
     display: flex;
     flex-direction: column;
+    margin: 10px 50px;
 }
 
 .div-inputs input,
@@ -49,6 +51,7 @@
 .cadastrados-title{
     margin-bottom: 25px;
     font-weight: lighter;
+    text-align: center;
 }
 
 .registered-users {
@@ -62,3 +65,22 @@
     justify-content: flex-end;
 }
 
+.usuarios-gradient .border-gradient {
+    background: linear-gradient(#080425, #080425) padding-box,
+    linear-gradient(to right, hsl(180, 100%, 50%), hsl(300, 100%, 50%)) border-box;
+}
+
+.cadastro--gradientSelect {
+    padding: 5px 15px;
+    border-width: 2px;
+    border-style: solid;
+    background: linear-gradient(#080425, #080425) padding-box,
+      linear-gradient(to right, hsl(180, 100%, 50%), hsl(300, 100%, 50%))
+        border-box;
+    border-radius: 42px;
+    border-color: transparent;
+    background-color: #080425;
+    color: white;
+    margin: 10px;
+    text-align: center;
+  }

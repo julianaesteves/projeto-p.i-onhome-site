@@ -6,8 +6,8 @@ import './style.css';
 
 const More = () => {
     return (
-            <Border>
-                <GradientText title="Aumente a sua produtividade com nossos produtos!" subtitle="Com o nosso suporte exclusivo, você irá aumentar a sua produtividade e seus lucros. Tenha uma ótima gestão da sua equipe e controle sobre seus processos." align="left" />
+            <Border padding={"20px"} margin={"20px"}>
+                <GradientText textAlign="left" title="Aumente a sua produtividade com nossos produtos!" subtitle="Com o nosso suporte exclusivo, você irá aumentar a sua produtividade e seus lucros. Tenha uma ótima gestão da sua equipe e controle sobre seus processos." align="left" />
                 <div style={{ textAlign: 'left', paddingTop: '20px' }}>
                     <Button value={"Saiba mais..."} width={180} height={45} borderRadius={40} margin={20}/>
                 </div>

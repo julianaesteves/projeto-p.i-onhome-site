@@ -12,39 +12,46 @@ const Reports = () => {
         { maquina: 3, squad: "S03", conteudo: "Uso CPU, GPU, RAM, Disco" },
         { maquina: 4, squad: "S04", conteudo: "Uso CPU, GPU, RAM, Disco" },
         { maquina: 5, squad: "S05", conteudo: "Uso CPU, GPU, RAM, Disco" },
+        { maquina: 6, squad: "S05", conteudo: "Uso CPU, GPU, RAM, Disco" },
+        { maquina: 7, squad: "S05", conteudo: "Uso CPU, GPU, RAM, Disco" },
 
     ]
 
     return (
-        <Border textAlign={"center"}>
-            <div style={{ display: "flex", maxHeight: "50px", justifyContent: "center" }}>
-                <img src="./icons/dashboard.svg" alt="" />
-                <GradientText title={"Relatórios de Monitoramento"} />
-            </div>
-            <Input placeholder={"Pesquisar"} width={"80%"} />
-            <Border margin={"20px 0"}>
-                <div>
-                    <div className="reports--header">
-                        {reportsHeader.map(title => (
-                            <div>{title}</div>
-                        ))}
-                    </div>
-                    {reportsList.map((item, index) => {
-                        const tableBorder = (index + 1) < reportsList.length ? "reports--table--border" : ""
-                        return (
-                            <div className={`reports--row ${tableBorder}`} key={index}>
-                                <div>{item.maquina}</div>
-                                <div>{item.squad}</div>
-                                <div>{item.conteudo}</div>
-                                <div>
-                                    <img src="./icons/pdf.svg" alt="" />
-                                    <img src="./icons/csv.svg" alt="" />
+        <div className="reports-container">
+            <Border textAlign={"center"} padding={"20px"} margin={"20px 50px"}>
+                <div style={{ display: "flex", maxHeight: "50px", justifyContent: "center" }}>
+                    <img src="./icons/dashboard.svg" alt="" />
+                    <GradientText className="reports--title" title={"Relatórios de Monitoramento"} textAlign={"center"} />
+                </div>
+                <Input placeholder={"Pesquisar"} width={"80%"} />
+                <div className="reports-gradient">
+                <Border margin={"20px 30px"} padding={"20px"}>
+                    <div>
+                        <div className="reports--header">
+                            {reportsHeader.map(title => (
+                                <div>{title}</div>
+                            ))}
+                        </div>
+                        {reportsList.map((item, index) => {
+                            const tableBorder = (index + 1) < reportsList.length ? "reports--table--border" : ""
+                            return (
+                                <div className={`reports--row ${tableBorder}`} key={index}>
+                                    <div>{item.maquina}</div>
+                                    <div>{item.squad}</div>
+                                    <div>{item.conteudo}</div>
+                                    <div>
+                                        <img src="./icons/pdf.svg" alt="" />
+                                        <img src="./icons/csv.svg" alt="" />
+                                    </div>
                                 </div>
-                            </div>
-                    )})}
+                            )
+                        })}
+                    </div>
+                </Border>
                 </div>
             </Border>
-        </Border>
+        </div>
     )
 }
 

@@ -166,6 +166,7 @@ const DadosEmpresa = ({ setFormData, formData, nextPage }) => {
         <div className="container__error">
           {telefoneError && <p>Por favor, preencha o telefone</p>}
         </div>
+
       </div>
       <ButtonWithArrow
         width={"200px"}

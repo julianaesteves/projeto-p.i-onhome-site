@@ -5,7 +5,7 @@ import './style.css'
 const FeedbackCard = (props) => {
     return (
         <div>
-            <Border width={"220px"} height={"150px"} margin={"0.8rem"}>
+            <Border width={"220px"} height={"150px"} margin={"0.8rem"} padding={"20px"}>
                 <div className='feedback--clientName'>
                     <TextWithImage
                         title={props.title}

@@ -24,7 +24,11 @@ header{
     cursor: pointer;
 }
 
-.header-options, li, ul{
+.header--options{
+    margin-left: 70px;
+}
+
+.header--options, li, ul{
     display: inline-block;
     padding: 0px 20px;
     font-weight: lighter;
@@ -32,14 +36,16 @@ header{
     cursor: pointer;
 }
 
-.header-options, li, ul:hover{
+.header--options, ul, li:hover{
     font-weight: bolder;
 }
 
 .header--login{
     display: flex;
+    align-items: center;
     justify-content: space-between;
     width: 170px;
+    
 }
 
 .btn--registrar{
@@ -47,6 +53,11 @@ header{
     border-radius: 20px;
     width: 110px;
     height: 35px;
+}
+
+.btn--login {
+    color: white;
+    text-decoration: none;
 }
 
 button{

@@ -6,7 +6,7 @@ const Border = ({ width, height, margin, textAlign, padding, cursor, onClick, ch
             <div className="border-gradient"
                 onClick={onClick} 
                 style={{
-                    borderRadius: "20px", 
+                    borderRadius: "28px", 
                     padding: padding, 
                     width: width,  
                     height: height,

@@ -22,9 +22,7 @@ const InitialPage = () => {
             <span className="about--onhome">
               Utilize de equipamentos da mais alta qualidade, com preços justos
               e serviços de suporte 24/7 a sua disposição!
-              <ButtonWithArrow style={{ width: "170px" }}>
-                Seguir
-              </ButtonWithArrow>
+              
             </span>
             <div className="down--arrow">
               <Link to="solutions--container" smooth={true} duration={1000}>

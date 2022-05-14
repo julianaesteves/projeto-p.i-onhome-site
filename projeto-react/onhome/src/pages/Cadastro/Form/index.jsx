@@ -52,7 +52,6 @@ const Form = () => {
       console.log(formData);
     } else {
       setPage((currPage) => currPage + 1);
-      console.log(formData);
     }
   }
 
@@ -73,14 +72,12 @@ const Form = () => {
           <form className="formulario--body" onSubmit={onSubmit}>
             {PageDisplay()}
             <div className="formulario--buttons">
-              <button type="button" disabled={page == 0} onClick={backPage}>
+              <button type="button" disabled={page == 0} onClick={backPage} style={{fontSize: "12px", opacity: "60%"}}>
                 Voltar
               </button>
               {/* <ButtonWithArrow
                 type="submit"
-                width={"200px"}
-                height={"30px"}
-                margin={"30px"}
+                style={{ width: "140px", height: "30px", marginLeft: "20px"}}
                 children={toggleButton}
               ></ButtonWithArrow> */}
             </div>

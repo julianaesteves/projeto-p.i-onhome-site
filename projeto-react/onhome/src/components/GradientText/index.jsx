@@ -1,11 +1,10 @@
-import { margin } from '@mui/system';
 import './style.css';
 
 const GradientText = (props) => {
     const className = props.className ?? "";
     const classNameTitle = props.classNameTitle ?? "";
     const classNameSubtitle = props.classNameSubtitle ?? "";
-    const textAlign = props.textAlign ? "center" : "left";
+    const textAlign = props.textAlign ? "left" : "center";
     const marginHorizontal = textAlign === "center" ? "auto" : "0";
     
     return (
@@ -14,7 +13,8 @@ const GradientText = (props) => {
                 textAlign: props.textAlign, 
                 width: props.width, 
                 padding: props.padding, 
-                margin: props.margin
+                margin: props.margin,
+                fontSize: props.fontSize
             }}>
             <div className="label" style={{ fontSize: `${props.fontSizeLabel}px` }}>
                 {props.label ?? ''}

@@ -75,7 +75,7 @@ const EnderecoEmpresa = ({ setFormData, formData, nextPage }) => {
           }
         }}
         width={"90%"}
-        height={"30px"}
+        height={"20px"}
         margin={"8px 0 20px 0"}
       />
       <div className="container__error">
@@ -98,7 +98,7 @@ const EnderecoEmpresa = ({ setFormData, formData, nextPage }) => {
           }
         }}
         width={"90%"}
-        height={"30px"}
+        height={"20px"}
         margin={"8px 0 20px 0"}
       />
       <div className="container__error">
@@ -163,7 +163,7 @@ const EnderecoEmpresa = ({ setFormData, formData, nextPage }) => {
           setFormData({ ...formData, complemento: e.target.value })
         }
         width={"90%"}
-        height={"30px"}
+        height={"20px"}
         margin={"8px 0 20px 0"}
       />
       <div className="inline--inputs">

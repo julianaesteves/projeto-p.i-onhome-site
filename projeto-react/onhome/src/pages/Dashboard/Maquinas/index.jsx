@@ -8,54 +8,22 @@ import './style.css'
 
 const Maquinas = () => {
     const machineList = [
-        {
-            number: 1,
-            status: -53
-        },
-        {
-            number: 2,
-            status: 39
-        },
-        {
-            number: 3,
-            status: 79
-        },
-        {
-            number: 4,
-            status: 21
-        },
-        {
-            number: 5,
-            status: 69
-        },
-        {
-            number: 6,
-            status: 19
-        },
-        {
-            number: 7,
-            status: 19
-        },
-        {
-            number: 8,
-            status: 10
-        },
-        {
-            number: 9,
-            status: 19
-        },
-        {
-            number: 10,
-            status: 19
-        },
-        {
-            number: 11,
-            status: 19
-        },
-        {
-            number: 12,
-            status: 19
-        },
+        { number: 1, status: -53 },
+        { number: 2, status: -29 },
+        { number: 3, status: -39 },
+        { number: 4, status: -31 },
+        { number: 5, status: -30 },
+        { number: 6, status: 69 },
+        { number: 7, status: -19 },
+        { number: 8, status: 10 },
+        { number: 9, status: -19 },
+        { number: 10, status: -39 },
+        { number: 11, status: -22 },
+        { number: 12, status: -31 },
+        { number: 13, status: -31 },
+        { number: 14, status: -31 },
+        { number: 15, status: -31 },
+        { number: 16, status: -31 },
     ]
 
     const [isVisible, setIsVisible] = useState(false)
@@ -79,17 +47,18 @@ const Maquinas = () => {
     }
 
     return (
-        <div style={{ height: "100vh", margin: "5px 15px" }}>
+        <div style={{ height: "100vh" }}>
             {isVisible ? 
-                <Machine machineInfo={machineChosen} handleWindow={handleWindow}/>
+                <Machine machineInfo={machineChosen} handleWindow={handleWindow} />
                 :
                 <div className="maquinas-container">
-                    <Border padding={"5px"} margin={"0 0 30px"}>
+                    <Border padding={8} margin={"0 0 30px"}>
                         <div className='maquinas-header'>
                             <GradientText 
                                 title={`Squad - OnHome`} 
                                 textAlign={"center"}  
-                                padding={"10px"}
+                                fontSize={12}
+                                margin={"10px 0 0 0"}
                             />
                             <div className='maquinas-legend'>
                                 <ul>
