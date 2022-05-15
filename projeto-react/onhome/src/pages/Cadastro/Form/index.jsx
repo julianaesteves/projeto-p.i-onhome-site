@@ -5,7 +5,6 @@ import EnderecoEmpresa from "../EnderecoEmpresa/index";
 import Licenca from "../Licenca/index";
 import DadosEmpresa from "../DadosEmpresa/index";
 import GradientText from "../../../components/GradientText/index";
-import ButtonWithArrow from "../../../components/ButtonWithArrow/index.jsx";
 import MenuCadastro from "../MenuCadastro/index";
 
 const Form = () => {
@@ -30,15 +29,37 @@ const Form = () => {
     qtdMaquinas: "",
   });
 
-  
-
   const PageDisplay = () => {
     if (page === 0) {
-      return <DadosEmpresa formData={formData} setFormData={setFormData} nextPage={nextPage}/>;
+      return (
+        <DadosEmpresa
+          formData={formData}
+          setFormData={setFormData}
+          nextPage={nextPage}
+          backPage={backPage}
+          page={page}
+        />
+      );
     } else if (page === 1) {
-      return <EnderecoEmpresa formData={formData} setFormData={setFormData} nextPage={nextPage}/>;
+      return (
+        <EnderecoEmpresa
+          formData={formData}
+          setFormData={setFormData}
+          nextPage={nextPage}
+          backPage={backPage}
+          page={page}
+        />
+      );
     } else {
-      return <Licenca formData={formData} setFormData={setFormData} nextPage={nextPage}/>;
+      return (
+        <Licenca
+          formData={formData}
+          setFormData={setFormData}
+          nextPage={nextPage}
+          backPage={backPage}
+          page={page}
+        />
+      );
     }
   };
 
@@ -67,20 +88,10 @@ const Form = () => {
         {/* <MenuCadastro /> */}
         <div className="formulario--mainContainer">
           <div className="formulario--gradientTitle">
-            <GradientText title={FormTitles[page]} textAlign="center" />
+            <GradientText title={FormTitles[page]} />
           </div>
           <form className="formulario--body" onSubmit={onSubmit}>
             {PageDisplay()}
-            <div className="formulario--buttons">
-              <button type="button" disabled={page == 0} onClick={backPage} style={{fontSize: "12px", opacity: "60%"}}>
-                Voltar
-              </button>
-              {/* <ButtonWithArrow
-                type="submit"
-                style={{ width: "140px", height: "30px", marginLeft: "20px"}}
-                children={toggleButton}
-              ></ButtonWithArrow> */}
-            </div>
           </form>
         </div>
       </div>
