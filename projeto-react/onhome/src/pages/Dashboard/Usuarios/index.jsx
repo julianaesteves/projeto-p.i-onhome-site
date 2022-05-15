@@ -24,9 +24,20 @@ const Usuarios = () => {
                         <label className='label-title-form'>Permissão:</label>
                         
                         <select name="" id="" className='cadastro--gradientSelect'>
+                            <option value="" selected disabled>Escolha uma permissão...</option>
                             <option value="">Usuário</option>
                             <option value="">Administrador</option>
                         </select>
+
+                        <label className='label-title-form'>Área: </label>
+                        <select name="" id="" className='cadastro--gradientSelect'>
+                            <option value="" selected disabled>Escolha uma área...</option>
+                            <option value="">Front-End</option>
+                            <option value="">Back-End</option>
+                            <option value="">DevOps</option>
+                            <option value="">Design</option>
+                        </select>
+
                         <div className='right-content-button'>
                             <button className="border-gradient" type="submit">Cadastrar</button>
                         </div>
