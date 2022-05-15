@@ -11,7 +11,7 @@ const TelaInicialCadastro = () => {
         <div className="mainDiv--content">
           <div className="div--text">
             <GradientText
-              title={"Olá! este é o seu primeiro acesso"}
+              title={"Olá! Este é o seu primeiro acesso"}
               fontSizeTitle={30}
             />
             <GradientText

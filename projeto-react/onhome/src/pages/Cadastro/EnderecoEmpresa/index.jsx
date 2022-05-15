@@ -4,7 +4,13 @@ import "./style.css";
 import { useState } from "react";
 import ButtonWithArrow from "../../../components/ButtonWithArrow/index.jsx";
 
-const EnderecoEmpresa = ({ setFormData, formData, nextPage }) => {
+const EnderecoEmpresa = ({
+  setFormData,
+  formData,
+  nextPage,
+  backPage,
+  page,
+}) => {
   const [logradouroError, setLogradouroError] = useState(false);
   const [bairroError, setBairroError] = useState(false);
   const [numeroError, setNumeroError] = useState(false);
@@ -47,12 +53,11 @@ const EnderecoEmpresa = ({ setFormData, formData, nextPage }) => {
     if (
       formData.cidade != "" &&
       formData.estado != "" &&
-      formData.cep != "" &&
-      formData.numero!= "" &&
+      formData.cep.length == 8 &&
+      formData.numero != "" &&
       formData.bairro != "" &&
       formData.logradouro != ""
     ) {
-      console.log("foi pt2");
       nextPage();
     }
   }
@@ -60,6 +65,7 @@ const EnderecoEmpresa = ({ setFormData, formData, nextPage }) => {
     <div className="enderecoEmpresa--mainContainer">
       <label className="formulario--label">Logradouro</label>
       <Input
+        name={"logradouro"}
         value={formData.logradouro}
         // onChange={
         //   ((e) => setFormData({ ...formData, logradouro: e.target.value }),
@@ -75,14 +81,15 @@ const EnderecoEmpresa = ({ setFormData, formData, nextPage }) => {
           }
         }}
         width={"90%"}
-        height={"20px"}
-        margin={"8px 0 20px 0"}
+        height={"30px"}
+        margin={"8px 0 5px 0"}
       />
       <div className="container__error">
         {logradouroError && <p>Por favor, preencha o logradouro</p>}
       </div>
       <label className="formulario--label">Bairro</label>
       <Input
+        name={"bairro"}
         value={formData.bairro}
         // onChange={
         //   ((e) => setFormData({ ...formData, bairro: e.target.value }),
@@ -98,16 +105,17 @@ const EnderecoEmpresa = ({ setFormData, formData, nextPage }) => {
           }
         }}
         width={"90%"}
-        height={"20px"}
-        margin={"8px 0 20px 0"}
+        height={"30px"}
+        margin={"8px 0 5px 0"}
       />
       <div className="container__error">
-        {bairroError && <p>Por favor, preencha o nome bairro</p>}
+        {bairroError && <p>Por favor, preencha o bairro</p>}
       </div>
       <div className="inline--inputs">
         <div>
           <label className="formulario--label">Número</label>
           <Input
+            name={"numero"}
             value={formData.numero}
             // onChange={
             //   ((e) => setFormData({ ...formData, numero: e.target.value }),
@@ -124,15 +132,17 @@ const EnderecoEmpresa = ({ setFormData, formData, nextPage }) => {
             }}
             width={"100%"}
             height={"30px"}
-            margin={"8px 0 20px 0"}
+            margin={"8px 0 5px 0"}
+            type={"number"}
           />
           <div className="container__error">
-            {numeroError && <p>Por favor, preencha o numero</p>}
+            {numeroError && <p>Por favor, preencha o número</p>}
           </div>
         </div>
         <div>
           <label className="formulario--label">CEP</label>
           <Input
+            name={"cep"}
             value={formData.cep}
             // onChange={
             //   ((e) => setFormData({ ...formData, cep: e.target.value }),
@@ -149,27 +159,30 @@ const EnderecoEmpresa = ({ setFormData, formData, nextPage }) => {
             }}
             width={"100%"}
             height={"30px"}
-            margin={"8px 0 20px 0"}
+            margin={"8px 0 5px 0"}
+            type={"number"}
           />
           <div className="container__error">
-            {cepError && <p>Por favor, preencha o cep</p>}
+            {cepError && <p>Por favor, preencha o CEP</p>}
           </div>
         </div>
       </div>
       <label className="formulario--label">Complemento</label>
       <Input
+        name={"complemento"}
         value={formData.complemento}
         onChange={(e) =>
           setFormData({ ...formData, complemento: e.target.value })
         }
         width={"90%"}
-        height={"20px"}
-        margin={"8px 0 20px 0"}
+        height={"30px"}
+        margin={"8px 0 40px 0"}
       />
       <div className="inline--inputs">
         <div>
           <label className="formulario--label">Estado</label>
           <Input
+            name={"estado"}
             value={formData.estado}
             // onChange={
             //   ((e) => setFormData({ ...formData, estado: e.target.value }),
@@ -186,7 +199,7 @@ const EnderecoEmpresa = ({ setFormData, formData, nextPage }) => {
             }}
             width={"100%"}
             height={"30px"}
-            margin={"8px 0 20px 0"}
+            margin={"8px 0 5px 0"}
           />
           <div className="container__error">
             {estadoError && <p>Por favor, preencha o estado</p>}
@@ -195,6 +208,7 @@ const EnderecoEmpresa = ({ setFormData, formData, nextPage }) => {
         <div>
           <label className="formulario--label">Cidade</label>
           <Input
+            name={"cidade"}
             value={formData.cidade}
             // onChange={
             //   ((e) => setFormData({ ...formData, cidade: e.target.value }),
@@ -211,20 +225,29 @@ const EnderecoEmpresa = ({ setFormData, formData, nextPage }) => {
             }}
             width={"100%"}
             height={"30px"}
-            margin={"8px 0 20px 0"}
+            margin={"8px 0 5px 0"}
           />
           <div className="container__error">
             {cidadeError && <p>Por favor, preencha a cidade</p>}
           </div>
         </div>
       </div>
-      <ButtonWithArrow
-      width={"200px"}
-      height={"30px"}
-      margin={"30px"}
-      onClick={verify}
-      children={"Próximo"}
-    ></ButtonWithArrow>
+      <div className="formulario--buttons">
+        <button
+          type="button"
+          disabled={page == 0}
+          onClick={backPage}
+          style={{ fontSize: "12px", opacity: "60%", marginRight: "50px" }}
+        >
+          Voltar
+        </button>
+        <ButtonWithArrow
+          width={"200px"}
+          height={"30px"}
+          onClick={verify}
+          children={"Próximo"}
+        ></ButtonWithArrow>
+      </div>
     </div>
   );
 };
