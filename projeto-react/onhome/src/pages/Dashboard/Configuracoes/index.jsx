@@ -17,11 +17,11 @@ const Configuracoes = () => {
                         <div className='cards-description'>
                             <h1 className='cards-title'>Empresa</h1>
                             <div className="cards-content">
-                                <p className='paragraph-card'><b>Razão Social:</b> OnHome Digital Solutions Ltda.</p>
-                                <p className='paragraph-card'><b>CNPJ:</b> 01.555.287/0001-87</p>
-                                <p className='paragraph-card'><b>Nome Fantasia:</b> OnHome</p>
-                                <p className='paragraph-card'><b>Email:</b> onhome@contato.com</p>
-                                <p className='paragraph-card'><b>Telefone:</b> (11) 96892-3112</p>
+                                <p className='paragraph-card'><b>Razão Social:</b>.</p>
+                                <p className='paragraph-card'><b>CNPJ:</b> </p>
+                                <p className='paragraph-card'><b>Nome Fantasia:</b> </p>
+                                <p className='paragraph-card'><b>Email:</b> </p>
+                                <p className='paragraph-card'><b>Telefone:</b> </p>
                             </div>
                         </div>
                     </Border>
@@ -30,10 +30,10 @@ const Configuracoes = () => {
                         <div className='cards-description'>
                             <h1 className='cards-title'>Plano</h1>
                             <div className="cards-content">
-                                <p className='paragraph-card'><b>Opção:</b> Plano 1</p>
-                                <p className='paragraph-card'><b>Tipo:</b> Semestral</p>
-                                <p className='paragraph-card'><b>Quantidade de máquinas:</b> 16</p>
-                                <p className='paragraph-card'><b>Data da contratatação:</b> 21/02/2022</p>
+                                <p className='paragraph-card'><b>Opção:</b> </p>
+                                <p className='paragraph-card'><b>Tipo:</b> </p>
+                                <p className='paragraph-card'><b>Quantidade de máquinas:</b> </p>
+                                <p className='paragraph-card'><b>Data da contratação:</b></p>
                             </div>
                         </div>
                         </div>
@@ -44,13 +44,13 @@ const Configuracoes = () => {
                         <div className='cards-description'>
                             <h1 className='cards-title'>Endereço</h1>
                             <div className="cards-content">
-                                <p className="paragraph-card"><b>Logradouro:</b> Rua Haddock Lobo</p>
-                                <p className="paragraph-card"><b>Número:</b> 595</p>
-                                <p className="paragraph-card"><b>Complemento:</b> 1 andar</p>
-                                <p className="paragraph-card"><b>CEP:</b> 01414-001</p>
-                                <p className="paragraph-card"><b>Bairro:</b> Cerqueira César</p>
-                                <p className='paragraph-card'><b>Cidade:</b> São Paulo</p>
-                                <p className="paragraph-card"><b>Estado:</b> São Paulo</p>
+                                <p className="paragraph-card"><b>Logradouro:</b></p>
+                                <p className="paragraph-card"><b>Número:</b> </p>
+                                <p className="paragraph-card"><b>Complemento:</b> </p>
+                                <p className="paragraph-card"><b>CEP:</b> </p>
+                                <p className="paragraph-card"><b>Bairro:</b> </p>
+                                <p className='paragraph-card'><b>Cidade:</b> </p>
+                                <p className="paragraph-card"><b>Estado:</b> </p>
                             </div>
                         </div>
                         <div>

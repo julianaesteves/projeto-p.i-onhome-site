@@ -1,8 +1,8 @@
 import "./style.css";
 
-const Button = ({ value, height, width, margin, borderRadius }) => {
+const Button = ({ value, height, width, margin, borderRadius, onClick }) => {
     return (
-        <button className="button--gradient" 
+        <button onClick={onClick} className="button--gradient" 
             style={{ 
                 width: width, 
                 height: height,
