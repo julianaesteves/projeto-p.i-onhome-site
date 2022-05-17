@@ -27,10 +27,10 @@ const Licenca = ({ setFormData, formData, nextPage, backPage, page }) => {
 
   const [opcaoError, setOpcaoError] = useState(false);
   const [periodoError, setPeriodoError] = useState(false);
-  const [qtdMaquinasError, setQtdMaquinasError] = useState(false);
+  const [qtdComputadoresError, setqtdComputadoresError] = useState(false);
 
   function verify() {
-    if (formData.opcoes == "") {
+    if (formData.plano == "") {
       setOpcaoError(true);
     } else {
       setOpcaoError(false);
@@ -40,15 +40,15 @@ const Licenca = ({ setFormData, formData, nextPage, backPage, page }) => {
     } else {
       setPeriodoError(false);
     }
-    if (formData.qtdMaquinas == "") {
-      setQtdMaquinasError(true);
+    if (formData.qtdComputadores == "") {
+      setqtdComputadoresError(true);
     } else {
-      setQtdMaquinasError(false);
+      setqtdComputadoresError(false);
     }
     if (
-      formData.opcoes != "" &&
+      formData.plano != "" &&
       formData.periodo != "" &&
-      formData.qtdMaquinas != ""
+      formData.qtdComputadores != ""
     ) {
       nextPage();
     }
@@ -69,22 +69,22 @@ const Licenca = ({ setFormData, formData, nextPage, backPage, page }) => {
         <div className="licenca--selects">
           <div>
             <select
-              name="opcoes"
-              value={formData.opcoes}
+              name="plano"
+              value={formData.plano}
               // onChange={
-              //   ((e) => setFormData({ ...formData, opcoes: e.target.value }),
+              //   ((e) => setFormData({ ...formData, plano: e.target.value }),
               //   setOpcaoError(false))
               // }
               onChange={({ target }) => {
-                setFormData({ ...formData, opcoes: target.value });
+                setFormData({ ...formData, plano: target.value });
                 setOpcaoError(false);
               }}
               className="licenca--gradientSelect"
             >
               <option value={""}>Selecione...</option>
-              <option value={1}>Opção 1</option>
-              <option value={2}>Opção 2</option>
-              <option value={3}>Opção 3</option>
+              <option value={1}>Plano 1</option>
+              <option value={2}>Plano 2</option>
+              <option value={3}>Plano 3</option>
             </select>
             <div className="container__error">
               {opcaoError && <p>Selecione uma opção</p>}
@@ -105,10 +105,9 @@ const Licenca = ({ setFormData, formData, nextPage, backPage, page }) => {
               className="licenca--gradientSelect"
             >
               <option value={""}>Selecione...</option>
-              <option value={1}>Anual</option>
-              <option value={2}>Semestral</option>
-              <option value={3}>Mensal</option>
-              <option value={4}>Personalizada</option>
+              <option value={"anual"}>Anual</option>
+              <option value={"semestral"}>Semestral</option>
+              <option value={"mensal"}>Mensal</option>
             </select>
             <div className="container__error">
               {periodoError && <p>Escolha o período</p>}
@@ -117,27 +116,27 @@ const Licenca = ({ setFormData, formData, nextPage, backPage, page }) => {
           <div className="input--maquinas">
             <Input
               type={"number"}
-              name={"qtdMaquinas"}
+              name={"qtdComputadores"}
               placeholder={"Quantidade de máquinas"}
-              value={formData.qtdMaquinas}
+              value={formData.qtdComputadores}
               width={190}
               margin={"10px 0 10px 10px"}
               // onChange={
-              //   ((e) => setFormData({ ...formData, qtdMaquinas: e.target.value }),
-              //   setQtdMaquinasError(false))
+              //   ((e) => setFormData({ ...formData, qtdComputadores: e.target.value }),
+              //   setqtdComputadoresError(false))
               // }
               onChange={({ target }) => {
-                setFormData({ ...formData, qtdMaquinas: target.value });
-                setQtdMaquinasError(false);
+                setFormData({ ...formData, qtdComputadores: target.value });
+                setqtdComputadoresError(false);
               }}
               onBlur={() => {
-                if (formData.qtdMaquinas == "") {
-                  setQtdMaquinasError(true);
+                if (formData.qtdComputadores == "") {
+                  setqtdComputadoresError(true);
                 }
               }}
             />
             <div className="container__error">
-              {qtdMaquinasError && <p>Por favor, preencha a quantidade</p>}
+              {qtdComputadoresError && <p>Por favor, preencha a quantidade</p>}
             </div>
           </div>
         </div>
