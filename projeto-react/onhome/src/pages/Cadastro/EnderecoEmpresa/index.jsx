@@ -3,6 +3,8 @@ import Input from "../../../components/Input/index.jsx";
 import "./style.css";
 import { useState } from "react";
 import ButtonWithArrow from "../../../components/ButtonWithArrow/index.jsx";
+import { formatarCep } from "../../../functions/formatter.js";
+
 
 const EnderecoEmpresa = ({
   setFormData,
@@ -18,6 +20,7 @@ const EnderecoEmpresa = ({
   const [estadoError, setEstadoError] = useState(false);
   const [cidadeError, setCidadeError] = useState(false);
 
+  console.log(formData.cep.length)
   function verify() {
     if (formData.logradouro == "") {
       setLogradouroError(true);
@@ -35,7 +38,7 @@ const EnderecoEmpresa = ({
     } else {
       setNumeroError(false);
     }
-    if (formData.cep.length != 8) {
+    if (formData.cep.length != 9) {
       setCepError(true);
     } else {
       setCepError(false);
@@ -53,7 +56,7 @@ const EnderecoEmpresa = ({
     if (
       formData.cidade != "" &&
       formData.estado != "" &&
-      formData.cep.length == 8 &&
+      formData.cep.length == 9 &&
       formData.numero != "" &&
       formData.bairro != "" &&
       formData.logradouro != ""
@@ -67,10 +70,6 @@ const EnderecoEmpresa = ({
       <Input
         name={"logradouro"}
         value={formData.logradouro}
-        // onChange={
-        //   ((e) => setFormData({ ...formData, logradouro: e.target.value }),
-        //   setLogradouroError(false))
-        // }
         onChange={({ target }) => {
           setFormData({ ...formData, logradouro: target.value });
           setLogradouroError(false);
@@ -91,10 +90,6 @@ const EnderecoEmpresa = ({
       <Input
         name={"bairro"}
         value={formData.bairro}
-        // onChange={
-        //   ((e) => setFormData({ ...formData, bairro: e.target.value }),
-        //   setBairroError(false))
-        // }
         onChange={({ target }) => {
           setFormData({ ...formData, bairro: target.value });
           setBairroError(false);
@@ -117,10 +112,6 @@ const EnderecoEmpresa = ({
           <Input
             name={"numero"}
             value={formData.numero}
-            // onChange={
-            //   ((e) => setFormData({ ...formData, numero: e.target.value }),
-            //   setNumeroError(false))
-            // }
             onChange={({ target }) => {
               setFormData({ ...formData, numero: target.value });
               setNumeroError(false);
@@ -133,7 +124,6 @@ const EnderecoEmpresa = ({
             width={"100%"}
             height={"30px"}
             margin={"8px 0 5px 0"}
-            type={"number"}
           />
           <div className="container__error">
             {numeroError && <p>Por favor, preencha o número</p>}
@@ -144,10 +134,6 @@ const EnderecoEmpresa = ({
           <Input
             name={"cep"}
             value={formData.cep}
-            // onChange={
-            //   ((e) => setFormData({ ...formData, cep: e.target.value }),
-            //   setCepError(false))
-            // }
             onChange={({ target }) => {
               setFormData({ ...formData, cep: target.value });
               setCepError(false);
@@ -160,7 +146,7 @@ const EnderecoEmpresa = ({
             width={"100%"}
             height={"30px"}
             margin={"8px 0 5px 0"}
-            type={"number"}
+            onInput={(e) => e.target.value = formatarCep(e.target.value)}
           />
           <div className="container__error">
             {cepError && <p>Por favor, preencha o CEP</p>}

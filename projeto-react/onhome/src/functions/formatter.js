@@ -1,8 +1,11 @@
-export function formatarCpf(ipt) {
-    return formatter(ipt, '###.###.###-##');
+export function formatarCNPJ(ipt) {
+    return formatter(ipt, '##.###.###/####-##');
 }
 export function formatarCep(ipt) {
     return formatter(ipt, '#####-###');
+}
+export function formatarTelefone(ipt) {
+    return formatter(ipt, '(##) #####-####');
 }
 function formatter(value, mask) {
     const text = value.replace(/\D/g, '');

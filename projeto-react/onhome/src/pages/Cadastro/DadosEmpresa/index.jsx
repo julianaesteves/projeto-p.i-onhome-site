@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import Input from "../../../components/Input/index.jsx";
 import "./style.css";
 import ButtonWithArrow from "../../../components/ButtonWithArrow/index.jsx";
+import { formatarCNPJ, formatarTelefone } from "../../../functions/formatter.js";
+
 const DadosEmpresa = ({ setFormData, formData, nextPage, backPage, page }) => {
   const [nomeFantasiaError, setNomeFantasiaError] = useState(false);
   const [cnpjError, setCNPJError] = useState(false);
@@ -9,13 +11,17 @@ const DadosEmpresa = ({ setFormData, formData, nextPage, backPage, page }) => {
   const [emailError, setEmailError] = useState(false);
   const [telefoneError, setTelefoneError] = useState(false);
 
+  // console.log(formData.telefoneEmpresa.length)
+  // console.log(formData.cnpj.length)
+
+
   function verify() {
     if (formData.nomeFantasia == "") {
       setNomeFantasiaError(true);
     } else {
       setNomeFantasiaError(false);
     }
-    if (formData.cnpj.length != 15) {
+    if (formData.cnpj.length != 18) {
       setCNPJError(true);
     } else {
       setCNPJError(false);
@@ -31,8 +37,8 @@ const DadosEmpresa = ({ setFormData, formData, nextPage, backPage, page }) => {
       setEmailError(false);
     }
     if (
-      formData.telefoneEmpresa.length != 10 ||
-      formData.telefoneEmpresa.length != 11
+      formData.telefoneEmpresa.length != 14 ||
+      formData.telefoneEmpresa.length != 15
     ) {
       setTelefoneError(true);
     } else {
@@ -40,13 +46,14 @@ const DadosEmpresa = ({ setFormData, formData, nextPage, backPage, page }) => {
     }
     if (
       formData.nomeFantasia != "" &&
-      formData.cnpj.length == 15 &&
+      formData.cnpj.length == 18 &&
       formData.razaoSocial != "" &&
       formData.emailEmpresa != "" &&
-      (formData.telefoneEmpresa.length == 10 ||
-        formData.telefoneEmpresa.length == 11)
-    ) {
-      console.log("foi?");
+      (
+        formData.telefoneEmpresa.length == 14 ||
+        formData.telefoneEmpresa.length == 15
+      )
+      ) {
       nextPage();
     }
   }
@@ -57,10 +64,6 @@ const DadosEmpresa = ({ setFormData, formData, nextPage, backPage, page }) => {
         <Input
           name={"nomeFantasia"}
           value={formData.nomeFantasia}
-          // onChange={(e) =>
-          //   setFormData({ ...formData, nomeFantasia: e.target.value }),
-          //   setNomeFantasiaError(false)
-          // }
           onChange={({ target }) => {
             setFormData({ ...formData, nomeFantasia: target.value });
             setNomeFantasiaError(false);
@@ -82,10 +85,6 @@ const DadosEmpresa = ({ setFormData, formData, nextPage, backPage, page }) => {
         <Input
           name={"cnpj"}
           value={formData.cnpj}
-          // onChange={(e) =>
-          //   setFormData({ ...formData, cnpj: e.target.value }),
-          //   setCNPJError(false)
-          // }
           onChange={({ target }) => {
             setFormData({ ...formData, cnpj: target.value });
             setCNPJError(false);
@@ -98,19 +97,15 @@ const DadosEmpresa = ({ setFormData, formData, nextPage, backPage, page }) => {
           width={"90%"}
           height={"30px"}
           margin={"8px 0 5px 0"}
-          type={"number"}
-        />
+          onInput={(e) => e.target.value = formatarCNPJ(e.target.value)}
+          />
         <div className="container__error">
-          {cnpjError && <p>O CNPJ deve ter 15 caracteres</p>}
+          {cnpjError && <p>O CNPJ deve ter 14 caracteres</p>}
         </div>
         <label className="formulario--label">Razão Social</label>
         <Input
           name={"razaoSocial"}
           value={formData.razaoSocial}
-          // onChange={(e) =>
-          //   setFormData({ ...formData, razaoSocial: e.target.value }),
-          //   setRazaoSocialError(false)
-          // }
           onChange={({ target }) => {
             setFormData({ ...formData, razaoSocial: target.value });
             setRazaoSocialError(false);
@@ -132,10 +127,6 @@ const DadosEmpresa = ({ setFormData, formData, nextPage, backPage, page }) => {
           name={"emailEmpresa"}
           type="email"
           value={formData.emailEmpresa}
-          // onChange={(e) =>
-          //   setFormData({ ...formData, emailEmpresa: e.target.value }),
-          //   setEmailError(false)
-          // }
           onChange={({ target }) => {
             setFormData({ ...formData, emailEmpresa: target.value });
             setEmailError(false);
@@ -156,10 +147,6 @@ const DadosEmpresa = ({ setFormData, formData, nextPage, backPage, page }) => {
         <Input
           name={"telefoneEmpresa"}
           value={formData.telefoneEmpresa}
-          // onChange={(e) =>
-          //   setFormData({ ...formData, telefoneEmpresa: e.target.value }),
-          //   setTelefoneError(false)
-          // }
           onChange={({ target }) => {
             setFormData({ ...formData, telefoneEmpresa: target.value });
             setTelefoneError(false);
@@ -172,7 +159,8 @@ const DadosEmpresa = ({ setFormData, formData, nextPage, backPage, page }) => {
           width={"30%"}
           height={"30px"}
           margin={"8px 0 5px 0"}
-          type={"number"}
+          onInput={(e) => e.target.value = formatarTelefone(e.target.value)}
+
         />
         <div className="container__error">
           {telefoneError && <p>Por favor, preencha o telefone com o DDD</p>}
