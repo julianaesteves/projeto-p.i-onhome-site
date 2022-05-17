@@ -3,9 +3,10 @@ import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 import './style.css'
 
 
-const ButtonWithArrow = ({style, children}) => {
+const ButtonWithArrow = ({style, children, onClick}) => {
     return (
         <button 
+        onClick={onClick}
             className="button-with-arrow" 
             style={style}>{children}
             <ArrowRightAltIcon 

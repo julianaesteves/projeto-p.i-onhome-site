@@ -13,20 +13,17 @@ const Header = () => {
                     <nav>
                         <ul>
                             <li><LinkScroll to='solutions--container' smooth={true} duration={1000}>Serviços</LinkScroll></li>
-                            <li><LinkScroll to='products' smooth={true} duration={1000}>Produtos</LinkScroll></li>
-                            <li>Sobre nós</li>
-                            <li>Planos</li>
-                            <li>Suporte</li>
-                         </ul>
+                                <li><LinkScroll to='products' smooth={true} duration={1000}>Produtos</LinkScroll></li>
+                                <li>Sobre nós</li>
+                                <li>Suporte</li>
+                                <li><LinkScroll to='contact--container' smooth={true} duration={1000}>Contato</LinkScroll></li>
+                         
+                        </ul>
                     </nav>
                 </div>
                 <div className="header--login">
-
-
-                    <button className='btn--login'><Link to={"/login"}>Login</Link></button>
-
-
-                    <button className='btn--registrar'>Registrar-se</button>
+                    <Link to={"/login"}><button className='btn--login' style={{color: "#FFF"}}>Login</button></Link>
+                    <button className='btn--registrar'><LinkScroll to='contact--container' smooth={true} duration={1000}>Registrar-se</LinkScroll></button>
                 </div>
             </header>
         </div>

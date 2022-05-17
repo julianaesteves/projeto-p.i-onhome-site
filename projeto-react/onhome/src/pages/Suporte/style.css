@@ -1,0 +1,30 @@
+.suporte--background {
+    height: 100vh;
+    background: #080425;
+}
+
+.suporte--gradientBackground {
+    height: 100%;
+    background: linear-gradient(9deg, rgba(8,4,37,0.8379945728291316) 14%, rgba(92,1,188,0.23855479691876746) 68%, rgba(255,0,201,0.18253238795518212) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    flex-direction: column;
+}
+
+.suporte--gradientBackground h3 {
+    text-align: center;
+}
+.suporte--gradientBackground p{
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.suporte--container {
+    flex-direction: column;
+}
+
+.map--container {
+    display: flex;
+}

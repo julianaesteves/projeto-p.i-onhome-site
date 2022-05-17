@@ -7,7 +7,7 @@ const ConnectedMachines = () => {
         { name: 'Emergência', value: 1 },
     ];
 
-    const chartColor = ["#c4342d", "#ffeb7a", "#a9d171"]
+    const chartColor = ["#00b02f", "#ffeb7a", "#c4342d"]
 
     return (
         <div style={{ display: "flex", alignItems: "center"}}>

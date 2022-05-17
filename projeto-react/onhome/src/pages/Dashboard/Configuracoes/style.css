@@ -7,6 +7,10 @@
     display: flex;
 }
 
+.title .config--title{
+    margin-right: 100%;
+}
+
 .cards {
     width: 100%;
     display: flex;
