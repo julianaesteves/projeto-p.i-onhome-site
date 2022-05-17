@@ -24,9 +24,9 @@ const Form = () => {
     complemento: "",
     estado: "",
     cidade: "",
-    opcoes: "",
+    plano: "",
     periodo: "",
-    qtdMaquinas: "",
+    qtdComputadores: "",
   });
 
   const PageDisplay = () => {
