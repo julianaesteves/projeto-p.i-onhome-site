@@ -5,6 +5,7 @@ import GradientText from "../../components/GradientText";
 import Input from "../../components/Input";
 import { useState } from "react";
 import Button from "../../components/Button"
+import { formatarCep } from "../../functions/formatter";
 const Suporte = () => {
   const [logradouro, setLogradouro] = useState("");
   const [logradouroError, setLogradouroError] = useState(false);
@@ -37,7 +38,7 @@ const Suporte = () => {
     } else {
       setNumeroError(false);
     }
-    if (cep.length != 8) {
+    if (cep.length != 9) {
       setCepError(true);
     } else {
       setCepError(false);
@@ -55,7 +56,7 @@ const Suporte = () => {
     if (
       cidade != "" &&
       estado != "" &&
-      cep == 8 &&
+      cep == 9 &&
       numero != "" &&
       bairro != "" &&
       logradouro != ""
@@ -97,6 +98,7 @@ const Suporte = () => {
                     setCepError(true);
                   }
                 }}
+                onInput={(e) => e.target.value = formatarCep(e.target.value)}
               />
               <div className="container__error">
                 {cepError && <p>Por favor, preencha o cep</p>}
