@@ -1,11 +1,11 @@
 import React from 'react'
 import Header from '../../components/Header';
-import DownArrow from '../../components/DownArrow';
-import ContactUs from './components/ContactUs';
-import Feedbacks from './components/Feedbacks';
-import Footer from './components/Footer';
-import Produtos from './components/Produtos';
-import Solutions from './components/Solutions';
+import DownArrow from '../../components/DownArrow/';
+import ContactUs from './Components/ContactUs';
+import Feedbacks from './Components/Feedbacks';
+import Footer from './Components/Footer';
+import Produtos from './Components/Produtos';
+import Solutions from './Components/Solutions';
 import "./style.css";
 
 const InitialPage = () => {
