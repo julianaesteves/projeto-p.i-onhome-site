@@ -89,7 +89,6 @@ const ContactUs = () => {
           width={150}
           height={30}
           value={"Enviar"}
-          color="white"
           onClick={onSubmit}
         />
       </div>
