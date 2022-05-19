@@ -1,30 +1,14 @@
-.feedback--background{
-    background-color: #0F0B30;
-    width: 100%;
-    display: flex;
+.feedback--background {
     padding: 0 0 100px 0;
 }
-
-.feedback--container{
-    width: 70rem;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.feedback--title{
+.feedback--cards {
     text-align: center;
-    width: 40%;
-}
-
-.feedback--cards{
-    display: inline-flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.feedback--clientName{
     display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+@media only screen and (max-width: 600px) {
+    .feedback--cards {
+        flex-direction: column;
+    }
 }

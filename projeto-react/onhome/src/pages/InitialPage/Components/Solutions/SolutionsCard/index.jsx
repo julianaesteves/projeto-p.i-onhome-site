@@ -1,14 +1,12 @@
-import Border from "../../../../../components/Border"
+import RlBorder from "../../../../../components/RlBorder"
 import "./style.css"
 
 const SolutionsCard = ({ iconUrl, description }) => {
     return (
-        <Border width={"220px"} height={"10rem"} margin={"0.8rem"} padding={"20px"}>
+        <RlBorder centerVertical='middle' size='size-3'>
             <img src={iconUrl} alt="" className="card--icon" />
-            <div className="card--description">
-                {description}
-            </div>
-        </Border>
+            <div className="card--description">{description}</div>
+        </RlBorder>
     )
 }
 

@@ -1,0 +1,21 @@
+.rl-border-gradient {
+    width: 100%;
+    padding: 0 10px;
+    border-width: 2px;
+    border-style: solid;
+    background: linear-gradient(#1F1B42, #1F1B42) padding-box,
+                linear-gradient(to right, hsl(180, 100%, 50%), hsl(300, 100%, 50%)) border-box;
+    border-radius: 20px;
+    border-color: transparent;
+}
+.size-3 {
+    flex-basis: calc(100%/3 - 10px);
+}
+.middle {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}

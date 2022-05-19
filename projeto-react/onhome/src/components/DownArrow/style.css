@@ -1,0 +1,13 @@
+.down--arrow {
+    padding-top: 100px;
+    animation: 1s up-and-down infinite alternate;
+}
+
+@keyframes up-and-down {
+    0% {
+        transform: translateY(0px);
+    }
+    100% {
+        transform: translateY(-40px);
+    }
+}
