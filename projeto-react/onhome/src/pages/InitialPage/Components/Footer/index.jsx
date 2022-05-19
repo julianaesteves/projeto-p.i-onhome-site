@@ -1,6 +1,8 @@
 import { UTurnLeftOutlined } from "@mui/icons-material"
 import ButtonWithArrow from "../../../../components/ButtonWithArrow"
 import GradientText from "../../../../components/GradientText"
+import { Link } from "react-router-dom";
+
 
 import "./style.css"
 
@@ -37,7 +39,7 @@ const Footer = () => {
                         fontSizeTitle={40}
                         fontWeight={"bold"}
                     />
-                    <ButtonWithArrow value={"Seguir"} style={{ margin: "20px 0" }}>Seguir</ButtonWithArrow>
+                    {/* <Link to='contact'><ButtonWithArrow value={"Seguir"} style={{ margin: "20px 0" }}>Seguir</ButtonWithArrow></Link> */}
                     <div className="footer--icons">
                         {mediaIcons.map(image => (
                             <img src={image} alt="" />

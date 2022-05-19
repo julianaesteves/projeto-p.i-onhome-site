@@ -17,9 +17,8 @@ const Header = () => {
                     <ul>
                         <li><LinkScroll to='solutions--container' smooth={true} duration={1000}>Serviços</LinkScroll></li>
                         <li><LinkScroll to='products' smooth={true} duration={1000}>Produtos</LinkScroll></li>
-                        <li>Sobre nós</li>
-                        <li>Suporte</li>
-                        <li><LinkScroll to='contact--container' smooth={true} duration={1000}>Contato</LinkScroll></li>
+                        <li><Link to={"/suporte"}>Suporte</Link></li>
+                        <li><LinkScroll to='contact' smooth={true} duration={1000}>Contato</LinkScroll></li>
                     </ul>
                 </nav>
                 <div className="rl-login">
@@ -30,13 +29,12 @@ const Header = () => {
             <nav className="rl-navigation rl-transparent">
                 <div className="rl-navigation-container">
                     <MenuHamburguerAberto />
-                    <LinkScroll to='solutions--container' smooth={true} duration={1000}>Serviços</LinkScroll>
+                    <LinkScroll to='solutions' smooth={true} duration={1000}>Serviços</LinkScroll>
                     <LinkScroll to='products' smooth={true} duration={1000}>Produtos</LinkScroll>
-                    <p>Sobre nós</p>
-                    <p>Suporte</p>
-                    <LinkScroll to='contact--container' smooth={true} duration={1000}>Contato</LinkScroll>
+                    <Link to={"/suporte"}>Suporte</Link>
+                    <LinkScroll to='contact' smooth={true} duration={1000}>Contato</LinkScroll>
                     <Link to={"/login"}>Login</Link>
-                    <LinkScroll to='contact--container' smooth={true} duration={1000}>Registrar-se</LinkScroll>
+                    <LinkScroll to='contact' smooth={true} duration={1000}>Registrar-se</LinkScroll>
                 </div>
                 <span className="rl-navigation-menu-close" />
             </nav>
