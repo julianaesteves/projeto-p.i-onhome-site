@@ -7,6 +7,9 @@ export function formatarCep(ipt) {
 export function formatarTelefone(ipt) {
     return formatter(ipt, '(##) #####-####');
 }
+export function tirarMascara(ipt) {
+    return ipt.replace(/\D/g, '');
+}
 function formatter(value, mask) {
     const text = value.replace(/\D/g, '');
     const special = value.replace(/\d/g, '');
