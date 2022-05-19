@@ -1,74 +1,61 @@
+.rl-container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
 .div--mainBox {
     background-color: #0F0B30;
-    display: flex;
 }
-
-.div--mainGradient{
-    height: 100vh;
-    width: 100%;
-    /* background: rgb(15,11,48);
-    background: linear-gradient(5deg, rgba(15,11,48,1) 16%, rgba(23,0,82,1) 39%, rgba(41,7,106,1) 58%, rgba(91,8,126,0.9416360294117647) 100%); */
-    /* background: rgb(15,11,48);
-    background: linear-gradient(5deg, rgba(15,11,48,1) 16%, rgba(23,0,82,0.913624824929972) 39%, rgba(41,7,106,1) 58%, rgba(91,8,126,0.9416360294117647) 100%); */
-    background: #0f0b30;
+.div--mainGradient {
     background: linear-gradient(5deg, rgba(15,11,48,1) 16%, rgba(23,0,82,0.913624824929972) 39%, rgba(41,7,106,1) 58%, rgba(118,0,150,0.7679665616246498) 100%);
-
-
 }
-
-.about--content{
+.rl-about {
+    padding-top: 100px;
+}
+.rl-about-content {
     display: flex;
     flex-direction: column;
-    margin-top: 10%;
+    align-items: center;
     text-align: center;
+    gap: 10px;
 }
-
-.subtitle{
+.rl-about-content .rl-subtitle {
     font-size: 45px;
     color: white;
     font-weight: lighter;
 }
-
-.header--title{
-    font-size: 80px;
+.rl-about-content .rl-about-title {
+    font-size: 5em;
     color: #7879F1;
     font-weight: bolder;
 }
-
-.about--onhome{
+.rl-about-content .rl-about-onhome {
     font-size: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
     color: white;
     font-weight: lighter;
-    margin: auto;
-    width: 35%;
-    height: 120px;
+    max-width: 500px;
 }
-
-.down--arrow{
-    margin-top: 100px;
-    animation: 1s up-and-down infinite alternate;
-}
-
-@keyframes up-and-down {
-    0% {
-        transform: translateY(0px);
-    }
-    100% {
-        transform: translateY(-40px);
-    }
-}
-
 .solutions {
+    background-color: #0F0B30;
     padding-top: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.feedbacks {
     background-color: #0F0B30;
 }
-
-
-
+.feedbacks > .rl-container {
+    max-width: 800px;
+}
+.contact {
+    background-color: #0F0B30;
+}
+@media only screen and (max-width: 600px) {
+    .rl-about-content .rl-subtitle {
+        font-size: 1.5em;
+    }
+    .rl-about-content .rl-about-title {
+        font-size: 2.5em;
+    }
+}

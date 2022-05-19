@@ -1,7 +1,7 @@
-import GradientText from "../../../../components/GradientText"
-import SolutionsCard from "./SolutionsCard"
+import GradientText from '../../../../components/GradientText';
+import SolutionsCard from './SolutionsCard';
 
-import "./style.css"
+import "./style.css";
 
 const Solutions = () => {
     const cards = [
@@ -32,20 +32,22 @@ const Solutions = () => {
     ]
 
     return (
-        <div className="solutions--container">
+        <>
             <div className="solutions--header">
-                <img src="./images/notebook.png" alt="" width={650}/>
+                <img src="./images/notebook.png" alt="" />
                 <GradientText title={"Potencialize seu negócio, produtividade é na OnHome"} />
             </div>
-            <h3 className="solutions--title">Um mundo de possibilidades</h3>
-            <div className="solutions--content">
-                <div className="solutions--cards">
-                    {cards.map((card, index) => (
-                        <SolutionsCard key={index} description={card.description} iconUrl={card.url}/>
-                    ))}
+            <div className="solutions--container">
+                <h3 className="solutions--title">Um mundo de possibilidades</h3>
+                <div className="solutions--content">
+                    <div className="solutions--cards">
+                        {cards.map((card, index) => (
+                            <SolutionsCard key={index} description={card.description} iconUrl={card.url} />
+                        ))}
+                    </div>
                 </div>
             </div>
-        </div>
+        </>
     )
 }
 

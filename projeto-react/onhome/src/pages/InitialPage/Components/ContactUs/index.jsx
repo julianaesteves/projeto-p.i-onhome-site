@@ -1,4 +1,4 @@
-import Input from "../../../../components/Input"
+import RlInput from "../../../../components/RlInput"
 import GradientText from "../../../../components/GradientText"
 import Button from "../../../../components/Button"
 
@@ -11,30 +11,36 @@ const ContactUs = () => {
     ]
 
     return (
-        <div className="contact--container">
-            <div className="contact--header"> 
-                <GradientText 
+        <div className="contact-content">
+            <div className="contact--header">
+                <GradientText
                     className="contact--title"
                     textAlign="center"
-                    title="Entre em contato" 
+                    title="Entre em contato"
                     subtitle="Entre em contato para obter mais informações ou fazer um orçamento que se adeque a suas necessidades"
+                    margin='0 auto'
                 />
             </div>
-            <div className="contact--content">
-                <div className="contact--content--userInfo">
-                    {inputLabels.map(label => (
-                        <Input placeholder={label} height={30} width={300} margin={"20px 5px"}/>
-                    ))}
-                </div>
-                <Input placeholder={"Escreva uma mensagem"} height={120} width={650} borderRadius={"20px"}/>
-                <Button
-                    width={150} 
-                    height={30} 
-                    margin={"20px 0"}
-                    value={"Enviar"}
-                /> 
+            <div className="contact-info">
+                {inputLabels.map(label => (
+                    <RlInput
+                        placeholder={label}
+                    />
+                ))}
             </div>
-        </div>    
+            <div className="contact-description">
+                <RlInput
+                    placeholder={"Escreva uma mensagem"}
+                    borderRadius='20px'
+                />
+                <Button
+                    width={150}
+                    height={30}
+                    value={"Enviar"}
+                    color='white'
+                />
+            </div>
+        </div>
     )
 }
 

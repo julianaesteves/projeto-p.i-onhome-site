@@ -1,25 +1,19 @@
-import Border from '../../../../../components/Border'
+import RlBorder from '../../../../../components/RlBorder'
 import TextWithImage from '../../Produtos/TextWithImage'
 import './style.css'
 
 const FeedbackCard = (props) => {
     return (
-        <div>
-            <Border width={"220px"} height={"150px"} margin={"0.8rem"} padding={"20px"}>
-                <div className='feedback--clientName'>
-                    <TextWithImage
-                        title={props.title}
-                        fontSizeTitle={props.fontSizeTitle}
-
-                        label={props.label} 
-                        fontSizeLabel={props.fontSizeLabel}
-
-                        subtitle={props.subtitle}
-                        fontSizeSubtitle={props.fontSizeSubtitle}
-                    />
-                </div>
-            </Border>
-        </div>
+        <RlBorder centerVertical='middle' size='size-3'>
+            <TextWithImage
+                title={props.title}
+                fontSizeTitle={props.fontSizeTitle}
+                label={props.label}
+                fontSizeLabel={props.fontSizeLabel}
+                subtitle={props.subtitle}
+                fontSizeSubtitle={props.fontSizeSubtitle}
+            />
+        </RlBorder>
     )
 }
 

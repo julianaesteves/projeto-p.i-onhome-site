@@ -1,5 +1,8 @@
+import { UTurnLeftOutlined } from "@mui/icons-material"
 import ButtonWithArrow from "../../../../components/ButtonWithArrow"
 import GradientText from "../../../../components/GradientText"
+import { Link } from "react-router-dom";
+
 
 import "./style.css"
 
@@ -26,33 +29,35 @@ const Footer = () => {
     ]
 
     return (
-        <div className="footer--container">
-            <div className="footer--description">
-                <GradientText 
-                    textAlign="left"
-                    title={"OnHome"} 
-                    subtitle={subtitle} 
-                    fontSizeTitle={40}
-                    fontWeight={"bold"} 
-                />
-                <ButtonWithArrow value={"Seguir"} style={{ margin: "20px 0"}}>Seguir</ButtonWithArrow>
-                <div className="footer--icons">
-                    {mediaIcons.map(image => (
-                        <img src={image} alt="" />
+        <footer className="footer">
+            <div className="footer--content">
+                <div className="footer--description">
+                    <GradientText
+                        textAlign="left"
+                        title={"OnHome"}
+                        subtitle={subtitle}
+                        fontSizeTitle={40}
+                        fontWeight={"bold"}
+                    />
+                    {/* <Link to='contact'><ButtonWithArrow value={"Seguir"} style={{ margin: "20px 0" }}>Seguir</ButtonWithArrow></Link> */}
+                    <div className="footer--icons">
+                        {mediaIcons.map(image => (
+                            <img src={image} alt="" />
+                        ))}
+                    </div>
+                </div>
+                <div className="footer--links">
+                    {footerList.map(item => (
+                        <ul className="footer--list">
+                            <li className="footer--link--title">{item.title}</li>
+                            {item.options.map(option => (
+                                <li className="footer--option">{option}</li>
+                            ))}
+                        </ul>
                     ))}
                 </div>
             </div>
-            <div className="footer--links">
-                {footerList.map(item => (
-                    <div className="footer--list">
-                        <li className="footer--link--title">{item.title}</li>
-                        {item.options.map(option => (
-                            <li className="footer--option">{option}</li>
-                        ))}
-                    </div>
-                ))}
-            </div>
-        </div>
+        </footer>
     )
 }
 

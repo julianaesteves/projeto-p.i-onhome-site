@@ -1,8 +1,9 @@
-.card--description {
-    color: #fff;
+.rl-solution-card-content {
+    padding: 20px;
 }
-
 .card--icon {
-    width: 5rem;
+    width: 4em;
+}
+.card--description {
     color: #fff;
 }

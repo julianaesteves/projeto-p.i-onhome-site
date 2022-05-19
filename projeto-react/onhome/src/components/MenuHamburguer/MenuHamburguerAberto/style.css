@@ -1,0 +1,28 @@
+label.open {
+    cursor: pointer;
+    position: relative;
+    display: block;
+    height: 22px;
+    width: 30px;
+    margin-bottom: 8px;
+}
+label.open span {
+    position: absolute;
+    display: block;
+    height: 5px;
+    width: 100%;
+    border-radius: 30px;
+    background: hsl(0, 100%, 100%);
+    transition: 0.25s ease-in-out;
+}
+label.open span:nth-child(1) {
+    transform: rotate(-45deg);
+    top: 8px;
+}
+label.open span:nth-child(2) {
+    opacity: 0;
+}
+label.open span:nth-child(3) {
+    transform: rotate(45deg);
+    top: 8px;
+}
