@@ -1,0 +1,14 @@
+.worker-mainContainer {
+    margin-bottom: 10px;
+}
+
+.worker--container {
+    display: flex;
+    height: 80px;
+    padding: 10px 0 0 10px;
+}
+
+.worker--container .worker--name{
+    color: #fff;
+    font-size: 15px;
+}
