@@ -6,6 +6,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: 300px;
 }
 
 .maquinas-header .maquinas-legend {
@@ -29,13 +30,85 @@
 .maquinas-content {
     display: flex;
     justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    /* max-width: 1100px; */
+    /* align-items: center; */
+    flex-wrap: no-wrap;
+    max-width: 1100px;
     overflow-y: auto;
-    height: calc(100vh - 150px) ;
+    /* height: calc(100vh - 150px); */
+    position: relative;
 }
 
 .maquinas-content div {
     color: #fff;
+}
+
+.maquinas-content .arrow--goBack{
+    position: fixed;
+    color: white;
+    font-size: 70px;
+    left: 250px;
+    top: 170px;
+    opacity: .7;
+}
+
+.maquinas-content .arrow--goBack:hover{
+    position: fixed;
+    color: white;
+    transform: scale(1.2);
+    transition: all ease 500ms;
+    left: 250px;
+    top: 170px;
+    opacity: 1;
+}
+
+.maquinas-content .arrow--goNext{
+    position: fixed;
+    color: white;
+    font-size: 70px;
+    right: 10px;
+    top: 170px;
+    opacity: .7;
+}
+
+.maquinas-content .arrow--goNext:hover{
+    position: fixed;
+    color: white;
+    transform: scale(1.2);
+    transition:all ease 500ms;
+    right: 10px;
+    top: 170px;
+    opacity: 1;
+}
+
+.maquinas--workerGraphs_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1100px;
+    max-height: 400px;
+    margin: 10px 0 0 20px;
+}
+
+.maquinas--workerGraphs_content {
+    display: flex;
+    width: 95%;
+    height: 400px;
+    flex-wrap: wrap;
+}
+
+.maquinas--graphPlaceholder {
+    color: rgb(122, 122, 122);
+    justify-content: center;
+    font-size: 16px;
+}
+
+.maquinas--itemGraph{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.maquinas--label {
+    color: white;
 }
