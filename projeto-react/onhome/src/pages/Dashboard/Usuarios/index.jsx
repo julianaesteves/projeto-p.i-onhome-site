@@ -8,51 +8,55 @@ import "./style.css";
 import Button from "../../../components/Button";
 
 const Usuarios = () => {
-  const [userName, setUserName] = useState("");
   const [userNameError, setUserNameError] = useState(false);
-  const [userEmail, setUserEmail] = useState("");
   const [userEmailError, setUserEmailError] = useState(false);
-  const [permission, setPermission] = useState("");
   const [permissionError, setPermissionError] = useState(false);
-  const [area, setArea] = useState("");
   const [areaError, setAreaError] = useState(false);
-  const [senha, setSenha] = useState("");
   const [senhaError, setSenhaError] = useState(false);
 
+  const [usuarios, setUsuarios] = useState({
+    userName: "",
+    userEmail: "",
+    permission: "",
+    area: "",
+    senha: ""
+  })
+
   function verify() {
-    if (userName == "") {
+    if (usuarios.userName == "") {
       setUserNameError(true);
     } else {
       setUserNameError(false);
     }
-    if (userEmail == "") {
+    if (usuarios.userEmail == "") {
       setUserEmailError(true);
     } else {
       setUserEmailError(false);
     }
-    if (senha == "") {
+    if (usuarios.senha.length < 8) {
       setSenhaError(true);
     } else {
       setSenhaError(false);
     }
-    if (permission == "") {
+    if (usuarios.permission == "") {
       setPermissionError(true);
     } else {
       setPermissionError(false);
     }
-    if (area == "") {
+    if (usuarios.area == "") {
       setAreaError(true);
     } else {
       setAreaError(false);
     }
     if (
-      userName != "" &&
-      userEmail != "" &&
-      senha > 7 &&
-      area != "" &&
-      permission != ""
+      usuarios.userName != "" &&
+      usuarios.userEmail != "" &&
+      usuarios.senha.length >= 8 &&
+      usuarios.area != "" &&
+      usuarios.permission != ""
     ) {
       console.log("Usuário cadastrado com sucesso!");
+      console.log(usuarios)
     }
   }
 
@@ -77,13 +81,13 @@ const Usuarios = () => {
             <Input
               type={"text"}
               name={"nome"}
-              value={userName}
-              onChange={(e) => {
-                setUserName(e.target.value);
+              value={usuarios.userName}
+              onChange={({ target }) => {
+                setUsuarios({ ...usuarios, userName: target.value });
                 setUserNameError(false);
               }}
               onBlur={() => {
-                if (userName == "") {
+                if (usuarios.userName == "") {
                   setUserNameError(true);
                 }
               }}
@@ -95,13 +99,14 @@ const Usuarios = () => {
             <Input
               type={"email"}
               name={"email"}
-              value={userEmail}
-              onChange={(e) => {
-                setUserEmail(e.target.value);
+              value={usuarios.userEmail}
+              value={usuarios.userEmail}
+              onChange={({ target }) => {
+                setUsuarios({ ...usuarios, userEmail: target.value });
                 setUserEmailError(false);
               }}
               onBlur={() => {
-                if (userEmail == "") {
+                if (usuarios.userEmail == "") {
                   setUserEmailError(true);
                 }
               }}
@@ -113,12 +118,14 @@ const Usuarios = () => {
             <Input
               type={"password"}
               name={"senha"}
-              onChange={(e) => {
-                setSenha(e.target.value);
+              value={usuarios.senha}
+              onChange={({ target }) => {
+                setUsuarios({ ...usuarios, senha: target.value });
+        
                 setSenhaError(false);
               }}
               onBlur={() => {
-                if (senha == "") {
+                if (usuarios.senha == "") {
                   setSenhaError(true);
                 }
               }}
@@ -132,9 +139,9 @@ const Usuarios = () => {
               name=""
               id=""
               className="cadastro--gradientSelect"
-              value={permission}
-              onChange={(e) => {
-                setPermission(e.target.value);
+              value={usuarios.permission}
+              onChange={({ target }) => {
+                setUsuarios({ ...usuarios, permission: target.value });
                 setPermissionError(false);
               }}
             >
@@ -152,9 +159,9 @@ const Usuarios = () => {
               name=""
               id=""
               className="cadastro--gradientSelect"
-              value={area}
-              onChange={(e) => {
-                setArea(e.target.value);
+              value={usuarios.area}
+              onChange={({ target }) => {
+                setUsuarios({ ...usuarios, area: target.value });
                 setAreaError(false);
               }}
             >
