@@ -10,20 +10,35 @@ const ContactUs = () => {
 
   const [mensagem, setMensagem] = useState("");
   const [mensagemError, setMensagemError] = useState(false);
-  const [email, setEmail] = useState("");
-  const [nome, setNome] = useState("");
+  const [emailError, setEmailError] = useState("");
+  const [nomeError, setNomeError] = useState("");
+
+  const [customer, setCustomer] = useState({
+    customerName: "",
+    customerEmail: ""
+  })
+
+  const sendEmail = async () => {
+    await fetch('http://localhost:8080/mailer', {
+      method: "POST",
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(customer)
+    })
+  }
 
   function verify() {
-    if (mensagem != "" && email != "" && nome != "") {
+    if (mensagem != "" && customer.customerEmail != "" && customer.customerName != "") {
       console.log("Email enviado");
     } else {
       setMensagemError(true);
     }
   }
-
+  
   const onSubmit = (e) => {
     e.preventDefault();
     verify();
+    sendEmail();
+    console.log(customer)
   };
 
   return (
@@ -41,13 +56,13 @@ const ContactUs = () => {
         <RlInput
           placeholder={"Seu nome"}
           borderRadius="20px"
-          value={nome}
-          onChange={(e) => {
-            setNome(e.target.value);
-            setMensagemError(false);
+          value={customer.customerName}
+          onChange={({ target }) => {
+            setCustomer({ ...customer, customerName: target.value});
+            setMensagemError(false); 
           }}
           onBlur={() => {
-            if (nome == "") {
+            if (customer.customerName == "") {
               setMensagemError(true);
             }
           }}
@@ -55,13 +70,13 @@ const ContactUs = () => {
         <RlInput
           placeholder={"Seu e-mail"}
           borderRadius="20px"
-          value={email}
-          onChange={(e) => {
-            setEmail(e.target.value);
-            setMensagemError(false);
+          value={customer.customerEmail}
+          onChange={({ target }) => {
+            setCustomer({ ...customer, customerEmail: target.value});
+            setMensagemError(false); 
           }}
           onBlur={() => {
-            if (email == "") {
+            if (customer.customerEmail == "") {
               setMensagemError(true);
             }
           }}
