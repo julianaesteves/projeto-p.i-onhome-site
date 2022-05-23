@@ -4,9 +4,9 @@ import Login from './pages/Login/index';
 import TelaInicialCadastro from './pages/Cadastro/TelaInicialCadastro';
 import Suporte from './pages/Suporte/'
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Form from './pages/Cadastro/Form';
 
 import './App.css';
-import Form from './pages/Cadastro/Form';
 
 function App() {
   return (
