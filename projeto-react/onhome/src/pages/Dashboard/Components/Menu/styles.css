@@ -51,6 +51,7 @@ input[type="checkbox"]:checked + nav {
 }
 .navbar li {
     font-weight: normal;
+    padding-left: 10px;
 }
 .navbar ul li a {
     text-decoration: none;
@@ -77,6 +78,7 @@ input[type="checkbox"]:checked + nav {
                 linear-gradient(to right, hsl(180, 100%, 50%), hsl(300, 100%, 50%)) border-box;
     border-radius: 14px;
     border-color: transparent;
+    
 }
 .navbar ul {
     width: 200px;

@@ -1,3 +1,4 @@
+import React, { PureComponent } from "react";
 import { useState } from "react";
 import Border from "../../../components/Border";
 import GradientText from "../../../components/GradientText";
@@ -5,7 +6,22 @@ import Machine from "../Components/Machine";
 import Thermometer from "../Components/Thermometer";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-import { LineChart, AreaChart, Area, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
+import {
+  PieChart,
+  Pie,
+  Sector,
+  Cell,
+  ResponsiveContainer,
+  LineChart,
+  AreaChart,
+  Area,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+} from "recharts";
 
 import "./style.css";
 
@@ -18,7 +34,7 @@ const Maquinas = () => {
     { number: 5, status: -30 },
     { number: 6, status: 69 },
     { number: 7, status: -19 },
-    { number: 8, status: 10 },
+    { number: 8, status: 60 },
     { number: 9, status: -19 },
     { number: 10, status: -39 },
     { number: 11, status: -22 },
@@ -31,38 +47,42 @@ const Maquinas = () => {
 
   const data = [
     {
-      name: '16:41:02',
+      name: "16:41:02",
       atual: 10,
     },
     {
-      name: '16:44:34',
+      name: "16:44:34",
       atual: 67,
     },
     {
-      name: '16:47:29',
+      name: "16:47:29",
       atual: 49,
     },
     {
-      name: '16:50:49',
+      name: "16:50:49",
       atual: 59,
     },
     {
-      name: '16:53:21',
+      name: "16:53:21",
       atual: 67,
-    }
+    },
   ];
 
-  const [chartData, setChartData] = useState(data)
+  const dataPieChart = [
+    { name: "Group A", value: 30 },
+    { name: "Group B", value: 100 },
+    { name: "Group C", value: 40 },
+    { name: "Group D", value: 200 },
+    { name: "Group E", value: 278 },
+    { name: "Group F", value: 189 },
+    { name: "Group G", value: 150 },
+  ];
+
+  const chartColor = ["#e692f7", "#b592f7", "#92b7f7", "#eafc83", "#0000"];
+
+  const [chartData, setChartData] = useState(data);
   const [isVisible, setIsVisible] = useState(false);
   const [machineChosen, setMachineChosen] = useState(0);
-
-  const legendList = [
-    { title: "Desligada", icon: "./icons/desligado.svg" },
-    { title: "Em repouso", icon: "./icons/repouso.svg" },
-    { title: "Ideal", icon: "./icons/ideal.svg" },
-    { title: "Atenção", icon: "./icons/atencao.svg" },
-    { title: "Emergência", icon: "./icons/emergencia.svg" },
-  ];
 
   const handleWindow = (machine) => {
     if (!isVisible) {
@@ -118,76 +138,105 @@ const Maquinas = () => {
       )}
       <div className="maquinas--workerGraphs_container">
         <div className="maquinas--workerGraphs_content">
+          <div className="maquinas--leftItems">
+            <div className="maquinas--itemGraph">
+              <label className="maquinas--label">Lorem ipsum sic amet</label>
+              <Border
+                width={"500px"}
+                height={"170px"}
+                margin={"10px"}
+                textAlign={"center"}
+              >
+                {/* <span className="maquinas--graphPlaceholder">
+                Selecione algum funcionário para visulizar seu desempenho
+              </span> */}
+                <AreaChart
+                  width={560}
+                  height={200}
+                  data={chartData}
+                  margin={{
+                    top: 15,
+                    right: 110,
+                    left: -20,
+                    bottom: 35,
+                  }}
+                >
+                  <CartesianGrid stroke="#333" />
+                  <XAxis
+                    dataKey="name"
+                    style={{ fill: "white", fontSize: "14px" }}
+                  />
+                  <YAxis style={{ fill: "white", fontSize: "14px" }} />
+                  <Tooltip />
+                  <Area
+                    type="monotone"
+                    dataKey="atual"
+                    fill="#FF3784"
+                    stroke="#FF3784"
+                  />
+                </AreaChart>
+              </Border>
+            </div>
+            <div className="maquinas--itemGraph">
+              <label className="maquinas--label">Lorem ipsum sic amet</label>
+              <Border
+                width={"500px"}
+                height={"170px"}
+                margin={"10px"}
+                textAlign={"center"}
+              >
+                <AreaChart
+                  width={560}
+                  height={200}
+                  data={chartData}
+                  margin={{
+                    top: 15,
+                    right: 105,
+                    left: -20,
+                    bottom: 25,
+                  }}
+                >
+                  <CartesianGrid stroke="#333" />
+                  <XAxis
+                    dataKey="name"
+                    style={{ fill: "white", fontSize: "14px" }}
+                  />
+                  <YAxis style={{ fill: "white", fontSize: "14px" }} />
+                  <Tooltip />
+                  <Area
+                    type="monotone"
+                    dataKey="atual"
+                    fill="#FF3784"
+                    stroke="#FF3784"
+                  />
+                </AreaChart>
+              </Border>
+            </div>
+          </div>
           <div className="maquinas--itemGraph">
             <label className="maquinas--label">Lorem ipsum sic amet</label>
             <Border
               width={"500px"}
-              height={"170px"}
+              height={"405px"}
               margin={"10px"}
               textAlign={"center"}
-              padding={"60px"}
             >
-              <span className="maquinas--graphPlaceholder">
-                Selecione algum funcionário para visulizar seu desempenho
-              </span>
-            </Border>
-          </div>
-          <div className="maquinas--itemGraph">
-            <label className="maquinas--label">Lorem ipsum sic amet</label>
-            <Border
-              width={"480px"}
-              height={"170px"}
-              margin={"10px"}
-              textAlign={"center"}
-              padding={"60px"}
-            >
-              <span className="maquinas--graphPlaceholder">
-                Selecione algum funcionário para visulizar seu desempenho
-              </span>
-            </Border>
-          </div>
-          <div className="maquinas--itemGraph">
-            <label className="maquinas--label">Lorem ipsum sic amet</label>
-            <Border
-              width={"450px"}
-              height={"180px"}
-              margin={"10px"}
-              textAlign={"center"}
-              padding={"60px"}
-            >
-              <span className="maquinas--graphPlaceholder">
-                Selecione algum funcionário para visulizar seu desempenho
-              </span>
-            </Border>
-          </div>
-          <div className="maquinas--itemGraph">
-            <label className="maquinas--label">Lorem ipsum sic amet</label>
-            <Border
-              width={"530px"}
-              height={"180px"}
-              margin={"10px"}
-              textAlign={"center"}
-              padding={"60px"}
-            >
-              {/* <span className="maquinas--graphPlaceholder">
-                Selecione algum funcionário para visulizar seu desempenho
-              </span> */}
-              <AreaChart 
-                                        width={420}
-                                        height={170}
-                                        data={chartData}
-                                        margin={{
-                                            top: 5,
-                                            right: 30,
-                                            bottom: 5,
-                                        }}
-                                    >
-                                        <CartesianGrid stroke="#333" />
-                                        <XAxis dataKey="name" />
-                                        <YAxis />
-                                        <Tooltip />
-                                        <Area type="monotone" dataKey="atual" fill="#FF3784" stroke="#FF3784"/>
-                                    </AreaChart>
+              <PieChart width={550} height={390}>
+                <Pie
+                  dataKey="value"
+                  data={dataPieChart}
+                  cx="43%"
+                  cy="45%"
+                  outerRadius={130}
+                  fill="#8884d8"
+                >
+                  {data.map((item, index) => (
+                    <Cell fill={chartColor[index]} />
+                  ))}
+                </Pie>
+                <Legend />
+                <Tooltip />
+              </PieChart>
             </Border>
           </div>
         </div>
