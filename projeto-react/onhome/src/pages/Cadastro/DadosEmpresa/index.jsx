@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Input from "../../../components/Input/index.jsx";
 import "./style.css";
 import ButtonWithArrow from "../../../components/ButtonWithArrow/index.jsx";
-import { formatarCNPJ, formatarTelefone } from "../../../functions/formatter.js";
+import { formatarCNPJ, formatarTelefone, tirarMascara } from "../../../functions/formatter.js";
 
 const DadosEmpresa = ({ setFormData, formData, nextPage, backPage, page }) => {
   const [nomeFantasiaError, setNomeFantasiaError] = useState(false);
