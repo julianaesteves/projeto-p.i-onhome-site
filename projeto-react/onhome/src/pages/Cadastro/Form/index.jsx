@@ -1,11 +1,14 @@
 import { useState } from "react";
 import React from "react";
-import "./style.css";
 import EnderecoEmpresa from "../EnderecoEmpresa/index";
 import Licenca from "../Licenca/index";
 import DadosEmpresa from "../DadosEmpresa/index";
 import GradientText from "../../../components/GradientText/index";
 import MenuCadastro from "../MenuCadastro/index";
+import sendForm from "../../../services/sendForm"
+
+import "./style.css";
+import { tirarMascara } from "../../../functions/formatter";
 
 const Form = () => {
   const [page, setPage] = useState(0);
@@ -69,8 +72,13 @@ const Form = () => {
 
   function nextPage() {
     if (page == FormTitles.length - 1) {
-      console.log("Formulário enviado com sucesso!");
+      formData.cnpj = tirarMascara(formData.cnpj);
+      formData.telefoneEmpresa = tirarMascara(formData.telefoneEmpresa);
+      formData.cep = tirarMascara(formData.cep);
       console.log(formData);
+
+      sendForm(formData);
+      console.log("Formulário enviado com sucesso!");
     } else {
       setPage((currPage) => currPage + 1);
     }
