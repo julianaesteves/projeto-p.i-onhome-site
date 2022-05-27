@@ -1,11 +1,12 @@
+import { useState } from "react";
 import Border from "../../../components/Border";
 import GradientText from "../../../components/GradientText";
-import EditIcon from "@mui/icons-material/Edit";
 import Input from "../../../components/Input";
-import DeleteIcon from "@mui/icons-material/Delete";
-import { useState } from "react";
-import "./style.css";
 import Button from "../../../components/Button";
+import DeleteIcon from "@mui/icons-material/Delete";
+import EditIcon from "@mui/icons-material/Edit";
+import sendUser from "../../../services/sendUser";
+import "./style.css";
 
 const Usuarios = () => {
   const [userNameError, setUserNameError] = useState(false);
@@ -63,6 +64,7 @@ const Usuarios = () => {
   const onSubmit = (e) => {
     e.preventDefault();
     verify();
+    sendUser(usuarios);
   };
 
   return (
@@ -99,7 +101,6 @@ const Usuarios = () => {
             <Input
               type={"email"}
               name={"email"}
-              value={usuarios.userEmail}
               value={usuarios.userEmail}
               onChange={({ target }) => {
                 setUsuarios({ ...usuarios, userEmail: target.value });
