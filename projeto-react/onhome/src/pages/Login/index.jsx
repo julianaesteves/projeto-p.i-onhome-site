@@ -22,19 +22,7 @@ const Login = () => {
     e.preventDefault()
     await Login(email, senha)
 
-    navigate("/formulario")
-    
-
-    if (userData.message) {
-      setEmailError(true)
-      setSenhaError(true)
-      console.log("Credenciais inválidas")
-    } else { 
-      // TODO: setar informaçoes no session storage e criar um hook de autenticação
-      console.log(userData[0])
-      navigate('/cadastro')
-    }
-
+    navigate('/cadastro')
   }
 
   return (
