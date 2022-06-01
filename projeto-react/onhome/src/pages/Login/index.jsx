@@ -3,7 +3,7 @@ import { useState } from "react";
 import Button from "../../components/Button";
 import GradientText from "../../components/GradientText";
 import Input from "../../components/Input";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import "./style.css";
 
@@ -12,6 +12,32 @@ const Login = () => {
   const [emailError, setEmailError] = useState(false);
   const [senha, setSenha] = useState("");
   const [senhaError, setSenhaError] = useState(false);
+
+  const navigate = useNavigate();
+
+  async function handleLogin(e) {
+    e.preventDefault()
+
+    const results = await fetch('http://localhost:8080/login', {
+      method: 'GET',
+      headers: { 
+        'Content-Type': 'application/json',
+        email,
+        senha
+      },
+    })
+    
+    const userData = await results.json()
+    
+    if (userData.message) {
+      console.log("Credenciais inválidas")
+    } else { 
+      // TODO: setar informaçoes no session storage e criar um hook de autenticação
+      console.log(userData[0])
+      navigate('/formulario')
+    }
+  }
+
 
   return (
     <div className="formulario--loginBackground">
@@ -59,14 +85,16 @@ const Login = () => {
             {senhaError && <p>Por favor, preencha a senha</p>}
           </div>
           <div className="formulario--loginButton">
-            <Link to={"/dashboard"}>
+            <Link to={"/formulario"}>
               <Button
                 type="submit"
                 value={"Entrar"}
                 width={"200px"}
                 height={"40px"}
                 borderRadius={50}
-              />
+                onClick={handleLogin}
+                >
+              </Button>
             </Link>
           </div>
         </form>
