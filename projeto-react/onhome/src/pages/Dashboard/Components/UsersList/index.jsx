@@ -4,10 +4,12 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 import "./style.css";
 import EditModal from "../EditModal";
+import DeleteModal from "../DeleteModal";
 
 // Receber os cadastrados no banco de dados
 const UsersList = () => {
   const [modal, setModal] = useState(false);
+  const [deleteModal, setDeleteModal] = useState(false);
   const [valueInputName, setValueInputName] = useState("");
   const [valueInputEmail, setValueInputEmail] = useState("");
   const [valueInputSenha, setValueInputSenha] = useState("");
@@ -31,6 +33,11 @@ const UsersList = () => {
         setValueInputPermissao={setValueInputPermissao}
       />
 
+      <DeleteModal
+      setDeleteModal={setDeleteModal}
+      deleteModal={deleteModal}
+      />
+
       <div className="usuarios-gradient">
         <div className="border-gradient" style={{ padding: "20px" }}>
           <h2 className="cadastrados-title">Cadastrados</h2>
@@ -48,7 +55,9 @@ const UsersList = () => {
                   setValueInputPermissao("Administrador");
                 }}
               />
-              <DeleteIcon style={{ cursor: "pointer" }} />
+              <DeleteIcon style={{ cursor: "pointer" }} onClick={() => {
+                  setDeleteModal(true)
+              }} />
             </div>
           </div>
         </div>

@@ -82,6 +82,7 @@ const Usuarios = () => {
             <label className="label-title-form">Nome:</label>
             <Input
               type={"text"}
+              width={"98%"}
               name={"nome"}
               value={usuarios.userName}
               onChange={({ target }) => {
@@ -101,6 +102,7 @@ const Usuarios = () => {
             <Input
               type={"email"}
               name={"email"}
+              width={"98%"}
               value={usuarios.userEmail}
               onChange={({ target }) => {
                 setUsuarios({ ...usuarios, userEmail: target.value });
@@ -119,6 +121,7 @@ const Usuarios = () => {
             <Input
               type={"password"}
               name={"senha"}
+              width={"98%"}
               value={usuarios.senha}
               onChange={({ target }) => {
                 setUsuarios({ ...usuarios, senha: target.value });
