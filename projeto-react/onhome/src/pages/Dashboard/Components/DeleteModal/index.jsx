@@ -1,35 +1,37 @@
-import react, { useState } from "react"
+import React, { useState } from "react"
 import "./style.css"
 
-const DeleteModal = (props) => {
-  const [isModalVisible, setModalVisible] = useState(false)
-  function Clicked() {
-    setModalVisible(true)
-  }
+const DeleteModal = ({
+  setDeleteModal,
+  deleteModal}) => {
+
+    if (deleteModal) {
+      // Função para remover o usuário do banco e da tela
+      function deleteUser(){
+        setDeleteModal(false);
+      }
+
   return (
     <>
-      {/* <div>
-        <button onClick={Clicked}> apagar </button>
-      </div> */}
-      <section className="deleteModal__blur">
-        {isModalVisible ? (
+      <section className="modalEdit__blur">
           <div className="deleteModal__modal">
             <h2>Deletar usuário</h2>
 
-            <p>Deseja excluir a o usuário {props.nomeVaga}?</p>
+            <p>Deseja excluir o usuário <span>Felipe Camara</span>?</p>
             <div>
-              <button className="deleteModal__buttons">Sim</button>
+              <button className="deleteModal__buttons" onClick={deleteUser}>Sim</button>
               <button
                 className="deleteModal__buttons"
-                onClick={() => setModalVisible(false)}>
+                onClick={() => setDeleteModal(false)}>
                 Não
               </button>
             </div>
           </div>
-        ) : null}
       </section>
     </>
   )
+  }
+  return null;
 }
 
 export default DeleteModal
