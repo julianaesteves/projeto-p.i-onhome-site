@@ -1,9 +1,10 @@
 import RlInput from "../../../../components/RlInput";
 import GradientText from "../../../../components/GradientText";
 import Button from "../../../../components/Button";
+import Swal from 'sweetalert2'
 
 import "./style.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const ContactUs = () => {
   const inputLabels = ["Seu nome", "Seu email"];
@@ -26,9 +27,20 @@ const ContactUs = () => {
     })
   }
 
+  const sendEmailAlert = () => {
+    Swal.fire({
+      position: 'center',
+      icon: 'success',
+      title: 'Verifique seu email :)',
+      showConfirmButton: false,
+      timer: 1500
+    })
+  }
+
   function verify() {
     if (mensagem != "" && customer.customerEmail != "" && customer.customerName != "") {
       console.log("Email enviado");
+      verify();
     } else {
       setMensagemError(true);
     }
@@ -36,8 +48,8 @@ const ContactUs = () => {
   
   const onSubmit = (e) => {
     e.preventDefault();
-    verify();
     sendEmail();
+    sendEmailAlert();
     console.log(customer)
   };
 
