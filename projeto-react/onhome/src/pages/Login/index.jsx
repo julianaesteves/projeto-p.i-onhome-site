@@ -4,6 +4,7 @@ import Button from "../../components/Button";
 import GradientText from "../../components/GradientText";
 import Input from "../../components/Input";
 import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../../context/Auth";
 
 import "./style.css";
 
@@ -13,22 +14,17 @@ const Login = () => {
   const [senha, setSenha] = useState("");
   const [senhaError, setSenhaError] = useState(false);
 
+  const { Login } = useAuth()
+
   const navigate = useNavigate();
 
   async function handleLogin(e) {
     e.preventDefault()
+    await Login(email, senha)
 
-    const results = await fetch('http://localhost:8080/login', {
-      method: 'GET',
-      headers: { 
-        'Content-Type': 'application/json',
-        email,
-        senha
-      },
-    })
+    navigate("/formulario")
     
-    const userData = await results.json()
-    
+
     if (userData.message) {
       setEmailError(true)
       setSenhaError(true)
@@ -38,8 +34,8 @@ const Login = () => {
       console.log(userData[0])
       navigate('/cadastro')
     }
-  }
 
+  }
 
   return (
     <div className="formulario--loginBackground">
@@ -58,7 +54,7 @@ const Login = () => {
               setEmailError(false);
             }}
             onBlur={() => {
-              if (email == "") {
+              if (email === "") {
                 setEmailError(true);
               }
             }}
@@ -78,7 +74,7 @@ const Login = () => {
               setSenhaError(false);
             }}
             onBlur={() => {
-              if (senha == "") {
+              if (senha === "") {
                 setSenhaError(true);
               }
             }}
@@ -87,6 +83,7 @@ const Login = () => {
             {senhaError && <p>Por favor, preencha a senha</p>}
           </div>
           <div className="formulario--loginButton">
+
             <Link to={"/cadastro"}>
               <Button
                 type="submit"
@@ -97,7 +94,7 @@ const Login = () => {
                 onClick={handleLogin}
                 >
               </Button>
-            </Link>
+            {/* </Link> */}
           </div>
         </form>
       </div>
