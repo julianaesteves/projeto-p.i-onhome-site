@@ -43,7 +43,7 @@
     font-weight: lighter;
 }
 
-.cadastrados-border{
+/* .cadastrados-border{
     display: flex;
     flex-direction: column;
 }
@@ -52,13 +52,13 @@
     margin-bottom: 25px;
     font-weight: lighter;
     text-align: center;
-}
+} */
 
-.registered-users {
+/* .registered-users {
    display: flex;
    justify-content: space-between;
    border-bottom: 1px solid grey;
-}
+} */
 
 .right-content-button {
     display: flex;

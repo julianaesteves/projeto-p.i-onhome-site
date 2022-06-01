@@ -1,11 +1,12 @@
+import { useState } from "react";
 import Border from "../../../components/Border";
 import GradientText from "../../../components/GradientText";
-import EditIcon from "@mui/icons-material/Edit";
 import Input from "../../../components/Input";
-import DeleteIcon from "@mui/icons-material/Delete";
-import { useState } from "react";
-import "./style.css";
 import Button from "../../../components/Button";
+
+import sendUser from "../../../services/sendUser";
+import UsersList from "../Components/UsersList";
+import "./style.css";
 
 const Usuarios = () => {
   const [userNameError, setUserNameError] = useState(false);
@@ -19,8 +20,8 @@ const Usuarios = () => {
     userEmail: "",
     permission: "",
     area: "",
-    senha: ""
-  })
+    senha: "",
+  });
 
   function verify() {
     if (usuarios.userName == "") {
@@ -56,13 +57,14 @@ const Usuarios = () => {
       usuarios.permission != ""
     ) {
       console.log("Usuário cadastrado com sucesso!");
-      console.log(usuarios)
+      console.log(usuarios);
     }
   }
 
   const onSubmit = (e) => {
     e.preventDefault();
     verify();
+    sendUser(usuarios);
   };
 
   return (
@@ -80,6 +82,7 @@ const Usuarios = () => {
             <label className="label-title-form">Nome:</label>
             <Input
               type={"text"}
+              width={"98%"}
               name={"nome"}
               value={usuarios.userName}
               onChange={({ target }) => {
@@ -99,7 +102,7 @@ const Usuarios = () => {
             <Input
               type={"email"}
               name={"email"}
-              value={usuarios.userEmail}
+              width={"98%"}
               value={usuarios.userEmail}
               onChange={({ target }) => {
                 setUsuarios({ ...usuarios, userEmail: target.value });
@@ -118,10 +121,11 @@ const Usuarios = () => {
             <Input
               type={"password"}
               name={"senha"}
+              width={"98%"}
               value={usuarios.senha}
               onChange={({ target }) => {
                 setUsuarios({ ...usuarios, senha: target.value });
-        
+
                 setSenhaError(false);
               }}
               onBlur={() => {
@@ -185,18 +189,7 @@ const Usuarios = () => {
               />
             </div>
           </form>
-          <div className="usuarios-gradient">
-            <div className="border-gradient" style={{ padding: "20px" }}>
-              <h2 className="cadastrados-title">Cadastrados</h2>
-              <div className="registered-users">
-                <p>Felipe Camara</p>
-                <div className="mui-icons">
-                  <EditIcon style={{ cursor: "pointer" }} />
-                  <DeleteIcon style={{ cursor: "pointer" }} />
-                </div>
-              </div>
-            </div>
-          </div>
+          <UsersList />
         </div>
       </Border>
     </div>

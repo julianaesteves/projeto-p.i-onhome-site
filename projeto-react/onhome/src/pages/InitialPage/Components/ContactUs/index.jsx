@@ -11,8 +11,7 @@ const ContactUs = () => {
 
   const [mensagem, setMensagem] = useState("");
   const [mensagemError, setMensagemError] = useState(false);
-  const [emailError, setEmailError] = useState("");
-  const [nomeError, setNomeError] = useState("");
+  const [sucess, setSucess] = useState(false);
 
   const [customer, setCustomer] = useState({
     customerName: "",
@@ -39,10 +38,11 @@ const ContactUs = () => {
 
   function verify() {
     if (mensagem != "" && customer.customerEmail != "" && customer.customerName != "") {
-      console.log("Email enviado");
-      verify();
+      sendEmailAlert();
+      setSucess(true);
     } else {
       setMensagemError(true);
+      setSucess(false)
     }
   }
   
@@ -110,6 +110,7 @@ const ContactUs = () => {
           }}
         />
         <div className="container__error">
+          {sucess && <p className="sucess_message">E-mail enviado com sucesso!</p>}
           {mensagemError && <p>Por favor, preencha todos os campos!</p>}
         </div>
         <Button
