@@ -3,9 +3,9 @@ import Border from "../../../components/Border";
 import GradientText from "../../../components/GradientText";
 import Input from "../../../components/Input";
 import Button from "../../../components/Button";
-import DeleteIcon from "@mui/icons-material/Delete";
-import EditIcon from "@mui/icons-material/Edit";
+
 import sendUser from "../../../services/sendUser";
+import UsersList from "../Components/UsersList";
 import "./style.css";
 
 const Usuarios = () => {
@@ -20,8 +20,8 @@ const Usuarios = () => {
     userEmail: "",
     permission: "",
     area: "",
-    senha: ""
-  })
+    senha: "",
+  });
 
   function verify() {
     if (usuarios.userName == "") {
@@ -57,7 +57,7 @@ const Usuarios = () => {
       usuarios.permission != ""
     ) {
       console.log("Usuário cadastrado com sucesso!");
-      console.log(usuarios)
+      console.log(usuarios);
     }
   }
 
@@ -122,7 +122,7 @@ const Usuarios = () => {
               value={usuarios.senha}
               onChange={({ target }) => {
                 setUsuarios({ ...usuarios, senha: target.value });
-        
+
                 setSenhaError(false);
               }}
               onBlur={() => {
@@ -186,18 +186,7 @@ const Usuarios = () => {
               />
             </div>
           </form>
-          <div className="usuarios-gradient">
-            <div className="border-gradient" style={{ padding: "20px" }}>
-              <h2 className="cadastrados-title">Cadastrados</h2>
-              <div className="registered-users">
-                <p>Felipe Camara</p>
-                <div className="mui-icons">
-                  <EditIcon style={{ cursor: "pointer" }} />
-                  <DeleteIcon style={{ cursor: "pointer" }} />
-                </div>
-              </div>
-            </div>
-          </div>
+          <UsersList />
         </div>
       </Border>
     </div>
