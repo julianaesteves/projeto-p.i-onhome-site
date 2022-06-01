@@ -1,0 +1,78 @@
+.modalEdit__blur {
+  background-color: #0000009d;
+  position: fixed;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 20;
+}
+
+.modalEdit__modal {
+  background-color: #fff;
+  border-radius: 30px;
+  margin: 5% auto 0;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  padding: 2% 4%;
+  color: black;
+}
+
+.modalEdit__error {
+  height: 10px;
+  margin-left: 10px;
+  margin-bottom: 15px;
+  color: #ff0000;
+  font-size: 11px;
+}
+.modalEdit__label {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.modalEdit__title {
+  margin-bottom: 5%;
+}
+
+.modalEdit__input {
+  margin-top: 0.5%;
+  margin-bottom: 0;
+  padding: 1.5%;
+  border-radius: 30px;
+  border: 2px solid darkorchid;
+  background-color: #cbc3e6ad;
+  outline: none;
+}
+
+.modalEdit__input--clean {
+  font-size: 12px;
+  font-weight: 700;
+  position: relative;
+  top: -1.8rem;
+  cursor: pointer;
+  width: 5%;
+  left: 93%;
+}
+
+.modalEdit__buttons button {
+  border: none;
+  background-color: transparent;
+  font-weight: 700;
+  margin-left: 1%;
+  width: 20%;
+  padding: 1%;
+  outline: none;
+  cursor: pointer;
+}
+
+.modalEdit__buttons {
+  text-align: end;
+}
+
+.modalEdit__buttons--save {
+  color: #fff;
+  border-radius: 30px;
+  background-color: rgb(65, 0, 119) !important;
+}

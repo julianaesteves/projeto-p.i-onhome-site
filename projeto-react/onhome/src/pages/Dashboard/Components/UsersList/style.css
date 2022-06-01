@@ -1,0 +1,16 @@
+.registered-users {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid grey;
+ }
+
+.cadastrados-border{
+    display: flex;
+    flex-direction: column;
+}
+
+.cadastrados-title{
+    margin-bottom: 25px;
+    font-weight: lighter;
+    text-align: center;
+}
