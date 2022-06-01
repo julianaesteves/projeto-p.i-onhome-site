@@ -30,11 +30,13 @@ const Login = () => {
     const userData = await results.json()
     
     if (userData.message) {
+      setEmailError(true)
+      setSenhaError(true)
       console.log("Credenciais inválidas")
     } else { 
       // TODO: setar informaçoes no session storage e criar um hook de autenticação
       console.log(userData[0])
-      navigate('/formulario')
+      navigate('/cadastro')
     }
   }
 
@@ -85,7 +87,7 @@ const Login = () => {
             {senhaError && <p>Por favor, preencha a senha</p>}
           </div>
           <div className="formulario--loginButton">
-            <Link to={"/formulario"}>
+            <Link to={"/cadastro"}>
               <Button
                 type="submit"
                 value={"Entrar"}
