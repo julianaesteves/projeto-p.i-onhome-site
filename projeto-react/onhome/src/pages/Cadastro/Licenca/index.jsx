@@ -1,9 +1,9 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import Input from "../../../components/Input";
 import LicencaCards from "./LicencaCards";
-import "./style.css";
 import ButtonWithArrow from "../../../components/ButtonWithArrow";
+
+import "./style.css";
 
 const Licenca = ({ setFormData, formData, nextPage, backPage, page }) => {
   const imgsLicenca = [
@@ -30,25 +30,25 @@ const Licenca = ({ setFormData, formData, nextPage, backPage, page }) => {
   const [qtdComputadoresError, setqtdComputadoresError] = useState(false);
 
   function verify() {
-    if (formData.plano == "") {
+    if (formData.plano === "") {
       setOpcaoError(true);
     } else {
       setOpcaoError(false);
     }
-    if (formData.periodo == "") {
+    if (formData.periodo === "") {
       setPeriodoError(true);
     } else {
       setPeriodoError(false);
     }
-    if (formData.qtdComputadores == "") {
+    if (formData.qtdComputadores === "") {
       setqtdComputadoresError(true);
     } else {
       setqtdComputadoresError(false);
     }
     if (
-      formData.plano != "" &&
-      formData.periodo != "" &&
-      formData.qtdComputadores != ""
+      formData.plano !== "" &&
+      formData.periodo !== "" &&
+      formData.qtdComputadores !== ""
     ) {
       nextPage();
     }
@@ -130,7 +130,7 @@ const Licenca = ({ setFormData, formData, nextPage, backPage, page }) => {
                 setqtdComputadoresError(false);
               }}
               onBlur={() => {
-                if (formData.qtdComputadores == "") {
+                if (formData.qtdComputadores === "") {
                   setqtdComputadoresError(true);
                 }
               }}
@@ -144,7 +144,7 @@ const Licenca = ({ setFormData, formData, nextPage, backPage, page }) => {
       <div className="formulario--buttons">
         <button
           type="button"
-          disabled={page == 0}
+          disabled={page === 0}
           onClick={backPage}
           style={{ fontSize: "12px", opacity: "60%", marginRight: "50px" }}
         >
