@@ -72,7 +72,7 @@ const Login = () => {
           </div>
           <div className="formulario--loginButton">
 
-            <Link to={"/cadastro"}>
+             {/*<Link to={"/cadastro"}>*/}
               <Button
                 type="submit"
                 value={"Entrar"}
