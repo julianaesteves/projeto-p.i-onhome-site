@@ -76,11 +76,13 @@ const Maquinas = () => {
   const [processList, setProcessList] = useState();
   const [pieInfo, setPieInfo] = useState();
   const [thermData, setThermData] = useState();
+  const [isDashVisible, setIsDashVisible] = useState()
 
   const handleWindow = (machine) => {
     if (!isVisible) {
       setMachineChosen(machine);
       setIsVisible(true);
+      setIsDashVisible("none")
     } else {
       setIsVisible(false);
     }
@@ -103,7 +105,7 @@ const Maquinas = () => {
       const thermData = await fetch('http://localhost:8080/usuario/37');
       const json = await thermData.json();
       setThermData(json);
-      console.log(json)
+      console.log(json);
     }
 
     setTimeout(() => {
@@ -147,7 +149,7 @@ const Maquinas = () => {
         </div>
       )}
       <div className="maquinas--workerGraphs_container">
-        <div className="maquinas--workerGraphs_content">
+        <div className="maquinas--workerGraphs_content" style={{display: `${isDashVisible}`}}>
           <div className="maquinas--leftItems">
             <div className="maquinas--itemGraph">
               <label className="maquinas--label">
