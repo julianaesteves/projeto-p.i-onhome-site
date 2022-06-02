@@ -25,6 +25,9 @@ const ContactUs = () => {
     })
   }
 
+
+  
+
   function verify() {
     if (mensagem != "" && customer.customerEmail != "" && customer.customerName != "") {
       setSucess(true);
