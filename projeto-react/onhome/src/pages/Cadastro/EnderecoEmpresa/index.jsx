@@ -79,7 +79,7 @@ const EnderecoEmpresa = ({
             setLogradouroError(true);
           }
         }}
-        width={"90%"}
+        width={"100%"}
         height={"30px"}
         margin={"8px 0 5px 0"}
       />
@@ -99,7 +99,7 @@ const EnderecoEmpresa = ({
             setBairroError(true);
           }
         }}
-        width={"90%"}
+        width={"100%"}
         height={"30px"}
         margin={"8px 0 5px 0"}
       />
@@ -160,7 +160,7 @@ const EnderecoEmpresa = ({
         onChange={(e) =>
           setFormData({ ...formData, complemento: e.target.value })
         }
-        width={"90%"}
+        width={"100%"}
         height={"30px"}
         margin={"8px 0 40px 0"}
       />
@@ -219,8 +219,7 @@ const EnderecoEmpresa = ({
         </div>
       </div>
       <div className="formulario--buttons">
-        <button
-          type="button"
+      <button className="botao--voltar"
           disabled={page == 0}
           onClick={backPage}
           style={{ fontSize: "12px", opacity: "60%", marginRight: "50px" }}
