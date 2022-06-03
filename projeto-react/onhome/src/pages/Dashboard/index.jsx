@@ -26,6 +26,9 @@ const Dashboard = () => {
                 break
             case "Usuários":
                 setChosenComponent(<Usuarios />)
+                break
+            default: 
+                setChosenComponent(<Home/>)
         }
     }
 

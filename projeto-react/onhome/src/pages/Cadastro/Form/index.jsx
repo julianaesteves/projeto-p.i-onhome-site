@@ -4,15 +4,19 @@ import EnderecoEmpresa from "../EnderecoEmpresa/index";
 import Licenca from "../Licenca/index";
 import DadosEmpresa from "../DadosEmpresa/index";
 import GradientText from "../../../components/GradientText/index";
-import MenuCadastro from "../MenuCadastro/index";
 import sendForm from "../../../services/sendForm"
+import { tirarMascara } from "../../../functions/formatter";
+import { useAuth } from "../../../context/Auth";
+import { useNavigate } from "react-router-dom";
 
 import "./style.css";
-import { tirarMascara } from "../../../functions/formatter";
 
 const Form = () => {
   const [page, setPage] = useState(0);
   const FormTitles = ["Dados da empresa", "Endereço", "Escolha sua licença"];
+
+  const { userInfo } = useAuth()
+  const navigate = useNavigate()
 
   const [formData, setFormData] = useState({
     nomeFantasia: "",
@@ -71,13 +75,15 @@ const Form = () => {
   }
 
   function nextPage() {
-    if (page == FormTitles.length - 1) {
+    if (page === FormTitles.length - 1) {
       formData.cnpj = tirarMascara(formData.cnpj);
       formData.telefoneEmpresa = tirarMascara(formData.telefoneEmpresa);
       formData.cep = tirarMascara(formData.cep);
-      console.log(formData);
+      
+      // Colocar loading de transição
+      navigate("/dashboard")
 
-      sendForm(formData);
+      sendForm(formData, userInfo.idUsuario);
       console.log("Formulário enviado com sucesso!");
     } else {
       setPage((currPage) => currPage + 1);

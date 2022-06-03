@@ -8,6 +8,7 @@ import Workers from "./Workers";
 import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft';
 import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
 import { useState } from "react";
+import { useAuth } from "../../../context/Auth";
 
 import "./style.css";
 
@@ -42,6 +43,7 @@ const Home = () => {
 const [isMessagesVisible, setMessagesVisible] = useState(true);
 const [isWorkerHidden, setWorkerHidden] = useState(true);
 
+const { userInfo } = useAuth()
 
   return (
     <div className="home-graph-container">
@@ -52,7 +54,7 @@ const [isWorkerHidden, setWorkerHidden] = useState(true);
         children={
           <GradientText
             className="welcome"
-            title="Bem-Vindo, Carlos!"
+            title={`Bem-Vindo, ${userInfo?.nomeUsuario}!`}
             textAlign="center"
           />
         }

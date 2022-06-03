@@ -1,39 +1,41 @@
-import React from "react";
-import "./style.css";
-import Border from "../../components/Border/index";
-import GradientText from "../../components/GradientText";
-import Input from "../../components/Input";
-import { useState } from "react";
-import Button from "../../components/Button"
-import { formatarCep } from "../../functions/formatter";
+import React from 'react';
+import Border from '../../components/Border/index';
+import GradientText from '../../components/GradientText';
+import Input from '../../components/Input';
+import Button from '../../components/Button';
+import { useState } from 'react';
+import { formatarCep } from '../../functions/formatter';
+
+import './style.css';
+
 const Suporte = () => {
-  const [logradouro, setLogradouro] = useState("");
+  const [logradouro, setLogradouro] = useState('');
   const [logradouroError, setLogradouroError] = useState(false);
-  const [bairro, setBairro] = useState("");
+  const [bairro, setBairro] = useState('');
   const [bairroError, setBairroError] = useState(false);
-  const [numero, setNumero] = useState("");
-  const [complemento, setComplemento] = useState("");
+  const [numero, setNumero] = useState('');
+  const [complemento, setComplemento] = useState('');
   const [numeroError, setNumeroError] = useState(false);
-  const [cep, setCep] = useState("");
+  const [cep, setCep] = useState('');
   const [cepError, setCepError] = useState(false);
-  const [estado, setEstado] = useState("");
+  const [estado, setEstado] = useState('');
   const [estadoError, setEstadoError] = useState(false);
-  const [cidade, setCidade] = useState("");
+  const [cidade, setCidade] = useState('');
   const [cidadeError, setCidadeError] = useState(false);
 
   function verify() {
-    if (logradouro == "") {
+    if (logradouro == '') {
       setLogradouroError(true);
     } else {
       setLogradouroError(false);
     }
 
-    if (bairro == "") {
+    if (bairro == '') {
       setBairroError(true);
     } else {
       setBairroError(false);
     }
-    if (numero == "") {
+    if (numero == '') {
       setNumeroError(true);
     } else {
       setNumeroError(false);
@@ -43,25 +45,25 @@ const Suporte = () => {
     } else {
       setCepError(false);
     }
-    if (estado == "") {
+    if (estado == '') {
       setEstadoError(true);
     } else {
       setEstadoError(false);
     }
-    if (cidade == "") {
+    if (cidade == '') {
       setCidadeError(true);
     } else {
       setCidadeError(false);
     }
     if (
-      cidade != "" &&
-      estado != "" &&
+      cidade != '' &&
+      estado != '' &&
       cep == 9 &&
-      numero != "" &&
-      bairro != "" &&
-      logradouro != ""
+      numero != '' &&
+      bairro != '' &&
+      logradouro != ''
     ) {
-      console.log("Buscando...");
+      console.log('Buscando...');
     }
   }
   return (
@@ -70,13 +72,13 @@ const Suporte = () => {
         <div className="suporte--gradientBackground">
           <Border
             margin={15}
-            padding={"10px 40px 0 20px"}
+            padding={'10px 40px 0 20px'}
             height={60}
             width={800}
           >
             <GradientText
-              textAlign={"center"}
-              title={"Encontre a autorizada mais próxima de você"}
+              textAlign={'center'}
+              title={'Encontre a autorizada mais próxima de você'}
             />
           </Border>
 
@@ -94,11 +96,11 @@ const Suporte = () => {
                   setCepError(false);
                 }}
                 onBlur={() => {
-                  if (cep == "") {
+                  if (cep == '') {
                     setCepError(true);
                   }
                 }}
-                onInput={(e) => e.target.value = formatarCep(e.target.value)}
+                onInput={(e) => (e.target.value = formatarCep(e.target.value))}
               />
               <div className="container__error">
                 {cepError && <p>Por favor, preencha o cep</p>}
@@ -113,7 +115,7 @@ const Suporte = () => {
                   setBairroError(false);
                 }}
                 onBlur={() => {
-                  if (bairro == "") {
+                  if (bairro == '') {
                     setBairroError(true);
                   }
                 }}
@@ -131,7 +133,7 @@ const Suporte = () => {
                   setLogradouroError(false);
                 }}
                 onBlur={() => {
-                  if (logradouro == "") {
+                  if (logradouro == '') {
                     setLogradouroError(true);
                   }
                 }}
@@ -149,7 +151,7 @@ const Suporte = () => {
                   setNumeroError(false);
                 }}
                 onBlur={() => {
-                  if (numero == "") {
+                  if (numero == '') {
                     setNumeroError(true);
                   }
                 }}
@@ -177,7 +179,7 @@ const Suporte = () => {
                   setCidadeError(false);
                 }}
                 onBlur={() => {
-                  if (cidade == "") {
+                  if (cidade == '') {
                     setCidadeError(true);
                   }
                 }}
@@ -195,7 +197,7 @@ const Suporte = () => {
                   setEstadoError(false);
                 }}
                 onBlur={() => {
-                  if (estado == "") {
+                  if (estado == '') {
                     setEstadoError(true);
                   }
                 }}
@@ -206,7 +208,7 @@ const Suporte = () => {
 
               <p>Não encontrou?</p>
               <p>Entre em contato com seu superior.</p>
-              <Button value={"Pesquisar"} onClick={verify} />
+              <Button value={'Pesquisar'} onClick={verify} />
             </Border>
 
             <Border width={900} height={510}></Border>
