@@ -38,3 +38,9 @@
 .formulario--body {
     justify-content: center;
 }
+
+.botao--voltar {
+    background: none;
+    border: none;
+    color: white;
+  }
