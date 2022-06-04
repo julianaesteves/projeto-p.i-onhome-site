@@ -12,6 +12,7 @@ import {
   Cell,
   LineChart,
   AreaChart,
+  ComposedChart,
   Area,
   Line,
   XAxis,
@@ -47,24 +48,9 @@ const Maquinas = () => {
 
   const data = [
     {
-      name: '16:41:02',
-      atual: 10,
-    },
-    {
-      name: '16:44:34',
-      atual: 67,
-    },
-    {
-      name: '16:47:29',
-      atual: 49,
-    },
-    {
-      name: '16:50:49',
-      atual: 59,
-    },
-    {
-      name: '16:53:21',
-      atual: 67,
+      // name: '16:41:02',
+      passada: 10,
+      atual: 30,
     },
   ];
 
@@ -76,13 +62,14 @@ const Maquinas = () => {
   const [processList, setProcessList] = useState();
   const [pieInfo, setPieInfo] = useState();
   const [thermData, setThermData] = useState();
-  const [isDashVisible, setIsDashVisible] = useState()
+  const [comparationData, setComparationData] = useState();
+  const [isDashVisible, setIsDashVisible] = useState();
 
   const handleWindow = (machine) => {
     if (!isVisible) {
       setMachineChosen(machine);
       setIsVisible(true);
-      setIsDashVisible("none")
+      setIsDashVisible('none');
     } else {
       setIsVisible(false);
     }
@@ -105,15 +92,22 @@ const Maquinas = () => {
       const thermData = await fetch('http://localhost:8080/usuario/37');
       const json = await thermData.json();
       setThermData(json);
+    };
+
+    const getComparationData = async () => {
+      const data = await fetch('http://localhost:8080/pontuacao/empresa/37');
+      const json = await data.json();
+      setComparationData([...json]);
       console.log(json);
-    }
+    };
 
     setTimeout(() => {
       getDashInfo();
       getPieData();
       getThermometerData();
+      getComparationData();
     }, 1000);
-  }, [setProcessList, setPieInfo]);
+  }, [setProcessList, setPieInfo, setComparationData]);
 
   return (
     <div style={{ height: '100vh' }}>
@@ -149,7 +143,10 @@ const Maquinas = () => {
         </div>
       )}
       <div className="maquinas--workerGraphs_container">
-        <div className="maquinas--workerGraphs_content" style={{display: `${isDashVisible}`}}>
+        <div
+          className="maquinas--workerGraphs_content"
+          style={{ display: `${isDashVisible}` }}
+        >
           <div className="maquinas--leftItems">
             <div className="maquinas--itemGraph">
               <label className="maquinas--label">
@@ -176,7 +173,7 @@ const Maquinas = () => {
             </div>
             <div className="maquinas--itemGraph">
               <label className="maquinas--label">
-                Comparação do squad - semana atual e semana passada
+                Pontos do Squad - semana passada e atual
               </label>
               <Border
                 width={'500px'}
@@ -184,31 +181,26 @@ const Maquinas = () => {
                 margin={'10px'}
                 textAlign={'center'}
               >
-                <AreaChart
-                  width={560}
-                  height={200}
-                  data={chartData}
+                <ComposedChart
+                  layout="vertical"
+                  width={450}
+                  height={180}
+                  data={comparationData}
                   margin={{
-                    top: 15,
-                    right: 105,
-                    left: -20,
-                    bottom: 25,
+                    top: 20,
+                    right: 40,
+                    bottom: 20,
+                    left: 20,
                   }}
                 >
-                  <CartesianGrid stroke="#333" />
-                  <XAxis
-                    dataKey="name"
-                    style={{ fill: 'white', fontSize: '14px' }}
-                  />
-                  <YAxis style={{ fill: 'white', fontSize: '14px' }} />
+                  <CartesianGrid stroke="#f5f5f5" />
+                  <XAxis type="number" />
+                  <YAxis dataKey="name" type="category"  />
                   <Tooltip />
-                  <Area
-                    type="monotone"
-                    dataKey="atual"
-                    fill="#FF3784"
-                    stroke="#FF3784"
-                  />
-                </AreaChart>
+                  <Legend />
+                  <Bar dataKey="atual" barSize={20} fill="#e165fc"/>
+                  <Bar dataKey="passada" barSize={20} fill="#69d2f5" />
+                </ComposedChart>
               </Border>
             </div>
           </div>

@@ -70,10 +70,10 @@ const Charts = ({ handleWindow }) => {
                 <h2>{chart}</h2>
                 <AreaChart
                   width={640}
-                  height={170}
+                  height={195}
                   data={chartData}
                   margin={{
-                    top: 5,
+                    top:15,
                     right: 30,
                     bottom: 5,
                   }}
