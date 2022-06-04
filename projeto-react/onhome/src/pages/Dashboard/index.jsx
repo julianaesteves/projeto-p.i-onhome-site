@@ -1,4 +1,6 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import { useAuth } from "../../context/Auth"
+import { useNavigate } from "react-router-dom"
 import Configuracoes from "./Configuracoes"
 import Menu from "./Components/Menu"
 import Usuarios from "./Usuarios"
@@ -8,6 +10,12 @@ import Maquinas from "./Maquinas"
 
 const Dashboard = () => {
     const [chosenComponent, setChosenComponent] = useState(<Home/>)
+    const { isAuthenticated } = useAuth()
+    const navigate = useNavigate()
+    
+    // useEffect(() => {
+    //     if (!isAuthenticated) return navigate("/login")
+    // })
 
     const handleChosenItem = (chosen) => {
         const chosenItem = chosen.target.innerText

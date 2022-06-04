@@ -5,17 +5,21 @@ const AuthContext = createContext({})
 export const AuthProvider = ({ children }) => {
 
     const [userInfo, setUserInfo] = useState();
+    const [isFirstAccess, setIsFirstAccess] = useState();
 
     useEffect(() => {
         const storagedUser = sessionStorage.getItem('@App:user');
+        const storagedAccess = sessionStorage.getItem('@App:firstAccess');
 
-        if (storagedUser && storagedUser !== 'undefined') {
+        if (storagedUser && storagedAccess) {
             setUserInfo(JSON.parse(storagedUser));
+            setIsFirstAccess(JSON.parse(storagedAccess));
         }
+
     }, []);
 
-
     async function Login(email, senha) {
+        sessionStorage.clear()
         const results = await fetch('http://localhost:8080/login', {
             method: 'GET',
             headers: {
@@ -26,24 +30,27 @@ export const AuthProvider = ({ children }) => {
         })
 
         const userData = await results.json()
-        setUserInfo(userData[0])
+        setUserInfo(userData.informacoesUsuario)
 
         if (userData.message) {
             console.log("Credenciais inválidas")
             // Colocar modal de email e/ou senha inválida
         } else {
-            sessionStorage.setItem('@App:user', JSON.stringify(userInfo));
+            sessionStorage.setItem('@App:user', JSON.stringify(userData.informacoesUsuario))
+            sessionStorage.setItem('@App:firstAccess', userData.primeiroAcesso)
         }
     }
 
     function Logout() {
         setUserInfo(null);
-      }
+        sessionStorage.clear();
+    }
 
     return (
         <AuthContext.Provider
             value={{
                 isAuthenticated: Boolean(userInfo),
+                isFirstAccess,
                 userInfo,
                 Login,
                 Logout
