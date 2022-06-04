@@ -1,9 +1,11 @@
-import { useState } from 'react';
 import '../../../../components/Border';
-import Button from '../../../../components/Button'
+import Button from '../../../../components/Button';
+import { useAuth } from '../../../../context/Auth';
 import './styles.css';
 
 const Menu = ({ handleChosenItem }) => {
+    const { Logout } = useAuth()
+
     const menuItens = [
         {
             description: "Geral",
@@ -34,7 +36,6 @@ const Menu = ({ handleChosenItem }) => {
     return (
         <div className='menuContainer'>
             <div className="menu">
-
                 <label htmlFor='dropdown' className="dropdown">
                     <span className="hamburger-icon">
                         <span className="icon-bar top-bar"></span>
@@ -50,7 +51,12 @@ const Menu = ({ handleChosenItem }) => {
                         ))}
                     </ul>
                     <div className='exit-btn'>
-                        <Button value={"Sair"} width={80} height={30} />
+                        <Button
+                            value={"Sair"}
+                            width={80}
+                            height={30}
+                            onClick={Logout}
+                        />
                     </div>
                 </nav>
             </div>

@@ -6,6 +6,8 @@ import Machine from '../Components/Machine';
 import Thermometer from '../Components/Thermometer';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import { useAuth } from '../../../context/Auth';
+
 import {
   PieChart,
   Pie,
@@ -45,6 +47,8 @@ const Maquinas = () => {
     { number: 16, status: -31 },
   ];
 
+  const { userInfo } = useAuth()
+
   const data = [
     {
       name: '16:41:02',
@@ -76,6 +80,7 @@ const Maquinas = () => {
   const [processList, setProcessList] = useState();
   const [pieInfo, setPieInfo] = useState();
   const [thermData, setThermData] = useState();
+  const [fkEmpresa, setFkEmpresa] = useState(userInfo.fkEmpresa);
 
   const handleWindow = (machine) => {
     if (!isVisible) {
@@ -100,10 +105,9 @@ const Maquinas = () => {
     };
 
     const getThermometerData = async () => {
-      const thermData = await fetch('http://localhost:8080/usuario/37');
+      const thermData = await fetch(`http://localhost:8080/computadores/empresa/${fkEmpresa}`);
       const json = await thermData.json();
       setThermData(json);
-      console.log(json)
     }
 
     setTimeout(() => {
@@ -111,7 +115,7 @@ const Maquinas = () => {
       getPieData();
       getThermometerData();
     }, 1000);
-  }, [setProcessList, setPieInfo]);
+  }, [setProcessList, setPieInfo, fkEmpresa]);
 
   return (
     <div style={{ height: '100vh' }}>
@@ -131,17 +135,23 @@ const Maquinas = () => {
           </Border>
           <div className="maquinas-content">
             <ArrowBackIosIcon className="arrow--goBack" />
-            {machineList.map((machine) => (
-              <Border
-                padding={'20px'}
-                margin={'20px'}
-                cursor={'pointer'}
-                onClick={() => handleWindow(machine)}
-              >
-                <div style={{ fontSize: '20px' }}>{machine.number}</div>
-                <Thermometer machineInfo={machine} />
-              </Border>
-            ))}
+            {thermData ?
+              thermData.map((machine) => {
+                console.log(machine)
+                return (
+                <Border
+                  padding={'20px'}
+                  margin={'20px'}
+                  cursor={'pointer'}
+                  onClick={() => handleWindow(machine)}
+                >
+                  <div style={{ fontSize: '20px' }}>{machine.nomeUsuario}</div>
+                  <Thermometer machineInfo={machine} />
+                </Border>
+              )})
+              :
+              null
+            }
             <ArrowForwardIosIcon className="arrow--goNext" />
           </div>
         </div>

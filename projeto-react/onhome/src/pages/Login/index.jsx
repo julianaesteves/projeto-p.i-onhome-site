@@ -1,9 +1,8 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import Button from "../../components/Button";
 import GradientText from "../../components/GradientText";
 import Input from "../../components/Input";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/Auth";
 
 import "./style.css";
@@ -14,15 +13,18 @@ const Login = () => {
   const [senha, setSenha] = useState("");
   const [senhaError, setSenhaError] = useState(false);
 
-  const { Login } = useAuth()
+  const { Login, isFirstAccess } = useAuth()
 
   const navigate = useNavigate();
-
+  
   async function handleLogin(e) {
     e.preventDefault()
     await Login(email, senha)
 
-    navigate('/cadastro')
+    console.log(isFirstAccess)
+    // if (isFirstAccess) return navigate('/cadastro')
+    // return navigate('/dashboard')
+
   }
 
   return (
@@ -71,8 +73,6 @@ const Login = () => {
             {senhaError && <p>Por favor, preencha a senha</p>}
           </div>
           <div className="formulario--loginButton">
-
-             {/*<Link to={"/cadastro"}>*/}
               <Button
                 type="submit"
                 value={"Entrar"}
@@ -82,7 +82,6 @@ const Login = () => {
                 onClick={handleLogin}
                 >
               </Button>
-            {/* </Link> */}
           </div>
         </form>
       </div>

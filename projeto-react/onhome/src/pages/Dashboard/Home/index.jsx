@@ -44,7 +44,7 @@ const [isMessagesVisible, setMessagesVisible] = useState(true);
 const [isWorkerHidden, setWorkerHidden] = useState(true);
 
 const { userInfo } = useAuth()
-
+  
   return (
     <div className="home-graph-container">
       <Border
