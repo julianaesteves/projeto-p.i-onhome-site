@@ -39,6 +39,7 @@ const ContactUs = () => {
   function verify() {
     if (mensagem != "" && customer.customerEmail != "" && customer.customerName != "") {
       sendEmailAlert();
+      sendEmail();
       setSucess(true);
     } else {
       setMensagemError(true);
@@ -48,8 +49,7 @@ const ContactUs = () => {
   
   const onSubmit = (e) => {
     e.preventDefault();
-    sendEmail();
-    sendEmailAlert();
+    verify();
     console.log(customer)
   };
 

@@ -36,8 +36,8 @@ const Login = () => {
           <Input
             type="email"
             value={email}
-            width={"90%"}
-            height={"30px"}
+            width={"100%"}
+            height={"40px"}
             margin={"8px 0 5px 0"}
             onChange={(e) => {
               setEmail(e.target.value);
@@ -56,8 +56,8 @@ const Login = () => {
           <Input
             type="password"
             value={senha}
-            width={"90%"}
-            height={"30px"}
+            width={"100%"}
+            height={"40px"}
             margin={"8px 0 5px 0"}
             onChange={(e) => {
               setSenha(e.target.value);

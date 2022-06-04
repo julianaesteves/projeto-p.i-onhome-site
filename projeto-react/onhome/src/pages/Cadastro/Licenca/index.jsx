@@ -19,10 +19,7 @@ const Licenca = ({ setFormData, formData, nextPage, backPage, page }) => {
       text: "Plano 3",
       urlImage: "./images/plano-2.png",
     },
-    {
-      text: "Plano personalizado",
-      urlImage: "./images/plano-3-1.png",
-    },
+    
   ];
 
   const [opcaoError, setOpcaoError] = useState(false);
@@ -142,7 +139,7 @@ const Licenca = ({ setFormData, formData, nextPage, backPage, page }) => {
         </div>
       </div>
       <div className="formulario--buttons">
-        <button
+        <button className="botao--voltar"
           type="button"
           disabled={page === 0}
           onClick={backPage}

@@ -73,7 +73,7 @@ const DadosEmpresa = ({ setFormData, formData, nextPage, backPage, page }) => {
               setNomeFantasiaError(true);
             }
           }}
-          width={"90%"}
+          width={"100%"}
           height={"30px"}
           margin={"8px 0 5px 0"}
         />
@@ -94,7 +94,7 @@ const DadosEmpresa = ({ setFormData, formData, nextPage, backPage, page }) => {
               setCNPJError(true);
             }
           }}
-          width={"90%"}
+          width={"100%"}
           height={"30px"}
           margin={"8px 0 5px 0"}
           onInput={(e) => e.target.value = formatarCNPJ(e.target.value)}
@@ -115,7 +115,7 @@ const DadosEmpresa = ({ setFormData, formData, nextPage, backPage, page }) => {
               setRazaoSocialError(true);
             }
           }}
-          width={"90%"}
+          width={"100%"}
           height={"30px"}
           margin={"8px 0 5px 0"}
         />
@@ -136,7 +136,7 @@ const DadosEmpresa = ({ setFormData, formData, nextPage, backPage, page }) => {
               setEmailError(true);
             }
           }}
-          width={"90%"}
+          width={"100%"}
           height={"30px"}
           margin={"8px 0 5px 0"}
         />
@@ -167,7 +167,7 @@ const DadosEmpresa = ({ setFormData, formData, nextPage, backPage, page }) => {
         </div>
       </div>
       <div className="formulario--buttons">
-        <button
+      <button className="botao--voltar"
           type="button"
           disabled={page == 0}
           onClick={backPage}
