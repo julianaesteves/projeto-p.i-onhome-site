@@ -35,3 +35,10 @@
 .process--header > div:nth-last-child(1), .process--row > div:nth-last-child(1) {
     border-right: none;
 }
+
+.process--container, .process--line{
+}
+
+.process--hardware{
+    margin-top: 35px
+}
