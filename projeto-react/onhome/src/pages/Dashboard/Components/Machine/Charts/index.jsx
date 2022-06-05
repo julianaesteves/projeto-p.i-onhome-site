@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import Border from '../../../../../components/Border';
 import HardwareInfo from './HardwareInfo';
+import { useAuth } from '../../../../../context/Auth';
+
 import {
   LineChart,
   AreaChart,
@@ -31,13 +33,43 @@ const Charts = ({ handleWindow }) => {
     },
   ];
 
+  const { userInfo } = useAuth()
+  const [idUsuario, setIdUsuario] = useState(userInfo.idUsuario)
+  const [dashData, setDashData] = useState([]);
   const [chartData, setChartData] = useState(data);
   const [nameData, setNameData] = useState(21);
   const [atualData, setAtualData] = useState(3000);
   const [mediaData, setMediaData] = useState(3000);
 
-  const chartsLabel = ['CPU', 'Memória'];
+  useEffect(() => {
+    const getCpuUseInfo = async () => {
+      const data = await fetch(
+        `http://localhost:8080/monitoramento/usuario/${idUsuario}`
+      );
+      const json = await data.json();
+      setDashData(json);
+      console.log(json)
+    };
+    setTimeout(
+      () => getCpuUseInfo(),
 
+      1000
+    );
+  }, [setDashData]);
+
+  const chartsLabel = ['Uso de CPU em porcentagem', 'Uso de Memória em porcentagem'];
+  const chartsDataKeys = ['usandoCpu', 'usandoRam']
+
+  const chartsData = [
+    {
+      titulo:"Uso da CPU (%)",
+      uso:"usandoCpu",
+    },
+    {
+      titulo:"Uso da Memória (%)",
+      uso:"usandoRam"
+    }
+  ]
   // useEffect(() => {
   //     setTimeout(() => {
   //         const newName = nameData + 1
@@ -65,26 +97,26 @@ const Charts = ({ handleWindow }) => {
               justifyContent: 'center',
             }}
           >
-            {chartsLabel.map((chart) => (
+            {chartsData.map(({titulo, uso}) => (
               <div>
-                <h2>{chart}</h2>
+                <h2>{titulo}</h2>
                 <AreaChart
                   width={640}
                   height={195}
-                  data={chartData}
+                  data={dashData[0]}
                   margin={{
-                    top:15,
+                    top: 15,
                     right: 30,
                     bottom: 5,
                   }}
                 >
                   <CartesianGrid stroke="#333" />
-                  <XAxis dataKey="name" />
+                  <XAxis dataKey="nome" />
                   <YAxis />
                   <Tooltip />
                   <Area
                     type="monotone"
-                    dataKey="atual"
+                    dataKey={uso}
                     fill="#FF3784"
                     stroke="#FF3784"
                   />
