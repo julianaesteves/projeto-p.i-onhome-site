@@ -51,7 +51,7 @@ export default function Map() {
   };
 
   return (
-    <div className="container">
+    <div className="container--map">
       <div className="controls">
         <h1 className="controls-title">OnHome Suporte</h1>
         <Places
