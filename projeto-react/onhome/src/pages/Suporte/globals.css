@@ -1,11 +1,11 @@
-html,
+/* html,
 body {
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     background: linear-gradient(to bottom, rgb(39, 1, 109), rgb(31, 0, 96), rgb(73, 0, 70));;
-  }
+  } */
 
 a {
   color: inherit;
@@ -16,10 +16,11 @@ a {
   box-sizing: border-box;
 }
 
-.container {
+.container--map {
   display: flex;
   height: 100vh;
-  
+  background: linear-gradient(to bottom, rgb(39, 1, 109), rgb(31, 0, 96), rgb(73, 0, 70));;
+
 }
 
 .controls {
