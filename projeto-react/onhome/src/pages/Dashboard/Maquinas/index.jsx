@@ -67,7 +67,6 @@ const Maquinas = () => {
   const [pieInfo, setPieInfo] = useState();
   const [thermData, setThermData] = useState();
   const [fkEmpresa, setFkEmpresa] = useState(userInfo.fkEmpresa);
-  const [isDashVisible, setIsDashVisible] = useState()
   const [comparationData, setComparationData] = useState();
   const [isDashVisible, setIsDashVisible] = useState();
 
