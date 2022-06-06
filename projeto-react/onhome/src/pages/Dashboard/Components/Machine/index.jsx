@@ -12,7 +12,7 @@ const Machine = ({ machineInfo, handleWindow }) => {
     const [textColor, setTextColor] = useState("")
 
     useEffect(() => {
-        if (machineInfo.status > 65) {
+        if (machineInfo.qtdPontos > 65) {
             setMachineStatus("EMERGÊNCIA")
             setTextColor("#ff0000")
         } else if (machineInfo.status >= 10) {
@@ -26,7 +26,7 @@ const Machine = ({ machineInfo, handleWindow }) => {
 
     return (
         <div style={{ display: "flex", flexDirection: "column", margin: "15px"}}>
-            <Title squad={"- OnHome"} machineNumber={machineInfo.number} />
+            <Title machineInfo={machineInfo.nomeUsuario} />
             <div style={{ display: "flex" }}>
                 <div>
                     <Border margin={"10px"} padding={"20px 15px"}>
@@ -35,7 +35,7 @@ const Machine = ({ machineInfo, handleWindow }) => {
                         </div>
                         <Thermometer machineInfo={machineInfo}/>
                     </Border>
-                    <Process />
+                    <Process machineInfo={machineInfo}/>
                 </div>
                 <Charts handleWindow={handleWindow}/>
             </div>
