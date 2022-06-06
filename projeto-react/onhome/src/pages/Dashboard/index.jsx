@@ -16,8 +16,6 @@ const Dashboard = () => {
     
     useEffect(() => {
         if (!isAuthenticated) return navigate("/login")
-        console.log("aooo", isAuthenticated)
-        console.log("testando firme")
     })
 
     const handleChosenItem = (chosen) => {
