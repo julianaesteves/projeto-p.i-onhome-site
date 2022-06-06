@@ -4,15 +4,12 @@ import HardwareInfo from './HardwareInfo';
 import { useAuth } from '../../../../../context/Auth';
 
 import {
-  LineChart,
   AreaChart,
   Area,
-  Line,
   XAxis,
   YAxis,
   CartesianGrid,
   Tooltip,
-  Legend,
 } from 'recharts';
 
 import './style.css';
@@ -33,13 +30,9 @@ const Charts = ({ handleWindow }) => {
     },
   ];
 
-  const { userInfo } = useAuth()
-  const [idUsuario, setIdUsuario] = useState(userInfo.idUsuario)
+  const { userInfo } = useAuth();
+  const [idUsuario, setIdUsuario] = useState(userInfo.idUsuario);
   const [dashData, setDashData] = useState([]);
-  const [chartData, setChartData] = useState(data);
-  const [nameData, setNameData] = useState(21);
-  const [atualData, setAtualData] = useState(3000);
-  const [mediaData, setMediaData] = useState(3000);
 
   useEffect(() => {
     const getCpuUseInfo = async () => {
@@ -48,41 +41,25 @@ const Charts = ({ handleWindow }) => {
       );
       const json = await data.json();
       setDashData(json);
-      console.log(json)
     };
-    setTimeout(
-      () => getCpuUseInfo(),
 
-      1000
-    );
+    setTimeout(() => {
+      getCpuUseInfo();
+    }, 1000);
   }, [setDashData]);
 
-  const chartsLabel = ['Uso de CPU em porcentagem', 'Uso de Memória em porcentagem'];
-  const chartsDataKeys = ['usandoCpu', 'usandoRam']
 
   const chartsData = [
     {
-      titulo:"Uso da CPU (%)",
-      uso:"usandoCpu",
+      titulo: 'Uso da CPU (%)',
+      uso: 'usandoCpu',
     },
     {
-      titulo:"Uso da Memória (%)",
-      uso:"usandoRam"
-    }
-  ]
-  // useEffect(() => {
-  //     setTimeout(() => {
-  //         const newName = nameData + 1
-  //         const newAtual = atualData + 500
-  //         const newMedia = mediaData + 50
-  //         setNameData(newName)
-  //         setMediaData(newMedia)
-  //         setAtualData(newAtual)
-  //         let newData = [...data, {name: `${newName}`, atual: `${newAtual}`, media: `${newMedia}`}]
-  //         setChartData(newData)
-  //     }, 3000)
-  // }, [chartData])
-
+      titulo: 'Uso da Memória (%)',
+      uso: 'usandoRam',
+    },
+  ];
+  
   return (
     <Border margin={'10px'} padding={'20px'}>
       <div>
@@ -97,7 +74,7 @@ const Charts = ({ handleWindow }) => {
               justifyContent: 'center',
             }}
           >
-            {chartsData.map(({titulo, uso}) => (
+            {chartsData.map(({ titulo, uso }) => (
               <div>
                 <h2>{titulo}</h2>
                 <AreaChart
