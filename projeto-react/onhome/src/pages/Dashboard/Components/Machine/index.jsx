@@ -37,7 +37,7 @@ const Machine = ({ machineInfo, handleWindow }) => {
                     </Border>
                     <Process machineInfo={machineInfo}/>
                 </div>
-                <Charts handleWindow={handleWindow}/>
+                <Charts handleWindow={handleWindow} machineInfo={machineInfo}/>
             </div>
         </div>
     )

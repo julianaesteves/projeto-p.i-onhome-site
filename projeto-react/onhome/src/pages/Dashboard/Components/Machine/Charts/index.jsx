@@ -14,7 +14,7 @@ import {
 
 import './style.css';
 
-const Charts = ({ handleWindow }) => {
+const Charts = ({ handleWindow, machineInfo }) => {
   const data = [
     {
       name: '16:41:02',
@@ -30,8 +30,7 @@ const Charts = ({ handleWindow }) => {
     },
   ];
 
-  const { userInfo } = useAuth();
-  const [idUsuario, setIdUsuario] = useState(userInfo.idUsuario);
+  const [idUsuario, setIdUsuario] = useState(machineInfo.idUsuario);
   const [dashData, setDashData] = useState([]);
 
   useEffect(() => {
