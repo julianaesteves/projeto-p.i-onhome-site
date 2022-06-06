@@ -65,7 +65,7 @@ const Maquinas = () => {
 
   useEffect(() => {
     const getDashInfo = async () => {
-      const data = await fetch('https://onhome-api-v1.herokuapp.com/processos');
+      const data = await fetch(`https://onhome-api-v1.herokuapp.com/processos/empresa/${fkEmpresa}`);
       const json = await data.json();
       setProcessList(json);
       console.log(json)
