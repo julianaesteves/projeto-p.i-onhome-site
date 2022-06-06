@@ -17,6 +17,7 @@ const Configuracoes = () => {
     async function getCompanyInfo() {
       const data = await fetch(`https://onhome-api-v1.herokuapp.com/empresa/${fkEmpresa}`);
       const [json] = await data.json();
+      console.log(json)
       setEmpresas(json);
     }
     getCompanyInfo();

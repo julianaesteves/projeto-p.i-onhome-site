@@ -15,20 +15,6 @@ import {
 import './style.css';
 
 const Charts = ({ handleWindow, machineInfo }) => {
-  const data = [
-    {
-      name: '16:41:02',
-      atual: 55,
-    },
-    {
-      name: '16:4c4:34',
-      atual: 67,
-    },
-    {
-      name: '16:47:29',
-      atual: 49,
-    },
-  ];
 
   const [idUsuario, setIdUsuario] = useState(machineInfo.idUsuario);
   const [dashData, setDashData] = useState([]);
@@ -45,7 +31,7 @@ const Charts = ({ handleWindow, machineInfo }) => {
     setTimeout(() => {
       getCpuUseInfo();
     }, 1000);
-  }, [setDashData]);
+  }, [idUsuario, setDashData]);
 
 
   const chartsData = [

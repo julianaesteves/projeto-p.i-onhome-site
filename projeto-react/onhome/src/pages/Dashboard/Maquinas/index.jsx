@@ -86,7 +86,7 @@ const Maquinas = () => {
     };
 
     const getComparationData = async () => {
-      const data = await fetch('https://onhome-api-v1.herokuapp.com/pontuacao/empresa/37');
+      const data = await fetch(`https://onhome-api-v1.herokuapp.com/pontuacao/empresa/${fkEmpresa}`);
       const json = await data.json();
       setComparationData([...json]);
     };
@@ -96,15 +96,15 @@ const Maquinas = () => {
       getPieData();
       getThermometerData();
       getComparationData();
-    }, 1000);
-  }, [setProcessList, setPieInfo, fkEmpresa, setComparationData]);
+    }, 2000);
+  }, [setProcessList, setPieInfo, fkEmpresa, setComparationData, processList]);
 
   const Loading = <img style={{ width: 100 }} src='/images/loader.svg' alt='Loading' />
 
   return (
     <div style={{ height: '100vh' }}>
       {!processList ?
-        <div style={{ display: "flex", justifyContent: "center", alignItems: "center", width: "100%" }}>
+        <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
           {Loading}
         </div>
         :
