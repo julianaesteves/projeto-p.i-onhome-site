@@ -129,7 +129,7 @@ const Usuarios = () => {
                 setSenhaError(false);
               }}
               onBlur={() => {
-                if (usuarios.senha == "") {
+                if (usuarios.senha === "") {
                   setSenhaError(true);
                 }
               }}

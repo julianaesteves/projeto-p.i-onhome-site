@@ -13,17 +13,15 @@ const Login = () => {
   const [senha, setSenha] = useState("");
   const [senhaError, setSenhaError] = useState(false);
 
-  const { Login, isFirstAccess } = useAuth()
+  const { Login, isFirstAccess, userInfo, isAuthenticated } = useAuth()
 
   const navigate = useNavigate();
   
   async function handleLogin(e) {
     e.preventDefault()
     await Login(email, senha)
-
-    console.log(isFirstAccess)
-    // if (isFirstAccess) return navigate('/cadastro')
-    // return navigate('/dashboard')
+    if (isFirstAccess) return navigate('/cadastro')
+    return navigate('/dashboard')
 
   }
 

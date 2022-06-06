@@ -3,7 +3,7 @@ import Button from '../../../../components/Button';
 import { useAuth } from '../../../../context/Auth';
 import './styles.css';
 
-const Menu = ({ handleChosenItem }) => {
+const Menu = ({ handleChosenItem, selectedItem }) => {
     const { Logout } = useAuth()
 
     const menuItens = [
@@ -39,9 +39,16 @@ const Menu = ({ handleChosenItem }) => {
                 <input id="dropdown" type="checkbox" />
                 <nav className="navbar border-gradient">
                     <ul>
-                        {menuItens.map(item => (
-                            <li onClick={(e) => handleChosenItem(e)}><img src={item.iconUrl} width={20}></img><a>{item.description}</a></li>
-                        ))}
+                        {menuItens.map(item => {
+                            const isSelected = selectedItem === item.description ? "menu--itemClicked" : ""
+
+                            return (
+                                <li className={isSelected} onClick={(e) => handleChosenItem(e)}>
+                                    <img src={item.iconUrl} width={20}></img>
+                                    <a>{item.description}</a>
+                                </li>
+                            )
+                        })}
                     </ul>
                     <div className='exit-btn'>
                         <Button
