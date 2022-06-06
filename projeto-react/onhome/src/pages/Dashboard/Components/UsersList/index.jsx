@@ -6,6 +6,7 @@ import "./style.css";
 import EditModal from "../EditModal";
 import DeleteModal from "../DeleteModal";
 import { useEffect } from "react";
+import { useAuth } from "../../../../context/Auth";
 
 const UsersList = () => {
   const [modal, setModal] = useState(false);
@@ -15,13 +16,14 @@ const UsersList = () => {
   const [valueInputSenha, setValueInputSenha] = useState("");
   const [valueInputArea, setValueInputArea] = useState("");
   const [valueInputPermissao, setValueInputPermissao] = useState("");
-
+  const { userInfo } = useAuth()
+  const [fkEmpresa] = useState(userInfo.fkEmpresa);
   const [usuarios, setUsuarios] = useState();
 
   useEffect(() => {
     async function getUserInfo() {
 
-      const data = await fetch("https://onhome-api-v1.herokuapp.com/usuarios/37");
+      const data = await fetch(`https://onhome-api-v1.herokuapp.com/usuarios/${fkEmpresa}`);
       const [json] = await data.json();
       setUsuarios(json);
     }
