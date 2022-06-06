@@ -10,15 +10,19 @@ import Maquinas from "./Maquinas"
 
 const Dashboard = () => {
     const [chosenComponent, setChosenComponent] = useState(<Home/>)
+    const [chosenItem, setChosenItem] = useState();
     const { isAuthenticated } = useAuth()
     const navigate = useNavigate()
     
-    // useEffect(() => {
-    //     if (!isAuthenticated) return navigate("/login")
-    // })
+    useEffect(() => {
+        if (!isAuthenticated) return navigate("/login")
+        console.log("aooo", isAuthenticated)
+        console.log("testando firme")
+    })
 
     const handleChosenItem = (chosen) => {
         const chosenItem = chosen.target.innerText
+        setChosenItem(chosenItem)
         switch (chosenItem) {
             case "Geral": 
                 setChosenComponent(<Maquinas />)
@@ -41,7 +45,10 @@ const Dashboard = () => {
 
     return (
         <div style={{ display: "flex" }}>
-            <Menu handleChosenItem={handleChosenItem}/>
+            <Menu 
+                handleChosenItem={handleChosenItem}
+                selectedItem={chosenItem}
+            />
             {chosenComponent}
         </div>
     );

@@ -20,7 +20,7 @@ const UsersList = () => {
 
   useEffect(() => {
     async function getUserInfo() {
-      const data = await fetch("http://localhost:8080/usuario/37");
+      const data = await fetch("http://localhost:8080/usuarios/37");
       const [json] = await data.json();
       setUsuarios(json);
     }
