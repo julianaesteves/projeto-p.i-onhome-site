@@ -7,9 +7,9 @@ const Thermometer = ({ machineInfo }) => {
     const [chartColor, setChartColor] = useState("")
 
     useEffect(() => {
-        if (machineInfo.qtdPontos > 55) setChartColor("emergencia")
+        if (machineInfo.qtdPontos > 55) setChartColor("ideal")
         else if (machineInfo.qtdPontos >= 10) setChartColor("atencao")
-        else if (machineInfo.qtdPontos >= -60) setChartColor("ideal")
+        else if (machineInfo.qtdPontos >= -60) setChartColor("emergencia")
     })
 
     return (

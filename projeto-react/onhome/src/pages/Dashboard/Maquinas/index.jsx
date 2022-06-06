@@ -1,12 +1,11 @@
-import React, { PureComponent, useEffect } from 'react';
-import { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useAuth } from '../../../context/Auth';
 import Border from '../../../components/Border';
 import GradientText from '../../../components/GradientText';
 import Machine from '../Components/Machine';
 import Thermometer from '../Components/Thermometer';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import { useAuth } from '../../../context/Auth';
 
 import {
   PieChart,
@@ -24,32 +23,15 @@ import {
   Legend,
   BarChart,
   Bar,
+  ResponsiveContainer
 } from 'recharts';
 
 import './style.css';
 
 const Maquinas = () => {
-  const machineList = [
-    { number: 1, status: -53 },
-    { number: 2, status: -29 },
-    { number: 3, status: -39 },
-    { number: 4, status: -31 },
-    { number: 5, status: -30 },
-    { number: 6, status: 69 },
-    { number: 7, status: -19 },
-    { number: 8, status: 60 },
-    { number: 9, status: -19 },
-    { number: 10, status: -39 },
-    { number: 11, status: -22 },
-    { number: 12, status: -31 },
-    { number: 13, status: -31 },
-    { number: 14, status: -31 },
-    { number: 15, status: -31 },
-    { number: 16, status: -31 },
-  ];
-
   const { userInfo } = useAuth()
 
+  // Apagar e depois mapear os dados do gráfico para colorir
   const data = [
     {
       // name: '16:41:02',
@@ -60,13 +42,13 @@ const Maquinas = () => {
 
   const chartColor = ['#e692f7', '#b592f7', '#92b7f7', '#eafc83', '#0000'];
 
-  const [chartData, setChartData] = useState(data);
+  // const [chartData, setChartData] = useState(data);
   const [isVisible, setIsVisible] = useState(false);
   const [machineChosen, setMachineChosen] = useState(0);
   const [processList, setProcessList] = useState();
   const [pieInfo, setPieInfo] = useState();
   const [thermData, setThermData] = useState();
-  const [fkEmpresa, setFkEmpresa] = useState(userInfo.fkEmpresa);
+  const [fkEmpresa] = useState(userInfo.fkEmpresa);
   const [comparationData, setComparationData] = useState();
   const [isDashVisible, setIsDashVisible] = useState();
 
@@ -83,13 +65,14 @@ const Maquinas = () => {
 
   useEffect(() => {
     const getDashInfo = async () => {
-      const data = await fetch('http://localhost:8080/processos');
+      const data = await fetch(`http://localhost:8080/processos/empresa/${fkEmpresa}`);
       const json = await data.json();
-      setProcessList(...json);
+      setProcessList(json);
+      console.log(json)
     };
 
     const getPieData = async () => {
-      const pieInfo = await fetch('http://localhost:8080/pontuacao-total');
+      const pieInfo = await fetch(`http://localhost:8080/pontuacao-total/${fkEmpresa}`);
       const json = await pieInfo.json();
       setPieInfo(json);
     };
@@ -104,7 +87,6 @@ const Maquinas = () => {
       const data = await fetch('http://localhost:8080/pontuacao/empresa/37');
       const json = await data.json();
       setComparationData([...json]);
-      console.log(json);
     };
 
     setTimeout(() => {
