@@ -8,11 +8,11 @@ import './style.css';
 const Process = ({ machineInfo }) => {
 
 const [userStats, setUserStats] = useState()
-const { userInfo } = useAuth();
-const [idUsuario, setIdUsuario] = useState(userInfo.idUsuario);
+const [idUsuario, setIdUsuario] = useState(machineInfo.idUsuario);
   
 
   useEffect(() => {
+    console.log(machineInfo)
     const getUserStats = async () => {
       const data = await fetch(
         `https://onhome-api-v1.herokuapp.com/computador/usuario/${idUsuario}`
