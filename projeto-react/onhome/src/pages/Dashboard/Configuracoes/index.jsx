@@ -3,15 +3,19 @@ import Button from "../../../components/Button";
 import GradientText from "../../../components/GradientText";
 import Input from "../../../components/Input";
 import { useEffect, useState } from "react";
+import { useAuth } from "../../../context/Auth"
 import "./style.css";
 import { padding } from "@mui/system";
 
 const Configuracoes = () => {
+  const { userInfo } = useAuth()
+
   const [empresas, setEmpresas] = useState();
+  const [fkEmpresa, setFkEmpresa] = useState(userInfo.fkEmpresa)
 
   useEffect(() => {
     async function getCompanyInfo() {
-      const data = await fetch("https://onhome-api-v1.herokuapp.com/empresa/38");
+      const data = await fetch(`https://onhome-api-v1.herokuapp.com/empresa/${fkEmpresa}`);
       const [json] = await data.json();
       setEmpresas(json);
     }

@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import "./style.css"
 
 const DeleteModal = ({
+  user,
   setDeleteModal,
   deleteModal}) => {
 
@@ -17,7 +18,7 @@ const DeleteModal = ({
           <div className="deleteModal__modal">
             <h2>Deletar usuário</h2>
 
-            <p>Deseja excluir o usuário <span>Felipe Camara</span>?</p>
+            <p>Deseja excluir o usuário <span>{user}</span>?</p>
             <div>
               <button className="deleteModal__buttons" onClick={deleteUser}>Sim</button>
               <button

@@ -29,7 +29,8 @@ export const AuthProvider = ({ children }) => {
             },
         })
 
-        const userData = await results.json()
+        const userData = await results.json();
+        console.log(userData);
         setUserInfo(userData.informacoesUsuario)
 
         if (userData.message) {

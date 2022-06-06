@@ -71,6 +71,7 @@ const UsersList = () => {
                   />
                   <DeleteIcon
                     style={{ cursor: "pointer" }}
+                    user={usuario.nomeUsuario}
                     onClick={() => {
                       setDeleteModal(true);
                     }}

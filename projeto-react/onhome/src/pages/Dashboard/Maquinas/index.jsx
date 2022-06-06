@@ -40,7 +40,7 @@ const Maquinas = () => {
     },
   ];
 
-  const chartColor = ['#e692f7', '#b592f7', '#92b7f7', '#eafc83', '#0000'];
+  const chartColor = ['#00F0FF', '#FF007A', '#5773FF', '#964AB9'];
 
   // const [chartData, setChartData] = useState(data);
   const [isVisible, setIsVisible] = useState(false);
@@ -48,7 +48,7 @@ const Maquinas = () => {
   const [processList, setProcessList] = useState();
   const [pieInfo, setPieInfo] = useState();
   const [thermData, setThermData] = useState();
-  const [fkEmpresa] = useState(userInfo.fkEmpresa);
+  const [fkEmpresa] = useState(userInfo?.fkEmpresa);
   const [comparationData, setComparationData] = useState();
   const [isDashVisible, setIsDashVisible] = useState();
 
@@ -99,136 +99,147 @@ const Maquinas = () => {
     }, 1000);
   }, [setProcessList, setPieInfo, fkEmpresa, setComparationData]);
 
+  const Loading = <img style={{ width: 100 }} src='/images/loader.svg' alt='Loading' />
+
   return (
     <div style={{ height: '100vh' }}>
-      {isVisible ? (
-        <Machine machineInfo={machineChosen} handleWindow={handleWindow} />
-      ) : (
-        <div className="maquinas-container">
-          <Border margin={'0 0 30px'}>
-            <div className="maquinas-header">
-              <GradientText
-                title={`Desempenho geral dos seus funcionários`}
-                fontSize={13}
-                margin={'10px 0 0 0'}
-              />
-            </div>
-          </Border>
-          <div className="maquinas-content">
-            <ArrowBackIosIcon className="arrow--goBack" />
-            {thermData ?
-              thermData.map((machine) => {
-                console.log(machine)
-                return (
-                <Border
-                  padding={'20px'}
-                  margin={'20px'}
-                  cursor={'pointer'}
-                  onClick={() => handleWindow(machine)}
-                >
-                  <div style={{ fontSize: '20px' }}>{machine.nomeUsuario}</div>
-                  <Thermometer machineInfo={machine} />
-                </Border>
-              )})
-              :
-              null
-            }
-            <ArrowForwardIosIcon className="arrow--goNext" />
-          </div>
+      {!processList ?
+        <div style={{ display: "flex", justifyContent: "center", alignItems: "center", width: "100%" }}>
+          {Loading}
         </div>
-      )}
-      <div className="maquinas--workerGraphs_container">
-        <div
-          className="maquinas--workerGraphs_content"
-          style={{ display: `${isDashVisible}` }}
-        >
-          <div className="maquinas--leftItems">
-            <div className="maquinas--itemGraph">
-              <label className="maquinas--label">
-                Principais processos da equipe na semana
-              </label>
-              <Border
-                width={'500px'}
-                height={'170px'}
-                margin={'10px'}
-                textAlign={'center'}
-              >
-                <BarChart
-                  width={450}
-                  style={{ marginTop: '10px' }}
-                  height={160}
-                  data={processList}
-                >
-                  <Bar dataKey="usoCpu" fill="#8884d8" />
-                  <Tooltip />
-                  <YAxis dataKey="usoCpu" />
-                  <XAxis dataKey="nomeProcesso" />
-                </BarChart>
+        :
+        <>
+          {isVisible ? (
+            <Machine machineInfo={machineChosen} handleWindow={handleWindow} />
+          ) : (
+            <div className="maquinas-container">
+              <Border margin={'0 0 30px'}>
+                <div className="maquinas-header">
+                  <GradientText
+                    title={`Desempenho geral dos seus funcionários`}
+                    fontSize={13}
+                    margin={'10px 0 0 0'}
+                  />
+                </div>
               </Border>
+              <div className="maquinas-content">
+                <ArrowBackIosIcon className="arrow--goBack" />
+                {thermData ?
+                  thermData.map((machine) => {
+                    console.log(machine)
+                    return (
+                      <Border
+                        padding={'20px'}
+                        margin={'20px'}
+                        cursor={'pointer'}
+                        onClick={() => handleWindow(machine)}
+                      >
+                        <div style={{ fontSize: '20px' }}>{machine.nomeUsuario}</div>
+                        <Thermometer machineInfo={machine} />
+                      </Border>
+                    )
+                  })
+                  :
+                  null
+                }
+                <ArrowForwardIosIcon className="arrow--goNext" />
+              </div>
             </div>
-            <div className="maquinas--itemGraph">
-              <label className="maquinas--label">
-                Pontos do Squad - semana passada e atual
-              </label>
-              <Border
-                width={'500px'}
-                height={'170px'}
-                margin={'10px'}
-                textAlign={'center'}
-              >
-                <ComposedChart
-                  layout="vertical"
-                  width={450}
-                  height={180}
-                  data={comparationData}
-                  margin={{
-                    top: 20,
-                    right: 40,
-                    bottom: 20,
-                    left: 20,
-                  }}
-                >
-                  <XAxis type="number" />
-                  <YAxis dataKey="name" type="category"  />
-                  <Tooltip />
-                  <Legend />
-                  <Bar dataKey="atual" barSize={20} fill="#e165fc"/>
-                  <Bar dataKey="passada" barSize={20} fill="#69d2f5" />
-                </ComposedChart>
-              </Border>
-            </div>
-          </div>
-          <div className="maquinas--itemGraph">
-            <label className="maquinas--label">
-              Qtd. de desenvolvedores por intervalo de pontuação
-            </label>
-            <Border
-              width={'500px'}
-              height={'405px'}
-              margin={'10px'}
-              textAlign={'center'}
+          )}
+          <div className="maquinas--workerGraphs_container">
+            <div
+              className="maquinas--workerGraphs_content"
+              style={{ display: `${isDashVisible}` }}
             >
-              <PieChart width={550} height={390}>
-                <Pie
-                  dataKey="value"
-                  data={pieInfo}
-                  cx="43%"
-                  cy="50%"
-                  outerRadius={130}
-                  fill="#8884d8"
-                  label
+              <div className="maquinas--leftItems">
+                <div className="maquinas--itemGraph">
+                  <label className="maquinas--label">
+                    Principais processos da equipe na semana
+                  </label>
+                  <Border
+                    width={'500px'}
+                    height={'170px'}
+                    margin={'10px'}
+                    textAlign={'center'}
+                  >
+                    <BarChart
+                      width={450}
+                      style={{ marginTop: '10px' }}
+                      height={160}
+                      data={processList}
+                    >
+                      <Bar dataKey="usoCpu" fill="#8884d8" />
+                      <Tooltip />
+                      <YAxis dataKey="usoCpu" />
+                      <XAxis dataKey="nomeProcesso" />
+                    </BarChart>
+                  </Border>
+                </div>
+                <div className="maquinas--itemGraph">
+                  <label className="maquinas--label">
+                    Pontos do Squad - semana passada e atual
+                  </label>
+                  <Border
+                    width={'500px'}
+                    height={'170px'}
+                    margin={'10px'}
+                    textAlign={'center'}
+                  >
+                    <ComposedChart
+                      layout="vertical"
+                      width={450}
+                      height={180}
+                      data={comparationData}
+                      margin={{
+                        top: 20,
+                        right: 40,
+                        bottom: 20,
+                        left: 20,
+                      }}
+                    >
+                      <XAxis type="number" />
+                      <YAxis dataKey="name" type="category" />
+                      <Tooltip />
+                      <Legend />
+                      <Bar dataKey="atual" barSize={20} fill="#e165fc" />
+                      <Bar dataKey="passada" barSize={20} fill="#69d2f5" />
+                    </ComposedChart>
+                  </Border>
+                </div>
+              </div>
+              <div className="maquinas--itemGraph">
+                <label className="maquinas--label">
+                  Qtd. de desenvolvedores por intervalo de pontuação
+                </label>
+                <Border
+                  width={'500px'}
+                  height={'405px'}
+                  margin={'10px'}
+                  textAlign={'center'}
                 >
-                  {data.map((item, index) => (
-                    <Cell fill={chartColor[index]} />
-                  ))}
-                </Pie>
-                <Legend />
-                <Tooltip />
-              </PieChart>
-            </Border>
+                  <PieChart width={550} height={390}>
+                    <Pie
+                      dataKey="value"
+                      data={pieInfo}
+                      cx="43%"
+                      cy="50%"
+                      outerRadius={130}
+                      // fill="#8884d8"
+                      label
+                    >
+                      {pieInfo?.map((item, index) => (
+                        <Cell fill={chartColor[index]} />
+                      ))}
+                    </Pie>
+                    <Legend />
+                    <Tooltip />
+                  </PieChart>
+                </Border>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
+        </>
+      }
     </div>
   );
 };
