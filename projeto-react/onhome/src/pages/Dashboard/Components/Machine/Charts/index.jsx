@@ -1,16 +1,15 @@
 import { useState, useEffect } from 'react';
 import Border from '../../../../../components/Border';
 import HardwareInfo from './HardwareInfo';
+import { useAuth } from '../../../../../context/Auth';
+
 import {
-  LineChart,
   AreaChart,
   Area,
-  Line,
   XAxis,
   YAxis,
   CartesianGrid,
   Tooltip,
-  Legend,
 } from 'recharts';
 
 import './style.css';
@@ -31,26 +30,36 @@ const Charts = ({ handleWindow }) => {
     },
   ];
 
-  const [chartData, setChartData] = useState(data);
-  const [nameData, setNameData] = useState(21);
-  const [atualData, setAtualData] = useState(3000);
-  const [mediaData, setMediaData] = useState(3000);
+  const { userInfo } = useAuth();
+  const [idUsuario, setIdUsuario] = useState(userInfo.idUsuario);
+  const [dashData, setDashData] = useState([]);
 
-  const chartsLabel = ['CPU', 'Memória'];
+  useEffect(() => {
+    const getCpuUseInfo = async () => {
+      const data = await fetch(
+        `http://localhost:8080/monitoramento/usuario/${idUsuario}`
+      );
+      const json = await data.json();
+      setDashData(json);
+    };
 
-  // useEffect(() => {
-  //     setTimeout(() => {
-  //         const newName = nameData + 1
-  //         const newAtual = atualData + 500
-  //         const newMedia = mediaData + 50
-  //         setNameData(newName)
-  //         setMediaData(newMedia)
-  //         setAtualData(newAtual)
-  //         let newData = [...data, {name: `${newName}`, atual: `${newAtual}`, media: `${newMedia}`}]
-  //         setChartData(newData)
-  //     }, 3000)
-  // }, [chartData])
+    setTimeout(() => {
+      getCpuUseInfo();
+    }, 1000);
+  }, [setDashData]);
 
+
+  const chartsData = [
+    {
+      titulo: 'Uso da CPU (%)',
+      uso: 'usandoCpu',
+    },
+    {
+      titulo: 'Uso da Memória (%)',
+      uso: 'usandoRam',
+    },
+  ];
+  
   return (
     <Border margin={'10px'} padding={'20px'}>
       <div>
@@ -65,26 +74,26 @@ const Charts = ({ handleWindow }) => {
               justifyContent: 'center',
             }}
           >
-            {chartsLabel.map((chart) => (
+            {chartsData.map(({ titulo, uso }) => (
               <div>
-                <h2>{chart}</h2>
+                <h2>{titulo}</h2>
                 <AreaChart
                   width={640}
                   height={195}
-                  data={chartData}
+                  data={dashData[0]}
                   margin={{
-                    top:15,
+                    top: 15,
                     right: 30,
                     bottom: 5,
                   }}
                 >
                   <CartesianGrid stroke="#333" />
-                  <XAxis dataKey="name" />
+                  <XAxis dataKey="nome" />
                   <YAxis />
                   <Tooltip />
                   <Area
                     type="monotone"
-                    dataKey="atual"
+                    dataKey={uso}
                     fill="#FF3784"
                     stroke="#FF3784"
                   />

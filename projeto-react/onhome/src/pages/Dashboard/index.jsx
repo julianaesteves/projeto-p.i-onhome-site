@@ -25,11 +25,10 @@ const Dashboard = () => {
         setChosenItem(chosenItem)
         switch (chosenItem) {
             case "Geral": 
-                setChosenComponent(<Home />)
-                break
-            case "Máquinas":
                 setChosenComponent(<Maquinas />)
                 break
+            case "Suporte":
+                navigate("/suporte")
             case "Relatórios":
                 setChosenComponent(<Reports />)
                 break
@@ -40,7 +39,7 @@ const Dashboard = () => {
                 setChosenComponent(<Usuarios />)
                 break
             default: 
-                setChosenComponent(<Home/>)
+                setChosenComponent(<Maquinas />)
         }
     }
 

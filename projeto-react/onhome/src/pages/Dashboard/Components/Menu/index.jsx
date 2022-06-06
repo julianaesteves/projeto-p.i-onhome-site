@@ -11,14 +11,7 @@ const Menu = ({ handleChosenItem, selectedItem }) => {
             description: "Geral",
             iconUrl: '/icons/homeMenu.svg'
         },
-        {
-            description: "Máquinas",
-            iconUrl: '/icons/monitorMenu.svg'
-        },
-        {
-            description: "Relatórios",
-            iconUrl: '/icons/dashMenu.svg'
-        },
+        
         {
             description: "Configurações",
             iconUrl: '/icons/cogMenu.svg'
@@ -26,6 +19,10 @@ const Menu = ({ handleChosenItem, selectedItem }) => {
         {
             description: "Usuários",
             iconUrl: '/icons/userMenu.svg'
+        },
+        {
+            description: "Suporte",
+            iconUrl: '/icons/dashMenu.svg'
         },
     ]
 
