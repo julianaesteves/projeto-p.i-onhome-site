@@ -19,7 +19,7 @@ const ContactUs = () => {
   })
 
   const sendEmail = async () => {
-    await fetch('http://localhost:8080/mailer', {
+    await fetch('https://onhome-api-v1.herokuapp.com/mailer', {
       method: "POST",
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(customer)

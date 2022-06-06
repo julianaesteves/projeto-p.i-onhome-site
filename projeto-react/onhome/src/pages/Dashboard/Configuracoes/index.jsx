@@ -10,7 +10,7 @@ const Configuracoes = () => {
 
   useEffect(() => {
     async function getCompanyInfo() {
-      const data = await fetch("http://localhost:8080/empresa/38");
+      const data = await fetch("https://onhome-api-v1.herokuapp.com/empresa/38");
       const [json] = await data.json();
       setEmpresas(json);
     }

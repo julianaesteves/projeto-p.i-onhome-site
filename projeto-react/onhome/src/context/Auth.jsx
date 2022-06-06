@@ -20,7 +20,7 @@ export const AuthProvider = ({ children }) => {
 
     async function Login(email, senha) {
         sessionStorage.clear()
-        const results = await fetch('http://localhost:8080/login', {
+        const results = await fetch('https://onhome-api-v1.herokuapp.com/login', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',

@@ -37,7 +37,7 @@ const Charts = ({ handleWindow }) => {
   useEffect(() => {
     const getCpuUseInfo = async () => {
       const data = await fetch(
-        `http://localhost:8080/monitoramento/usuario/${idUsuario}`
+        `https://onhome-api-v1.herokuapp.com/monitoramento/usuario/${idUsuario}`
       );
       const json = await data.json();
       setDashData(json);
