@@ -4,6 +4,7 @@ import GradientText from "../../../components/GradientText";
 import Input from "../../../components/Input";
 import { useEffect, useState } from "react";
 import "./style.css";
+import { padding } from "@mui/system";
 
 const Configuracoes = () => {
   const [empresas, setEmpresas] = useState();
@@ -29,7 +30,7 @@ const Configuracoes = () => {
       </div>
       <div className="cards">
         <div className="empresa-plano">
-          <Border height={250} padding={"20px"}>
+          <Border height={300} padding={"30px"}>
             <div className="cards-description">
               <h1 className="cards-title">Empresa</h1>
               <div className="cards-content">
@@ -46,12 +47,12 @@ const Configuracoes = () => {
                   <b>Email: </b>{empresas?.emailEmpresa}
                 </p>
                 <p className="paragraph-card">
-                  <b>Telefone:</b>{empresas?.telefoneEmpresa}
+                  <b>Telefone: </b>{empresas?.telefoneEmpresa}
                 </p>{" "}
               </div>
             </div>
           </Border>
-          <Border height={210} padding={"20px"}>
+          <Border height={300} padding={"30px"}>
             <div className="div-plano">
               <div className="cards-description">
                 <h1 className="cards-title">Plano</h1>
@@ -74,7 +75,7 @@ const Configuracoes = () => {
           </Border>
         </div>
         <div className="endereco">
-          <div className="border-gradient" style={{ width: "100%" }}>
+          <div className="border-gradient" style={{ width: "100%" , padding: "30px"}}>
             <div className="cards-description">
               <h1 className="cards-title">Endereço</h1>
               <div className="cards-content">
@@ -102,13 +103,13 @@ const Configuracoes = () => {
               </div>
             </div>
             <div>
-              <div className="div-input">
+              {/* <div className="div-input">
                 <Input
                   width={300}
                   height={30}
                   placeholder={"Status da licença:"}
                 />
-              </div>
+              </div> */}
               {/* <div className="button-right">
                 <Button width={150} height={30} value={"Renovar..."}></Button>
               </div> */}
