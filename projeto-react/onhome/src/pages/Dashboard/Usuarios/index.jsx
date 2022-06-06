@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useAuth } from "../../../context/Auth"
 import Border from "../../../components/Border";
 import GradientText from "../../../components/GradientText";
 import Input from "../../../components/Input";
@@ -9,12 +10,15 @@ import UsersList from "../Components/UsersList";
 import "./style.css";
 
 const Usuarios = () => {
+  const { userInfo } = useAuth()
+
   const [userNameError, setUserNameError] = useState(false);
   const [userEmailError, setUserEmailError] = useState(false);
   const [permissionError, setPermissionError] = useState(false);
   const [areaError, setAreaError] = useState(false);
   const [senhaError, setSenhaError] = useState(false);
   const [sucess, setSucess] = useState(false);
+  const [idEmpresa, setIdEmpresa] = useState(userInfo.fkEmpresa)
 
   const [usuarios, setUsuarios] = useState({
     userName: "",
@@ -60,7 +64,7 @@ const Usuarios = () => {
       setSucess(true);
       console.log("Usuário cadastrado com sucesso!");
       console.log(usuarios);
-      sendUser(usuarios);
+      sendUser(usuarios, idEmpresa);
     }
   }
 
@@ -180,12 +184,12 @@ const Usuarios = () => {
             </select>
             <div className="container__error">
               {areaError && <p>Por favor, escolha uma área</p>}
-                {sucess && (
-                  <p className="sucess_message-user">
-                    Usuário cadastrado com sucesso!
-                  </p> )}
+              {sucess && (
+                <p className="sucess_message-user">
+                  Usuário cadastrado com sucesso!
+                </p>)}
             </div>
-            
+
             <div className="right-content-button">
               <Button
                 type={"submit"}
@@ -194,7 +198,7 @@ const Usuarios = () => {
                 borderRadius={"40px"}
                 onClick={onSubmit}
               />
-             
+
             </div>
           </form>
           <UsersList />
