@@ -60,6 +60,7 @@ const Maquinas = () => {
       setIsDashVisible('none');
     } else {
       setIsVisible(false);
+      setIsDashVisible("flex")
     }
   };
 
