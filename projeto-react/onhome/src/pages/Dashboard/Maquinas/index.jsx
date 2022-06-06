@@ -108,7 +108,6 @@ const Maquinas = () => {
             <div className="maquinas-header">
               <GradientText
                 title={`Desempenho geral dos seus funcionários`}
-                textAlign="center"
                 fontSize={13}
                 margin={'10px 0 0 0'}
               />

@@ -31,7 +31,7 @@ const [idUsuario, setIdUsuario] = useState(userInfo.idUsuario);
         <div className="process--line"></div>
         <p>Total de pontos: {machineInfo.qtdPontos}</p>
         <div className="process--hardware">
-          <b>Processador:</b>{userStats?.modeloProcessador}
+          <b>Processador: </b>{userStats?.modeloProcessador}
         </div>
         <div className="process--hardware">
           <b>RAM:</b> {userStats?.tamanhoRam.toFixed()} <b>GB</b>

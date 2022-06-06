@@ -6,7 +6,6 @@ const Title = ({ machineInfo}) => {
         <Border padding={"10px"} margin={"10px"}>
             <GradientText 
                 title={machineInfo} 
-                textAlign={"center"}
             />
         </Border>
     )
