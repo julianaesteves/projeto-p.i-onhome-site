@@ -13,14 +13,14 @@ const Machine = ({ machineInfo, handleWindow }) => {
 
     useEffect(() => {
         if (machineInfo.qtdPontos > 65) {
-            setMachineStatus("EMERGÊNCIA")
-            setTextColor("#ff0000")
-        } else if (machineInfo.status >= 10) {
-            setMachineStatus("ATENÇÃO")
-            setTextColor("#ffff00")
-        } else if (machineInfo.status >= -60) {
             setMachineStatus("IDEAL")
             setTextColor("#008000")
+        } else if (machineInfo.qtdPontos >= 10) {
+            setMachineStatus("ATENÇÃO")
+            setTextColor("#ffff00")
+        } else if (machineInfo.qtdPontos >= -60) {
+            setMachineStatus("EMERGENCIA")
+            setTextColor("#ff0000")
         }
     }, [])
 
