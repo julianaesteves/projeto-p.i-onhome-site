@@ -23,7 +23,7 @@ const Header = () => {
                 </nav>
                 <div className="rl-login">
                     <Link to={"/login"}><button className='rl-btn-login'>Login</button></Link>
-                    <button className='rl-btn-registrar'><LinkScroll to='contact--container' smooth={true} duration={1000}>Registrar-se</LinkScroll></button>
+                    <button className='rl-btn-registrar'><LinkScroll to='contact' smooth={true} duration={1000}>Registrar-se</LinkScroll></button>
                 </div>
             </div>
             <nav className="rl-navigation rl-transparent">
