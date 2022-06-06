@@ -1,8 +1,8 @@
-const sendUser = async (userInfo) => {
-    await fetch(`https://onhome-api-v1.herokuapp.com/usuario`, {
+const sendUser = async (userInfo, idEmpresa) => {
+    await fetch(`http://localhost:8080/usuario`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(userInfo)
+        body: JSON.stringify({...userInfo, fkEmpresa: idEmpresa})
     })
 }
 
