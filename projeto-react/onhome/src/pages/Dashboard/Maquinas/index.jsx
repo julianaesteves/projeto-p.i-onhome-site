@@ -83,28 +83,28 @@ const Maquinas = () => {
 
   useEffect(() => {
     const getDashInfo = async () => {
-      const data = await fetch('http://localhost:8080/processos');
+      const data = await fetch('https://onhome-api-v1.herokuapp.com/processos');
       const json = await data.json();
       setProcessList(...json);
     };
 
     const getPieData = async () => {
-      const pieInfo = await fetch('http://localhost:8080/pontuacao-total');
+      const pieInfo = await fetch(`https://onhome-api-v1.herokuapp.com/pontuacao-total/${fkEmpresa}`);
       const json = await pieInfo.json();
       setPieInfo(json);
+      console.log(pieInfo);
     };
 
     const getThermometerData = async () => {
-      const thermData = await fetch(`http://localhost:8080/computadores/empresa/${fkEmpresa}`);
+      const thermData = await fetch(`https://onhome-api-v1.herokuapp.com/computadores/empresa/${fkEmpresa}`);
       const json = await thermData.json();
       setThermData(json);
     };
 
     const getComparationData = async () => {
-      const data = await fetch('http://localhost:8080/pontuacao/empresa/37');
+      const data = await fetch('https://onhome-api-v1.herokuapp.com/pontuacao/empresa/37');
       const json = await data.json();
       setComparationData([...json]);
-      console.log(json);
     };
 
     setTimeout(() => {
@@ -205,7 +205,6 @@ const Maquinas = () => {
                     left: 20,
                   }}
                 >
-                  <CartesianGrid stroke="#f5f5f5" />
                   <XAxis type="number" />
                   <YAxis dataKey="name" type="category"  />
                   <Tooltip />

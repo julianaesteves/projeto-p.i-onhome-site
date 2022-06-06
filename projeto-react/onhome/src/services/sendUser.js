@@ -1,5 +1,5 @@
 const sendUser = async (userInfo) => {
-    await fetch(`http://localhost:8080/usuario`, {
+    await fetch(`https://onhome-api-v1.herokuapp.com/usuario`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(userInfo)

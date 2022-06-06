@@ -15,7 +15,7 @@ const [idUsuario, setIdUsuario] = useState(userInfo.idUsuario);
   useEffect(() => {
     const getUserStats = async () => {
       const data = await fetch(
-        `http://localhost:8080/computador/usuario/${idUsuario}`
+        `https://onhome-api-v1.herokuapp.com/computador/usuario/${idUsuario}`
       );
       const [json] = await data.json();
       setUserStats(...json);
@@ -45,29 +45,3 @@ const [idUsuario, setIdUsuario] = useState(userInfo.idUsuario);
 };
 
 export default Process;
-
-// const processList = [
-//     { name: "Google Chrome", percentual: "100%" },
-//     { name: "VSCode", percentual: "10%" },
-//     { name: "Spotify", percentual: "40%" },
-//     { name: "NetBeans", percentual: "80%" },
-//     { name: "Postman", percentual: "10%" },
-//     { name: "Slack", percentual: "15%" },
-//     { name: "Microsoft Outlook", percentual: "16%" },
-// ]
-
-/* <div>
-    <div className="process--header">
-        <div>Programas em execução</div>
-        <div style={{ width: "100px" }}>% de uso</div>
-    </div>
-        {processList.map((process, index) => {
-            const tableBorder = (index + 1) < processList.length ? "process--table--border" : ""
-            return (
-                <div className={`process--row ${tableBorder}`}>
-                    <div>{process.name}</div>
-                    <div style={{ width: "100px" }}>{process.percentual}</div>
-                </div>
-            )
-        })}
-</div> */
