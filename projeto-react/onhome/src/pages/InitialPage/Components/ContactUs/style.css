@@ -35,3 +35,9 @@
     color: greenyellow;
     font-size: 20px;
 }
+
+.container__error .sucess_message-user{
+    color: greenyellow;
+    font-size: 16px;
+    text-align: center;
+}

@@ -14,6 +14,7 @@ const Usuarios = () => {
   const [permissionError, setPermissionError] = useState(false);
   const [areaError, setAreaError] = useState(false);
   const [senhaError, setSenhaError] = useState(false);
+  const [sucess, setSucess] = useState(false);
 
   const [usuarios, setUsuarios] = useState({
     userName: "",
@@ -56,15 +57,16 @@ const Usuarios = () => {
       usuarios.area != "" &&
       usuarios.permission != ""
     ) {
+      setSucess(true);
       console.log("Usuário cadastrado com sucesso!");
       console.log(usuarios);
+      sendUser(usuarios);
     }
   }
 
   const onSubmit = (e) => {
     e.preventDefault();
     verify();
-    sendUser(usuarios);
   };
 
   return (
@@ -178,7 +180,12 @@ const Usuarios = () => {
             </select>
             <div className="container__error">
               {areaError && <p>Por favor, escolha uma área</p>}
+                {sucess && (
+                  <p className="sucess_message-user">
+                    Usuário cadastrado com sucesso!
+                  </p> )}
             </div>
+            
             <div className="right-content-button">
               <Button
                 type={"submit"}
@@ -187,6 +194,7 @@ const Usuarios = () => {
                 borderRadius={"40px"}
                 onClick={onSubmit}
               />
+             
             </div>
           </form>
           <UsersList />
