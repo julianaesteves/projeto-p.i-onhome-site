@@ -1,0 +1,21 @@
+.loader--div img{
+    max-width: 100vw;
+    height: 100vh;
+}
+
+.loader--div {
+    background-color: #0f0b30;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loader--gradientBackground {
+    width: 100%;
+    background: linear-gradient(9deg, rgba(8,4,37,0.8379945728291316) 14%, rgba(92,1,188,0.23855479691876746) 68%, rgba(195, 0, 255, 0.158) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
