@@ -5,11 +5,10 @@ import Configuracoes from "./Configuracoes"
 import Menu from "./Components/Menu"
 import Usuarios from "./Usuarios"
 import Reports from "./Components/Reports"
-import Home from "./Home"
 import Maquinas from "./Maquinas"
 
 const Dashboard = () => {
-    const [chosenComponent, setChosenComponent] = useState(<Home/>)
+    const [chosenComponent, setChosenComponent] = useState(<Maquinas />)
     const [chosenItem, setChosenItem] = useState();
     const { isAuthenticated } = useAuth()
     const navigate = useNavigate()
