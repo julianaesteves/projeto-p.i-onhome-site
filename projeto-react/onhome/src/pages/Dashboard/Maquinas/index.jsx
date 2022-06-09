@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useAuth } from '../../../context/Auth';
 import Border from '../../../components/Border';
 import GradientText from '../../../components/GradientText';
+import Loader from '../../../components/Loader/Loader';
 import Machine from '../Components/Machine';
 import Thermometer from '../Components/Thermometer';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
@@ -11,19 +12,13 @@ import {
   PieChart,
   Pie,
   Cell,
-  LineChart,
-  AreaChart,
   ComposedChart,
-  Area,
-  Line,
   XAxis,
   YAxis,
-  CartesianGrid,
   Tooltip,
   Legend,
   BarChart,
-  Bar,
-  ResponsiveContainer
+  Bar
 } from 'recharts';
 
 import './style.css';
@@ -105,7 +100,7 @@ const Maquinas = () => {
     <div style={{ height: '100vh' }}>
       {!processList ?
         <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-          {Loading}
+          < Loader/>
         </div>
         :
         <>
